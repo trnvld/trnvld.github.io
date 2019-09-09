@@ -1,0 +1,24 @@
+{
+  "name": "blackshield.github.io",
+  "version": "1.0.0",
+  "description": "",
+  "main": "\u001b[D\u001b[D\u001b[C\u001b[C",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^4.0.2",
+    "gulp-sass": "^4.0.2"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/trnvld/blackshield.github.io.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/trnvld/blackshield.github.io/issues"
+  },
+  "homepage": "https://github.com/trnvld/blackshield.github.io#readme"
+}
