@@ -5,6 +5,7 @@
   "main": "\u001b[D\u001b[D\u001b[C\u001b[C",
   "dependencies": {},
   "devDependencies": {
+    "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
     "gulp-sass": "^4.0.2"
   },

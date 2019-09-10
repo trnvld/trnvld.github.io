@@ -1,0 +1,16 @@
+@import 'normalize/variables';
+@import 'normalize/vertical-rhythm';
+@import 'normalize/normalize-mixin';
+@include normalize
+
+html {
+	box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+	background-color: #E5E5E5;
+}
