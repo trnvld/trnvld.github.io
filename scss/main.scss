@@ -3,6 +3,8 @@
 @import 'normalize/normalize-mixin';
 @include normalize
 
+@import 'globals';
+
 html {
 	box-sizing: border-box;
 }
@@ -12,5 +14,92 @@ html {
 }
 
 body {
+	font-family: $fontFamily;
 	background-color: #E5E5E5;
+}
+
+ul, ol, h1, h2, h3 {
+	padding: 0;
+	margin: 0;
+}
+
+li {
+	list-style-type: none;
+}
+
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 1170px;
+	width: 100%;
+	padding: 0 15px;
+	margin: 0 auto;
+}
+
+.header {
+	background-color: #FFF;
+	.container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 12px 0;
+	}
+	&__menu {
+		display: flex;
+		justify-content: center;
+		text-transform: uppercase;
+		margin-left: auto;
+		li {
+			list-style-type: none;
+			margin: 0 14px;
+			a {
+				display: block;
+				padding: 5px;
+				font-size: 14px;
+				line-height: 19px;
+				color: #2F3234;
+				text-decoration: none;
+				font-family: $fontFamily;
+				font-weight: normal;
+				&:hover, &.selected {
+					font-weight: bold;
+					color: #2F3234
+				}
+			}
+		}
+	}
+	&__language {
+		display: flex;
+		justify-content: center;
+		text-transform: uppercase;
+		margin-left: 70px;
+		li {
+			list-style-type: none;
+			a {
+				display: block;
+				padding: 5px;
+				font-size: 14px;
+				line-height: 19px;
+				color: #2F3234;
+				text-decoration: none;
+				font-family: $fontFamily;
+				&:hover, &.selected {
+					font-weight: bold;
+					color: #2F3234
+				}
+			}
+		}
+	}
+}
+
+
+.main {
+
+}
+
+.homepage__intro-who-we-are--wrapper {
+	background: url(../img/main-bg.jpg);
+	background-size: cover;
 }
