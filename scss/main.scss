@@ -81,6 +81,13 @@ textarea {
 	}
 }
 
+.no-border {
+	border: none;
+	&:hover {
+		border: none;
+	}
+}
+
 .btn-white {
 	color: #F15C42;
 	background: #ffffff;
@@ -157,6 +164,20 @@ textarea {
 
 .homepage__intro {
 	padding-top: 68px;
+	position: relative;
+	&-socials {
+		display: flex;
+		flex-direction: column;
+		position: absolute;
+		top: 15px;
+		right: 0;
+		img {
+			margin-bottom: 16px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
 	&-header {
 		font-family: $fontFamily;
 		font-style: normal;
@@ -165,6 +186,12 @@ textarea {
 		line-height: 87px;
 		text-transform: uppercase;
 		margin-bottom: 27px;
+		margin-right: 30px;
+		span {
+			color: #FFFFFF;
+			background: #F15C42;
+			padding: 0 8px;
+		}
 	}
 	&-text {
 		font-family: $fontFamily;
