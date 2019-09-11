@@ -18,7 +18,7 @@ body {
 	background-color: #E5E5E5;
 }
 
-ul, ol, h1, h2, h3 {
+ul, ol, h1, h2, h3, p {
 	padding: 0;
 	margin: 0;
 }
@@ -38,13 +38,44 @@ a {
 	margin: 0 auto;
 }
 
+.btn {
+	display: block;
+	width: 170px;
+	font-family: $fontFamily;
+	text-align: center;
+	font-weight: bold;
+	font-size: 14px;
+	line-height: 48px;
+	box-shadow: 0 18px 40px rgba(241, 92, 66, 0.25);
+	border-radius: 2px;
+	border: 2px solid #F05336;
+}
+
+.btn-orange {
+	background: #F15C42;
+	color: #ffffff;
+	&:hover {
+		color: #F15C42;
+		background: #ffffff;
+	}
+}
+
+.btn-white {
+	color: #F15C42;
+	background: #ffffff;
+	&:hover {
+		background: #F15C42;
+		color: #ffffff;
+	}
+}
+
 .header {
 	background-color: #FFF;
+	padding: 12px 0;
 	.container {
 		display: flex;
 		justify-content: space-between;
 		align-items: center;
-		padding: 12px 0;
 	}
 	&__menu {
 		display: flex;
@@ -63,6 +94,7 @@ a {
 				text-decoration: none;
 				font-family: $fontFamily;
 				font-weight: normal;
+				min-width: 84px;
 				&:hover, &.selected {
 					font-weight: bold;
 					color: #2F3234
@@ -85,6 +117,7 @@ a {
 				color: #2F3234;
 				text-decoration: none;
 				font-family: $fontFamily;
+				min-width: 30px;
 				&:hover, &.selected {
 					font-weight: bold;
 					color: #2F3234
@@ -94,12 +127,66 @@ a {
 	}
 }
 
-
-.main {
-
+.homepage__intro-who-we-are--wrapper {
+	background: url(../img/main-bg.jpg) no-repeat;
+	background-size: cover;
+	background-position: center bottom;
 }
 
-.homepage__intro-who-we-are--wrapper {
-	background: url(../img/main-bg.jpg);
-	background-size: cover;
+.homepage__intro {
+	padding-top: 68px;
+	&-header {
+		font-family: $fontFamily;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 64px;
+		line-height: 87px;
+		text-transform: uppercase;
+		margin-bottom: 27px;
+	}
+	&-text {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 25px;
+		color: #000000;
+		margin-bottom: 50px;
+	}
+	&-arrow {
+		margin-top: 61px;
+		margin-bottom: 42px;
+        background: url(../img/arrow.svg) no-repeat;
+        width: 9px;
+        height: 63px;
+        background-size: 100%;
+	}
+}
+
+.homepage__who-we-are {
+	margin-top: 42px;
+	&-heading {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 49px;
+		color: #000000;
+		margin-bottom: 20px;
+	}
+	img {
+		float: right;
+		padding: 0 0 30px 30px;
+	}
+	p {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 25px;
+		color: #2F3234;
+		margin-bottom: 30px;
+	}
+	&:after {
+		clear: both;
+		display: table;
+		content: "";
+	}
 }
