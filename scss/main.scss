@@ -322,3 +322,31 @@ a {
 		}
 	}
 }
+
+.homepage__careers {
+	background: url(../img/careers-bg.png) no-repeat;
+	background-size: cover;
+	padding: 100px 0;
+	.container {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+	}
+	&-heading {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 49px;
+		color: #FFFFFF;
+		margin-bottom: 39px;
+	}
+	&-content {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 18px;
+		line-height: 25px;
+		text-align: center;
+		color: #FFFFFF;
+		margin-bottom: 65px;
+	}
+}
