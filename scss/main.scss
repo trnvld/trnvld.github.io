@@ -36,6 +36,22 @@ a {
 	text-decoration: none;
 }
 
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
+}
+
+input,
+textarea {
+	outline:none;
+	border: none;
+}
+
 .container {
 	max-width: 1170px;
 	width: 100%;
@@ -99,6 +115,7 @@ a {
 				text-decoration: none;
 				font-family: $fontFamily;
 				font-weight: normal;
+				text-align: center;
 				min-width: 84px;
 				&:hover, &.selected {
 					font-weight: bold;
@@ -348,5 +365,104 @@ a {
 		text-align: center;
 		color: #FFFFFF;
 		margin-bottom: 65px;
+	}
+}
+
+.footer {
+	padding: 124px 0;
+	background-color: #fff;
+	.container {
+		display: flex;
+		justify-content: space-between;
+	}
+	&-subscribe {
+		display: flex;
+		flex-direction: column;
+		max-width: 367px;
+		&-text {
+			font-family: $fontFamily;
+			font-weight: bold;
+			font-size: 12px;
+			line-height: 16px;
+			color: #000000;
+			margin-bottom: 35px;
+		}
+		&-form {
+			display: flex;
+			align-items: center;
+			border-bottom: 1px solid black;
+			&-email {
+				margin-bottom: 12px;
+				width: 100%;
+				cursor: pointer;
+				color: gray;
+			}
+			&-btn {
+				background: url(../img/arrow-right.svg) center no-repeat !important;
+				width: 105px;
+				height: 28px;
+				margin-bottom: 12px;
+			}
+		}
+	}
+	&-menus {
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		align-items: flex-end;
+		&-bottom {
+			display: flex;
+			align-items: flex-end;
+		}
+	}
+	&-socials {
+		display: flex;
+		margin-right: 68px;
+		img {
+			margin-right: 20px;
+		}
+	}
+	&-menu {
+		display: flex;
+		justify-content: center;
+		text-transform: uppercase;
+		margin-left: auto;
+		li {
+			list-style-type: none;
+			margin: 0 14px;
+			&:last-child {
+				margin-right: 0;
+				a {
+					min-width: 142px;
+					padding-right: 0;
+					text-align: right;
+				}
+			}
+			a {
+				display: block;
+				padding: 0 5px;
+				font-size: 12px;
+				line-height: 16px;
+				color: #2F3234;
+				text-decoration: none;
+				font-family: $fontFamily;
+				font-weight: normal;
+				text-align: center;
+				min-width: 84px;
+				&:hover, &.selected {
+					font-weight: bold;
+					color: #2F3234
+				}
+
+			}
+		}
+	}
+	&-copyright {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 12px;
+		line-height: 16px;
+		text-align: center;
+		color: #333333;
 	}
 }
