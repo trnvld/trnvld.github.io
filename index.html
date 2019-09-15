@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
 </head>
@@ -34,28 +35,42 @@
 
             <div class="homepage__intro">
                 <div class="homepage__intro-socials">
+                	<div class="roupe">
                     <a href="/">
                     	<img src="img/facebook.svg" alt="facebook">
                     	<img src="img/facebook-w.svg" alt="facebook">
                     </a>
+                    <div class="roupe">
                     <a href="/">
                     	<img src="img/linkedin.svg" alt="linkedin">
                     	<img src="img/linkedin-w.svg" alt="linkedin">
                     </a>
+                    <div class="roupe">
                     <a href="/">
                     	<img src="img/telegram.svg" alt="telegram">
                     	<img src="img/telegram-w.svg" alt="telegram">
                     </a>
+                    <div class="roupe">
                     <a href="/">
                     	<img src="img/instagram.svg" alt="instagram">
                     	<img src="img/instagram-w.svg" alt="instagram">
                     </a>
+                    <div class="roupe">
                     <a href="/">
                     	<img src="img/youtube.svg" alt="youtube">
                     	<img src="img/youtube-w.svg" alt="youtube">
                     </a>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    </div>
+                    
+                    
+                    
+                    
                 </div>
-                <h1 class="homepage__intro-header">Technology<br> and Innovations<br> as a long-term <span>investment</span>
+                <h1 class="homepage__intro-header">Technology<br> and Innovations<br> as a long-term <div class="type-wrapp"><span class="type-effect">investment</span></div>
                 </h1>
                 <div class="homepage__intro-text">
                     <p>We clearly see opportunities and prospects, we feel the trends, we monitor technological
@@ -241,6 +256,11 @@
         slidesToScroll: 5,
         infinite: true
     });
+
+    const instance = new TypeIt('.type-effect', {
+	  speed: 150
+	}).go();
+
 </script>
 </body>
 </html>

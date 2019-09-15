@@ -8,6 +8,7 @@
 
 html {
 	box-sizing: border-box;
+	user-select: none;
 }
 
 img {
@@ -97,6 +98,7 @@ textarea {
 	position: fixed;
 	width: 100%;
 	z-index: 10;
+	background-color: #fff;
 	&.offset {
 		background-color: rgba(255,255,255,0.5);
 		border-bottom: 1px solid black;
@@ -125,7 +127,7 @@ textarea {
 				font-family: $fontFamily;
 				font-weight: 300;
 				text-align: center;
-				min-width: 84px;
+				min-width: 87px;
 				transition: 0.3s;
 				&:hover, &.selected {
 					font-weight: bold;
@@ -182,49 +184,56 @@ textarea {
 		position: absolute;
 		top: 15px;
 		right: 0;
-		a {
-			position: relative;
-			margin-bottom: 16px;
-			border: 1px solid black;
-			border-radius: 50%;
-			width: 30px;
-			height: 30px;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			background-color: transparent;
-			transition: 0.3s;
-			&:last-child {
-				margin-bottom: 0;
-				img {
-					padding: 8px 5px;
-			}
-			}
-			img {
-				padding: 8px;
-				opacity: 1;
+		.roupe {
+			transform-origin: top center;
+	  		animation: fall-n-swing 7s 1;
+	  		animation-timing-function: ease-in-out;
+			a {
+				position: relative;
+				margin-bottom: 16px;
+				border: 1px solid black;
+				border-radius: 50%;
+				width: 30px;
+				height: 30px;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				background-color: transparent;
 				transition: 0.3s;
+				
 				&:last-child {
-					position: absolute;
-					opacity: 0;
+					margin-bottom: 0;
+					img {
+						padding: 8px 5px;
 				}
-			}
-			&:hover {
-				transition: 0.3s;
-				background-color: #F15C42;
-				border: 1px solid #F15C42;
+				}
 				img {
-					&:first-child {
-						opacity: 0;
-						transition: 0.3s;
-					}
+					padding: 8px;
+					opacity: 1;
+					transition: 0.3s;
 					&:last-child {
-						opacity: 1;
-						transition: 0.3s;
+						position: absolute;
+						opacity: 0;
+					}
+				}
+				&:hover {
+					transition: 0.3s;
+					background-color: #F15C42;
+					border: 1px solid #F15C42;
+					img {
+						&:first-child {
+							opacity: 0;
+							transition: 0.3s;
+						}
+						&:last-child {
+							opacity: 1;
+							transition: 0.3s;
+						}
 					}
 				}
 			}
 		}
+		
 	}
 	&-header {
 		font-family: $fontFamily;
@@ -235,11 +244,16 @@ textarea {
 		text-transform: uppercase;
 		margin-bottom: 27px;
 		margin-right: 30px;
-		span {
-			color: #FFFFFF;
-			background: #F15C42;
-			padding: 0 8px;
+			.type-wrapp	{
+				display: inline-block;
+				background: #F15C42;
+				min-width: 434px;
+				.type-effect {
+				color: #FFFFFF;
+				padding: 0 8px;
+			}
 		}
+		
 	}
 	&-text {
 		font-family: $fontFamily;
@@ -358,7 +372,7 @@ textarea {
 			transition: 0.5s;
 			img {
 				margin-bottom: 41px;
-				max-width: 170px;
+				max-width: 168px;
 			}
 			p {
 				margin-bottom: 50px;
@@ -431,6 +445,7 @@ textarea {
 		}
 	}
 	&-slider {
+		cursor: pointer;
 		img {
 			width: auto !important;
 		}
@@ -602,5 +617,53 @@ textarea {
 		line-height: 16px;
 		text-align: center;
 		color: #333333;
+		strong {
+			font-weight: bold;
+		}
 	}
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes top {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+@keyframes fall-n-swing {
+  0% {
+    transform: rotateZ(30deg);
+  }
+  14% {
+    transform: rotateZ(-15.5deg);
+  }
+  28% {
+    transform: rotateZ(9.75deg);
+  }
+  42% {
+    transform: rotateZ(-8.25deg);
+  }
+  56% {
+    transform: rotateZ(5.75deg);
+  }
+  70% {
+    transform: rotateZ(-4.25deg);
+  }
+  84% {
+    transform: rotateZ(2.5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
 }
