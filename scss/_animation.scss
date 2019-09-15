@@ -1,0 +1,44 @@
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes top {
+  0% {
+    top: -100px;
+  }
+  100% {
+    top: 15px;
+  }
+}
+
+@keyframes fall-n-swing {
+  0% {
+    transform: rotateZ(30deg);
+  }
+  14% {
+    transform: rotateZ(-15.5deg);
+  }
+  28% {
+    transform: rotateZ(9.75deg);
+  }
+  42% {
+    transform: rotateZ(-8.25deg);
+  }
+  56% {
+    transform: rotateZ(5.75deg);
+  }
+  70% {
+    transform: rotateZ(-4.25deg);
+  }
+  84% {
+    transform: rotateZ(2.5deg);
+  }
+  100% {
+    transform: rotateZ(0deg);
+  }
+}

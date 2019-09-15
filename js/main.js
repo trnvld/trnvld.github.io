@@ -6,4 +6,10 @@ $(document).ready(function() {
             $('.header').removeClass('offset');
         }
     });
+
+   $(".homepage__intro-arrow").click(function() {
+    $('html,body').animate({
+        scrollTop: $(".homepage__who-we-are").offset().top - 100},
+        'slow');
+});
 });

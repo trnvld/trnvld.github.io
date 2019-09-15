@@ -1,0 +1,29 @@
+.homepage__who-we-are {
+	margin-top: 42px;
+	padding-bottom: 98px;
+	&-heading {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 49px;
+		color: #000000;
+		margin-bottom: 30px;
+	}
+	img {
+		float: right;
+		padding: 0 0 30px 30px;
+	}
+	p {
+		font-family: $fontFamily;
+		font-weight: 300;
+		font-size: 18px;
+		line-height: 25px;
+		color: #2F3234;
+		margin-bottom: 30px;
+	}
+	&:after {
+		clear: both;
+		display: table;
+		content: "";
+	}
+}

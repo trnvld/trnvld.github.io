@@ -1,0 +1,82 @@
+.homepage__services {
+	padding: 145px 0;
+	background: #F5F5F5;
+	.container {
+		display: flex;
+	}
+	&-heading {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 49px;
+		color: #2F3234;
+		margin-bottom: 32px;
+	}
+	&-description {
+		display: flex;
+		flex-direction: column;
+		max-width: 269px;
+		min-width: 269px;
+		margin-right: 20px;
+		p {
+			font-family: $fontFamily;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 25px;
+			color: #2F3234;
+			margin-bottom: 30px;
+		}
+	}
+	&-list {
+		display: flex;
+		width: 100%;
+		&-wrapp {
+			margin: 0 10px;
+			display: flex;
+			flex: 33%;
+			position: relative;
+			min-height: 370px;
+			&:first-child {
+				margin-left: 0;
+			}
+			&:last-child {
+				margin-right: 0;
+			}
+			&:hover {
+				.homepage__services-list-element {
+					top: -30px;
+					transition: 0.5s;
+				}
+			}
+		}
+		&-element {
+			position: absolute;
+			top: 0;
+			left: 0;
+			display: flex;
+			flex-direction: column;
+			align-items: center;
+			justify-content: space-between;
+			background: #FFFFFF;
+			box-shadow: 0 18px 40px #E4E4E3;
+			border-radius: 2px;
+			min-height: 370px;
+			padding: 53px 43px 33px 43px;
+			text-align: center;
+			transition: 0.5s;
+			img {
+				margin-bottom: 41px;
+				max-width: 168px;
+			}
+			p {
+				margin-bottom: 50px;
+				font-family: $fontFamily;
+				font-weight: 300;
+				font-size: 12px;
+				line-height: 16px;
+				color: #2F3234;
+				user-select: none;
+			}
+		}
+	}
+}

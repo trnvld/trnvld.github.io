@@ -1,0 +1,34 @@
+.homepage__approach {
+	padding-top: 91px;
+	padding-bottom: 12px;
+	background: #fff url(../img/approach-bg.jpg) right bottom no-repeat;
+	&-wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+	&-card {
+		margin-bottom: 91px;
+		padding: 31px 45px 45px 45px;
+		max-width: 560px;
+		background: #F5F5F5;
+		border-radius: 2px;
+		&-heading {
+			font-family: $fontFamily;
+			font-weight: normal;
+			font-size: 36px;
+			line-height: 49px;
+			color: #2F3234;
+			margin-bottom: 32px;
+		}
+		&-content {
+			font-family: $fontFamily;
+			font-weight: 300;
+			font-size: 18px;
+			line-height: 25px;
+			color: #2F3234;
+			p {
+				margin-bottom: 30px;
+			}
+		}
+	}
+}
