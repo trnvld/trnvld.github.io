@@ -9,8 +9,21 @@
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="js/fakeloader.js"></script>
 </head>
 <body>
+	<script>
+            $(document).ready(function(){
+                $.fakeLoader({
+                    timeToHide:3200,
+                    bgColor:"#000000",
+                    spinner:"spinner4"
+                });
+            });
+        </script>
+
+
+        <div class="fakeLoader"></div>
 <header class="header">
     <div class="header__container container">
         <div class="header__logo">
@@ -258,6 +271,7 @@
     });
 
     const instance = new TypeIt('.type-effect', {
+      startDelay: 3200,
 	  speed: 150
 	}).go();
 

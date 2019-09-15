@@ -3,7 +3,9 @@
   "version": "1.0.0",
   "description": "",
   "main": "\u001b[D\u001b[D\u001b[C\u001b[C",
-  "dependencies": {},
+  "dependencies": {
+    "jq-fakeloader": "^2.0.1"
+  },
   "devDependencies": {
     "browser-sync": "^2.26.7",
     "gulp": "^4.0.2",
