@@ -91,15 +91,8 @@ textarea {
 	color: #ffffff;
 	&:hover {
 		color: #F15C42;
+		box-shadow: none;
 		background: transparent;
-		transition: 0.5s;
-	}
-}
-
-.no-border {
-	border: none;
-	&:hover {
-		border: none;
 		transition: 0.5s;
 	}
 }
