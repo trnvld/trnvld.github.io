@@ -31,6 +31,90 @@
     </div>
 </header>
 <main class="main">
+	<div class="preloader">
+        <div class="preload-wrap">
+                <div class="loader">
+                    <img src="img/shield-capital.svg" alt="shield-capital" class="shield1">
+                    <img src="img/shield-advisers.svg" alt="shield-advisers" class="shield2">
+                    <img src="img/shield-fund.svg" alt="shield-fund" class="shield3">
+                </div>
+        </div>
+    </div>
+
+    <script>
+
+        if (!sessionStorage.getItem('showPreloader')) {
+            sessionStorage.setItem('showPreloader', 'true');
+            $(window).on('load', function () {
+                $preloader = $('.preloader');
+                $loader = $preloader.find('.preload-wrap');
+                $('.shield1').addClass('block');
+                setTimeout(function() {
+			       $('.shield1').removeClass('block');
+			    }, 1000);
+                setTimeout(function() {
+			       $('.shield2').addClass('block');
+			    }, 1000);
+			    setTimeout(function() {
+			       $('.shield2').removeClass('block');
+			    }, 2000);
+			    setTimeout(function() {
+			       $('.shield3').addClass('block');
+			    }, 2000);
+			    setTimeout(function() {
+			       $('.shield3').removeClass('block');
+			    }, 3000);
+                $loader.delay(3000).fadeOut('slow');
+                $preloader.delay(3000).fadeOut('slow');
+                setTimeout(function() {
+			       $('.roupe').addClass('animate');
+			    }, 3000);
+			    setTimeout(function() {
+			       $('.homepage__intro-socials').addClass('animate');
+			    }, 3000);
+			    let type = new TypeIt('.type-effect', {
+		    	startDelay: 4000,
+		        speed: 50,
+		        afterComplete: (instance) => {
+		        	$('.ti-cursor').addClass('is-hidden');
+			        	let type1 = new TypeIt('.type-span', {
+			        		beforeStep: (step, queue, instance) => {
+			        			$('.type-span').removeClass('is-hidden');
+							},
+					        speed: 100,
+					    }).go();
+			  		},
+			    }).go();
+            });
+        }
+        else {
+            $('.preloader').hide().delay(0);
+            $('.preload-wrap').delay(0);
+            setTimeout(function() {
+			       $('.roupe').addClass('animate');
+			    }, 1000);
+			    setTimeout(function() {
+			       $('.homepage__intro-socials').addClass('animate');
+			    }, 1000);
+			    $(window).on('load', function () {
+			    	let type = new TypeIt('.type-effect', {
+		    	startDelay: 1000,
+		        speed: 50,
+		        afterComplete: (instance) => {
+		        	$('.ti-cursor').addClass('is-hidden');
+			        	let type1 = new TypeIt('.type-span', {
+			        		beforeStep: (step, queue, instance) => {
+			        			$('.type-span').removeClass('is-hidden');
+							},
+					        speed: 100,
+					    }).go();
+			  		},
+			    }).go();
+			    });
+
+	   		}
+
+    </script>
     <div class="homepage__intro-who-we-are--wrapper">
         <div class="container">
 
@@ -255,19 +339,7 @@
         infinite: true
     });
 
-    let type = new TypeIt('.type-effect', {
-    	startDelay: 1000,
-        speed: 50,
-        afterComplete: (instance) => {
-        	$('.ti-cursor').addClass('is-hidden');
-        	let type1 = new TypeIt('.type-span', {
-        		beforeStep: (step, queue, instance) => {
-        			$('.type-span').removeClass('is-hidden');
-				},
-		        speed: 100,
-		    }).go();
-  		},
-    }).go();
+    
 
 </script>
 </body>
