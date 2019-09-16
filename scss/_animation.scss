@@ -9,10 +9,10 @@
 
 @keyframes top {
   0% {
-    top: -100px;
+    top: -250px;
   }
   100% {
-    top: 15px;
+    top: 68px;
   }
 }
 
@@ -45,27 +45,9 @@
 
 @keyframes fall {
   0% {
-    transform: rotateY(30deg);
-  }
-  14% {
-    transform: rotateY(-15.5deg);
-  }
-  28% {
-    transform: rotateY(9.75deg);
-  }
-  42% {
-    transform: rotateY(-8.25deg);
-  }
-  56% {
-    transform: rotateY(5.75deg);
-  }
-  70% {
-    transform: rotateY(-4.25deg);
-  }
-  84% {
-    transform: rotateY(2.5deg);
+    top: -250px;
   }
   100% {
-    transform: rotateY(0deg);
+   top: 0;
   }
 }
