@@ -9,21 +9,9 @@
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
-    <!-- <script src="js/fakeloader.js"></script> -->
 </head>
 <body>
-<script>
-    $(document).ready(function () {
-        $.fakeLoader({
-            timeToHide: 3200,
-            bgColor: "#000000",
-            spinner: "spinner4"
-        });
-    });
-</script>
 
-
-<!-- <div class="fakeLoader"></div> -->
 <header class="header">
     <div class="header__container container">
         <div class="header__logo">
@@ -79,8 +67,7 @@
                         </a>
                     </div>
                 </div>
-                <h1 class="homepage__intro-header">Technology<br> and Innovations<br> as a long-term
-                    <div class="type-wrapp"><span class="type-effect">investment</span></div>
+                <h1 class="homepage__intro-header"><span class="type-effect">Technology<br> and Innovations<br> as a long-term</span><span class="type-span is-hidden">investment</span>
                 </h1>
                 <div class="homepage__intro-text">
                     <p>We clearly see opportunities and prospects, we feel the trends, we monitor technological
@@ -268,9 +255,18 @@
         infinite: true
     });
 
-    const instance = new TypeIt('.type-effect', {
-        startDelay: 1000,
-        speed: 150
+    let type = new TypeIt('.type-effect', {
+    	startDelay: 1000,
+        speed: 50,
+        afterComplete: (instance) => {
+        	$('.ti-cursor').addClass('is-hidden');
+        	let type1 = new TypeIt('.type-span', {
+        		beforeStep: (step, queue, instance) => {
+        			$('.type-span').removeClass('is-hidden');
+				},
+		        speed: 100,
+		    }).go();
+  		},
     }).go();
 
 </script>
