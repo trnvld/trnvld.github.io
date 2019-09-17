@@ -45,8 +45,8 @@
 				}
 			a {
 				position: relative;
-				border: 2px solid black;
-				border-radius: 50%;
+				//border: 2px solid black;
+				//border-radius: 50%;
 				width: 27px;
 				height: 27px;
 				display: flex;
@@ -56,16 +56,25 @@
 				transition: 0.3s;
 				box-sizing: content-box;
 				svg {
-					padding: 8px;
+					//padding: 8px;
 					transition: 0.3s;
-					fill: black;
+					path {
+						fill: black;
+					}
+
 				}
 				&:hover {
 					transition: 0.3s;
-					background-color: #F15C42;
-					border: 2px solid #F15C42;
+					//background-color: #F15C42;
+					//border: 2px solid #F15C42;
 					svg {
-						fill: white;
+						fill: #F15C42;
+						path {
+							fill: white;
+						}
+						circle {
+							stroke: #F15C42;
+						}
 					}
 				}
 			}
@@ -73,7 +82,7 @@
 				a {
 					margin-bottom: 0;
 					svg {
-						padding: 8px 6px;
+						//padding: 8px 6px;
 					}
 				}
 			}
