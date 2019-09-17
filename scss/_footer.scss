@@ -54,39 +54,37 @@
 		margin-right: 68px;
 		a {
 			position: relative;
-			border: 2px solid black;
-			border-radius: 50%;
-			width: 30px;
-			height: 30px;
+			width: 27px;
+			height: 27px;
 			margin-right: 20px;
 			display: flex;
 			justify-content: center;
 			align-items: center;
-			background-color: transparent;
 			transition: 0.3s;
 			box-sizing: content-box;
-			&:last-child {
-				svg {
-					padding: 8px 5px;
-				}
-			}
+		
 			svg {
-				padding: 8px;
-				opacity: 1;
-				transition: 0.3s;
-				fill: black;
-				&:last-child {
-					position: absolute;
+					transition: 0.3s;
+					path {
+						transition: 0.3s;
+						fill: black;
+					}
+
 				}
-			}
-			&:hover {
-				transition: 0.3s;
-				background-color: #F15C42;
-				border: 2px solid #F15C42;
-				svg {
-					fill: white;
+				&:hover {
+					transition: 0.3s;
+					svg {
+						transition: 0.3s;
+						fill: #F15C42;
+						path {
+							fill: white;
+						}
+						circle {
+							transition: 0.3s;
+							stroke: #F15C42;
+						}
+					}
 				}
-			}
 		}
 	}
 	&-menu {

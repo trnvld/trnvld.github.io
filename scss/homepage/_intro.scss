@@ -45,8 +45,6 @@
 				}
 			a {
 				position: relative;
-				//border: 2px solid black;
-				//border-radius: 50%;
 				width: 27px;
 				height: 27px;
 				display: flex;
@@ -56,23 +54,23 @@
 				transition: 0.3s;
 				box-sizing: content-box;
 				svg {
-					//padding: 8px;
 					transition: 0.3s;
 					path {
+						transition: 0.3s;
 						fill: black;
 					}
 
 				}
 				&:hover {
 					transition: 0.3s;
-					//background-color: #F15C42;
-					//border: 2px solid #F15C42;
 					svg {
+						transition: 0.3s;
 						fill: #F15C42;
 						path {
 							fill: white;
 						}
 						circle {
+							transition: 0.3s;
 							stroke: #F15C42;
 						}
 					}
@@ -81,9 +79,6 @@
 			&:last-child {
 				a {
 					margin-bottom: 0;
-					svg {
-						//padding: 8px 6px;
-					}
 				}
 			}
 		}

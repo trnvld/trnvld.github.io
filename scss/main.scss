@@ -1,8 +1,3 @@
-@import 'normalize/variables';
-@import 'normalize/vertical-rhythm';
-@import 'normalize/normalize-mixin';
-@include normalize
-
 @import 'variables';
 @import 'slick';
 @import 'animation';
@@ -33,6 +28,11 @@ body {
 	font-family: $fontFamily;
 	background-color: #FFFFFF;
 	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+	.preloader-on {
+		overflow: hidden;
+	}
 }
 
 ul, ol, h1, h2, h3, p {
