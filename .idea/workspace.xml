@@ -5,12 +5,7 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/css/main.css" beforeDir="false" afterPath="$PROJECT_DIR$/css/main.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/js/main.js" beforeDir="false" afterPath="$PROJECT_DIR$/js/main.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/_animation.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_animation.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/homepage/_careers.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/homepage/_careers.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/homepage/_intro.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/homepage/_intro.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scss/homepage/_who-we-are.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/homepage/_who-we-are.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/scss/main.scss" beforeDir="false" afterPath="$PROJECT_DIR$/scss/main.scss" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -59,7 +54,7 @@
       <updated>1568188140158</updated>
       <workItem from="1568188141587" duration="16387000" />
       <workItem from="1568620067282" duration="4883000" />
-      <workItem from="1568703970085" duration="9001000" />
+      <workItem from="1568703970085" duration="10699000" />
     </task>
     <servers />
   </component>
