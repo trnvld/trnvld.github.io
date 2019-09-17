@@ -50,7 +50,7 @@
 		margin-right: 68px;
 		a {
 			position: relative;
-			border: 1px solid black;
+			border: 2px solid black;
 			border-radius: 50%;
 			width: 30px;
 			height: 30px;
@@ -60,33 +60,27 @@
 			align-items: center;
 			background-color: transparent;
 			transition: 0.3s;
+			box-sizing: content-box;
 			&:last-child {
-				img {
+				svg {
 					padding: 8px 5px;
+				}
 			}
-			}
-			img {
+			svg {
 				padding: 8px;
 				opacity: 1;
 				transition: 0.3s;
+				fill: black;
 				&:last-child {
 					position: absolute;
-					opacity: 0;
 				}
 			}
 			&:hover {
 				transition: 0.3s;
 				background-color: #F15C42;
-				border: 1px solid #F15C42;
-				img {
-					&:first-child {
-						opacity: 0;
-						transition: 0.3s;
-					}
-					&:last-child {
-						opacity: 1;
-						transition: 0.3s;
-					}
+				border: 2px solid #F15C42;
+				svg {
+					fill: white;
 				}
 			}
 		}

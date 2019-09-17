@@ -45,44 +45,35 @@
 				}
 			a {
 				position: relative;
-				border: 1px solid black;
+				border: 2px solid black;
 				border-radius: 50%;
-				width: 30px;
-				height: 30px;
+				width: 27px;
+				height: 27px;
 				display: flex;
 				justify-content: center;
 				align-items: center;
 				background-color: transparent;
 				transition: 0.3s;
-
-				&:last-child {
-					margin-bottom: 0;
-					img {
-						padding: 8px 5px;
-				}
-				}
-				img {
+				box-sizing: content-box;
+				svg {
 					padding: 8px;
-					opacity: 1;
 					transition: 0.3s;
-					&:last-child {
-						position: absolute;
-						opacity: 0;
-					}
+					fill: black;
 				}
 				&:hover {
 					transition: 0.3s;
 					background-color: #F15C42;
-					border: 1px solid #F15C42;
-					img {
-						&:first-child {
-							opacity: 0;
-							transition: 0.3s;
-						}
-						&:last-child {
-							opacity: 1;
-							transition: 0.3s;
-						}
+					border: 2px solid #F15C42;
+					svg {
+						fill: white;
+					}
+				}
+			}
+			&:last-child {
+				a {
+					margin-bottom: 0;
+					svg {
+						padding: 8px 6px;
 					}
 				}
 			}

@@ -128,16 +128,7 @@ textarea {
 	position: absolute;
     max-width: 100%;
     transform-origin: top center;
-    display: none;
-    &:nth-child(1) {
-    	animation: spin 0.75s linear;
-    }
-    &:nth-child(2) {
-    	animation: spin-revert 1s linear;
-    }
-    &:nth-child(3) {
-    	animation: spin-revert 1s linear;
-    }
+	animation: spin 2s linear;
 }
 
 .block {
