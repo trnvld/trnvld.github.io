@@ -22,16 +22,17 @@
 			align-items: center;
 			border-bottom: 1px solid black;
 			&-email {
-				margin-bottom: 12px;
+				padding-bottom: 12px;
 				width: 100%;
-				cursor: pointer;
+				cursor: text;
 				color: gray;
 			}
 			&-btn {
 				background: url(../img/arrow-right.svg) center no-repeat !important;
 				width: 105px;
-				height: 28px;
-				margin-bottom: 12px;
+				height: 25px;
+				margin-bottom: 7px;
+
 			}
 		}
 	}
