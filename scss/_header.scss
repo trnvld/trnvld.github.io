@@ -7,11 +7,11 @@
 	overflow: hidden;
 	&:before{
 		content: "";
-		background: inherit; 
+		background: inherit;
 		position: absolute;
 		left: 0;
 		right: 0;
-		top: 0; 
+		top: 0;
 		bottom: 0;
 		box-shadow: inset 0 0 0 3000px rgba(255,255,255,0.3);
 		filter: blur(10px);
@@ -56,7 +56,7 @@
 					color: #2F3234;
 					transition: 0.3s;
 				}
-				
+
 			}
 		}
 	}
@@ -66,23 +66,30 @@
 		text-transform: uppercase;
 		margin-left: 70px;
 		z-index: 1;
+		position: relative;
+		width: 19px;
+		height: 19px;
 		li {
 			list-style-type: none;
-			a {
-				display: block;
-				padding: 5px;
-				font-size: 14px;
-				line-height: 19px;
+			position: absolute;
+			top: 0;
+			display: block;
+			//padding: 5px;
+			font-size: 14px;
+			line-height: 19px;
+			color: #2F3234;
+			text-decoration: none;
+			font-family: $fontFamily;
+			min-width: 30px;
+			transition: 0.3s;
+			cursor: pointer;
+			&.hidden {
+				display: none;
+			}
+			&:hover, &.selected {
+				font-weight: bold;
 				color: #2F3234;
-				text-decoration: none;
-				font-family: $fontFamily;
-				min-width: 30px;
 				transition: 0.3s;
-				&:hover, &.selected {
-					font-weight: bold;
-					color: #2F3234;
-					transition: 0.3s;
-				}
 			}
 		}
 	}

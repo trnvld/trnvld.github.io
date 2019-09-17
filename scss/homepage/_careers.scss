@@ -1,11 +1,20 @@
 .homepage__careers {
-	background: url(../img/careers-bg.png) no-repeat;
+	//background: url(../img/careers-bg.png) no-repeat;
 	background-size: cover;
 	padding: 100px 0;
+	position: relative;
+	video {
+		position: absolute;
+		z-index: -1;
+		left: 0;
+		top: -70px;
+	}
 	.container {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
+		z-index: 1;
+
 	}
 	&-heading {
 		font-family: $fontFamily;

@@ -9,9 +9,17 @@
 		color: #000000;
 		margin-bottom: 30px;
 	}
-	img {
+	.video-top {
 		float: right;
 		padding: 0 0 30px 30px;
+		position: relative;
+		width: 657px;
+		height: 368px;
+		overflow: hidden;
+		video {
+			position: absolute;
+			top: -35px;
+		}
 	}
 	p {
 		font-family: $fontFamily;
