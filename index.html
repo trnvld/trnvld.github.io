@@ -34,8 +34,7 @@
     <div class="preloader">
         <div class="preload-wrap">
             <div class="loader">
-                <img src="img/shield-fund.svg" alt="shield-fund" class="shield1">
-
+                <span class="preloader-type"></span>
             </div>
         </div>
     </div>
@@ -47,11 +46,15 @@
             $(window).on('load', function () {
                 $preloader = $('.preloader');
                 $loader = $preloader.find('.preload-wrap');
-                $loader.delay(2000).fadeOut('slow');
-                $preloader.delay(2000).fadeOut('slow');
+                $loader.delay(1900).fadeOut('slow');
+                $preloader.delay(1900).fadeOut('slow');
+                let preloaderType = new TypeIt('.preloader-type', {
+                    strings: 'hello',
+                    speed: 100
+                }).go();
                 setTimeout(function () {
                     $('body').removeClass('preloader-on');
-                }, 2000);
+                }, 2500);
                 setTimeout(function () {
                     $('.roupe').addClass('animate');
                     $('.homepage__intro-socials').addClass('animate');

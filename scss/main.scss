@@ -120,6 +120,26 @@ textarea {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
+	.preloader-type {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		display: inline-block;
+		background: #F15C42;
+		color: #FFFFFF;
+		padding-left: 8px;
+		font-family: $fontFamily;
+		font-style: normal;
+		font-weight: 800;
+		font-size: 64px;
+		line-height: 87px;
+		.ti-cursor {
+			top: -6px;
+		}
+	}
 }
 
 .preload-wrap img {
