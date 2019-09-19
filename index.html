@@ -46,15 +46,15 @@
             $(window).on('load', function () {
                 $preloader = $('.preloader');
                 $loader = $preloader.find('.preload-wrap');
-                $loader.delay(1900).fadeOut('slow');
-                $preloader.delay(1900).fadeOut('slow');
+                $loader.delay(2000).fadeOut('slow');
+                $preloader.delay(2000).fadeOut('slow');
                 let preloaderType = new TypeIt('.preloader-type', {
                     strings: 'hello',
                     speed: 100
                 }).go();
                 setTimeout(function () {
                     $('body').removeClass('preloader-on');
-                }, 2500);
+                }, 2000);
                 setTimeout(function () {
                     $('.roupe').addClass('animate');
                     $('.homepage__intro-socials').addClass('animate');
