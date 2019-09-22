@@ -11,9 +11,12 @@
 @import 'homepage/partners';
 @import 'homepage/careers';
 
+@import 'terms-and-conditions/terms-and-conditions';
+
 html {
 	box-sizing: border-box;
 	user-select: none;
+	height: 100%;
 }
 
 img {
@@ -30,9 +33,16 @@ body {
 	overflow-x: hidden;
 	margin: 0;
 	padding: 0;
+	height: 100%;
 	&.preloader-on {
 		overflow: hidden;
 	}
+}
+
+.wrapper {
+	min-height: 100%;
+	display: flex;
+	flex-direction: column;
 }
 
 ul, ol, h1, h2, h3, p {
@@ -98,6 +108,7 @@ textarea {
 
 .main {
 	padding-top: 86px;
+	flex: 1 0 auto;
 }
 
 .preloader {

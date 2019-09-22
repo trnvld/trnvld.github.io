@@ -25,7 +25,7 @@ function langChange() {
 }
 
 function anchorNav() {
-    $(".menu").on("click","a", function (event) {
+    $(".menu").on("click",".menu-link", function (event) {
         event.preventDefault();
         var id  = $(this).attr('href'),
             top = $(id).offset().top - 86;
