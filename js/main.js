@@ -71,8 +71,6 @@ function fullscreenVideo() {
     document.addEventListener('keydown', modalClose);
 }
 
-
-
 $(document).ready(function () {
     menuOffset();
     slideDownArrow();
