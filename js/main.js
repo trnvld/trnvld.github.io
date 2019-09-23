@@ -50,9 +50,28 @@ function menuItemHighlight() {
             } else if ($(this).hasClass('link6')) {
                 $('.link6').addClass('selected')
             }
-        } 
+        }
     });
 }
+
+function fullscreenVideo() {
+    $('.video-arrow').click(function () {
+        event.preventDefault();
+        $('.video-wrapper-bg, .video-wrapper').addClass('open');
+    });
+    $('.video-close, .video-wrapper-bg, .video-wrapper').click(function () {
+        $('.video-wrapper-bg, .video-wrapper').removeClass('open');
+    });
+
+    function modalClose ( e ) {
+        if ( e.keyCode === 27 ) {
+            $('.video-wrapper-bg, .video-wrapper').removeClass('open');
+        }
+    }
+    document.addEventListener('keydown', modalClose);
+}
+
+
 
 $(document).ready(function () {
     menuOffset();
@@ -60,4 +79,5 @@ $(document).ready(function () {
     langChange();
     anchorNav();
     menuItemHighlight();
+    fullscreenVideo();
 });

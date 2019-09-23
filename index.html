@@ -12,340 +12,358 @@
 </head>
 <body class="preloader-on">
 <div class="wrapper">
-<header class="header">
-    <div class="header__container container">
-        <div class="header__logo">
-            <a href="/"><img src="img/logo.svg" alt="logo"></a>
-        </div>
-        <ul class="header__menu menu">
-            <li><a href="#home" class="selected link1 menu-link">Home</a></li>
-            <li><a href="#services" class="link2 menu-link">Services</a></li>
-            <li><a href="#partners" class="link3 menu-link">Partners</a></li>
-            <li><a href="#carrers" class="link4 menu-link">Careers</a></li>
-            <li><a href="#carrers" class="link5 menu-link">Contacts</a></li>
-        </ul>
-        <ul class="header__language">
-            <li class="lang-en hidden">En</li>
-            <li class="lang-ru">Ru</li>
-        </ul>
-    </div>
-</header>
-<main class="main" id="home">
-    <div class="preloader">
-        <div class="preload-wrap">
-            <div class="loader">
-                <span class="preloader-type"></span>
+    <header class="header">
+        <div class="header__container container">
+            <div class="header__logo">
+                <a href="/"><img src="img/logo.svg" alt="logo"></a>
             </div>
-        </div>
-    </div>
-
-    <script>
-
-        if (!sessionStorage.getItem('showPreloader')) {
-            sessionStorage.setItem('showPreloader', 'true');
-            $(window).on('load', function () {
-                $preloader = $('.preloader');
-                $loader = $preloader.find('.preload-wrap');
-                $loader.delay(2000).fadeOut('slow');
-                $preloader.delay(2000).fadeOut('slow');
-                let preloaderType = new TypeIt('.preloader-type', {
-                    strings: 'hello',
-                    speed: 100
-                }).go();
-                setTimeout(function () {
-                    $('body').removeClass('preloader-on');
-                }, 2000);
-                setTimeout(function () {
-                    $('.roupe').addClass('animate');
-                    $('.homepage__intro-socials').addClass('animate');
-                }, 2100);
-                let type = new TypeIt('.type-effect', {
-                    startDelay: 3000,
-                    speed: 50,
-                    afterComplete: (instance) => {
-                        $('.ti-cursor').addClass('is-hidden');
-                        let type1 = new TypeIt('.type-span', {
-                            beforeStep: (step, queue, instance) => {
-                                $('.type-span').removeClass('is-hidden');
-                            },
-                            speed: 100,
-                        }).go();
-                    },
-                }).go();
-            });
-        } else {
-            $('.preloader').hide().delay(0);
-            $('.preload-wrap').hide().delay(0);
-            $('body').removeClass('preloader-on');
-            setTimeout(function () {
-                $('.roupe').addClass('animate');
-            }, 100);
-            setTimeout(function () {
-                $('.homepage__intro-socials').addClass('animate');
-            }, 100);
-            $(window).on('load', function () {
-                let type = new TypeIt('.type-effect', {
-                    startDelay: 1000,
-                    speed: 50,
-                    afterComplete: (instance) => {
-                        $('.ti-cursor').addClass('is-hidden');
-                        let type1 = new TypeIt('.type-span', {
-                            beforeStep: (step, queue, instance) => {
-                                $('.type-span').removeClass('is-hidden');
-                            },
-                            speed: 100,
-                        }).go();
-                    },
-                }).go();
-            });
-
-        }
-
-    </script>
-    <div class="homepage__intro-who-we-are--wrapper">
-        <div class="container">
-
-            <div class="homepage__intro">
-                <div class="homepage__intro-socials">
-                    <div class="roupe">
-                        <a href="https://www.facebook.com/BlackshieldCapital">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="14" cy="14" r="13.5" stroke="black"/>
-                                <path d="M16.9995 8.0025L15.4434 8C13.6952 8 12.5654 9.15914 12.5654 10.9532V12.3148H11.0008C10.8656 12.3148 10.7561 12.4245 10.7561 12.5597V14.5325C10.7561 14.6677 10.8657 14.7772 11.0008 14.7772H12.5654V19.7553C12.5654 19.8905 12.6749 20 12.8101 20H14.8514C14.9866 20 15.0961 19.8904 15.0961 19.7553V14.7772H16.9255C17.0607 14.7772 17.1702 14.6677 17.1702 14.5325L17.1709 12.5597C17.1709 12.4947 17.1451 12.4326 17.0993 12.3866C17.0535 12.3407 16.9911 12.3148 16.9261 12.3148H15.0961V11.1606C15.0961 10.6058 15.2283 10.3241 15.951 10.3241L16.9993 10.3238C17.1344 10.3238 17.2438 10.2142 17.2438 10.0791V8.24718C17.2438 8.11223 17.1345 8.00275 16.9995 8.0025Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="roupe">
-                        <a href="https://www.linkedin.com/company/blackshieldcapital/about/">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="14" cy="14" r="13.5" stroke="black"/>
-                                <path d="M20 15.2969V19.7334H17.428V15.594C17.428 14.5542 17.056 13.8445 16.125 13.8445C15.4143 13.8445 14.9914 14.3228 14.8054 14.7854C14.7375 14.9508 14.72 15.181 14.72 15.4125V19.7334H12.1472C12.1472 19.7334 12.1818 12.7227 12.1472 11.9963H14.7198V13.093C14.7146 13.1012 14.7078 13.1101 14.7029 13.118H14.7198V13.093C15.0616 12.5666 15.672 11.8145 17.0383 11.8145C18.731 11.8145 20 12.9204 20 15.2969ZM9.45587 8.26666C8.5757 8.26666 8 8.84398 8 9.60318C8 10.3458 8.55905 10.9407 9.42172 10.9407H9.43891C10.3361 10.9407 10.8941 10.3459 10.8941 9.60318C10.8772 8.84398 10.3361 8.26666 9.45587 8.26666ZM8.1528 19.7334H10.7247V11.9963H8.1528V19.7334Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="roupe">
-                        <a href="https://t.me/BlackshieldInsight">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="14" cy="14" r="13.5" stroke="black"/>
-                                <path d="M7.24344 13.754L10.4192 14.9393L11.6484 18.8924C11.7271 19.1456 12.0367 19.2392 12.2422 19.0712L14.0124 17.628C14.198 17.4768 14.4623 17.4693 14.6562 17.6101L17.8491 19.9282C18.0689 20.088 18.3803 19.9675 18.4355 19.7019L20.7744 8.45112C20.8346 8.16096 20.5495 7.91889 20.2732 8.02575L7.23972 13.0537C6.91808 13.1777 6.92088 13.6331 7.24344 13.754ZM11.4503 14.3083L17.657 10.4856C17.7685 10.4171 17.8833 10.5679 17.7875 10.6568L12.6652 15.4182C12.4852 15.5858 12.369 15.8101 12.3361 16.0535L12.1616 17.3466C12.1385 17.5193 11.896 17.5364 11.8484 17.3693L11.1773 15.0113C11.1004 14.7424 11.2124 14.4551 11.4503 14.3083Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="roupe">
-                        <a href="https://www.instagram.com/blackshieldcapitalin/">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="14" cy="14" r="13.5" stroke="black"/>
-                                <path d="M16.6884 8H11.3115C9.48554 8 8 9.48561 8 11.3116V16.6884C8 18.5145 9.48554 20 11.3115 20H16.6884C18.5145 20 20 18.5144 20 16.6884V11.3116C20.0001 9.48561 18.5145 8 16.6884 8ZM18.9354 16.6884C18.9354 17.9274 17.9274 18.9353 16.6884 18.9353H11.3115C10.0726 18.9354 9.0647 17.9274 9.0647 16.6884V11.3116C9.0647 10.0727 10.0726 9.0647 11.3115 9.0647H16.6884C17.9273 9.0647 18.9353 10.0727 18.9353 11.3116V16.6884H18.9354Z"/>
-                                <path d="M13.9998 10.908C12.2947 10.908 10.9077 12.2951 10.9077 14.0001C10.9077 15.7051 12.2947 17.0921 13.9998 17.0921C15.7048 17.0921 17.0918 15.7051 17.0918 14.0001C17.0918 12.2951 15.7048 10.908 13.9998 10.908ZM13.9998 16.0273C12.8819 16.0273 11.9724 15.1179 11.9724 14.0001C11.9724 12.8821 12.8818 11.9727 13.9998 11.9727C15.1177 11.9727 16.0271 12.8821 16.0271 14.0001C16.0271 15.1179 15.1176 16.0273 13.9998 16.0273Z"/>
-                                <path d="M17.2215 10.0052C17.0164 10.0052 16.8149 10.0883 16.67 10.2338C16.5244 10.3786 16.4407 10.5802 16.4407 10.786C16.4407 10.9912 16.5245 11.1927 16.67 11.3383C16.8148 11.483 17.0164 11.5668 17.2215 11.5668C17.4274 11.5668 17.6282 11.483 17.7737 11.3383C17.9192 11.1927 18.0023 10.9912 18.0023 10.786C18.0023 10.5802 17.9192 10.3786 17.7737 10.2338C17.6289 10.0883 17.4274 10.0052 17.2215 10.0052Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                    <div class="roupe">
-                        <a href=https://www.youtube.com/channel/UCW90QlyCK6VXHz36-L372eg?view_as=subscriber">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                <circle cx="14" cy="14" r="13.5" stroke="black"/>
-                                <path d="M22.7905 12.5938C22.7844 12.2563 22.7576 11.8296 22.7109 11.3141C22.6639 10.7983 22.5967 10.3374 22.5093 9.93123C22.4093 9.47504 22.1921 9.09062 21.8578 8.77812C21.5235 8.46555 21.1343 8.28436 20.6905 8.23429C19.3029 8.07815 17.206 8 14.3999 8C11.5938 8 9.4969 8.07815 8.1094 8.23429C7.66559 8.28433 7.27802 8.46555 6.94687 8.77812C6.61558 9.09052 6.39995 9.47494 6.29993 9.93123C6.20628 10.3375 6.13588 10.7984 6.08902 11.3141C6.04223 11.8296 6.01563 12.2561 6.00942 12.5938C6.00309 12.9312 6 13.4 6 14C6 14.6 6.00309 15.0688 6.00946 15.4062C6.01566 15.7439 6.04226 16.1704 6.08905 16.6858C6.13591 17.2016 6.20313 17.6626 6.29063 18.0688C6.39065 18.5251 6.6078 18.9094 6.94217 19.2218C7.27661 19.5343 7.66575 19.7155 8.10944 19.7656C9.49693 19.9219 11.5937 20 14.4 20C17.2063 20 19.3029 19.9219 20.6905 19.7656C21.1344 19.7156 21.5218 19.5343 21.8531 19.2218C22.1844 18.9094 22.3999 18.5249 22.4999 18.0688C22.5936 17.6626 22.6639 17.2016 22.7109 16.6858C22.7576 16.1704 22.7842 15.7437 22.7905 15.4062C22.7968 15.0688 22.7999 14.6 22.7999 14C22.7999 13.4 22.7968 12.9312 22.7905 12.5938ZM17.7187 14.5063L12.9188 17.5062C12.8313 17.5686 12.7249 17.5999 12.6 17.5999C12.5063 17.5999 12.4094 17.5748 12.3094 17.5248C12.1032 17.4124 12.0001 17.2374 12.0001 16.9999V11.0001C12.0001 10.7627 12.1033 10.5877 12.3094 10.4752C12.522 10.3625 12.725 10.3688 12.9188 10.4939L17.7188 13.4939C17.9062 13.5999 17.9999 13.7688 17.9999 14C17.9999 14.2312 17.9061 14.4001 17.7187 14.5063Z"/>
-                            </svg>
-                        </a>
-                    </div>
-                </div>
-                <h1 class="homepage__intro-header"><span class="type-effect">Technology<br> and Innovations<br> as a long-term</span><span
-                        class="type-span is-hidden">investment</span>
-                </h1>
-                <div class="homepage__intro-text">
-                    <p>We clearly see opportunities and prospects, we feel the trends, we monitor technological
-                        innovations.</p>
-                    <p>So that every new day could bring the long-term growth of your assets.</p>
-                </div>
-                <a href="/" class="btn btn-orange">Lets start</a>
-                <div class="homepage__intro-arrow"></div>
-            </div>
-            <div class="homepage__who-we-are">
-                <div class="video-top">
-                    <video width="657px" autoplay muted loop>
-                        <source src="video/top.mp4" type="video/mp4">
-                    </video>
-                </div>
-                <h2 class="homepage__who-we-are-heading">Who we are</h2>
-                <p>Blackshield Capital Management is a managing company of a Hedge Fund Blackshield Exponential
-                    Technologies LP.</p>
-
-                <p>Having a strong background in asset management, we are now focused on investing in stocks of
-                    innovative companies and technology sector with a potential for exponential growth.</p>
-
-                <p>We combine experience, sophistication, connections and a range of investment solutions with the
-                    client-centric focus of an independent investment boutique.</p>
-
-                <p>Our mission is to protect and increase our clients' capital.<br>To help them obtain reliance in a
-                    constantly changing world, investing together with professionals, responsibly managing their assets.
-                </p>
-
-            </div>
-        </div>
-    </div>
-
-    <div class="homepage__services" id="services">
-        <div class="container">
-            <div class="homepage__services-description">
-                <h2 class="homepage__services-heading">Our Services</h2>
-                <p>Hedgeable offers highly customized portfolios based on your goals.</p>
-            </div>
-            <div class="homepage__services-list">
-                <div class="homepage__services-list-wrapp">
-                    <div class="homepage__services-list-element">
-                        <img src="img/blackshield-ag.svg" alt="blackshield-ag">
-                        <p>Blackshield Capital Management is a managing company of a Hedge Fund Blackshield Exponential
-                            Technologies LP.</p>
-                        <a href="/" class="btn btn-orange">Read more >>></a>
-                    </div>
-                </div>
-                <div class="homepage__services-list-wrapp">
-                    <div class="homepage__services-list-element">
-                        <img src="img/blackshield-ad.svg" alt="blackshield-ad">
-                        <p>Having a strong background in asset management, we are now focused on investing in stocks of
-                            innovative companies and technology sector with...</p>
-                        <a href="/" class="btn btn-orange">Read more >>></a>
-                    </div>
-                </div>
-                <div class="homepage__services-list-wrapp">
-                    <div class="homepage__services-list-element">
-                        <img src="img/blackshield-fund.svg" alt="blackshield-fund">
-                        <p>We combine experience, sophistication, connections and a range of investment solutions with
-                            the
-                            client-centric focus of an...</p>
-                        <a href="/" class="btn btn-orange">Read more >>></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="homepage__approach">
-        <div class="container">
-            <div class="homepage__approach-wrapper">
-                <div class="homepage__approach-card">
-                    <h2 class="homepage__approach-card-heading">Our approach & strategy</h2>
-                    <div class="homepage__approach-card-content">
-                        <p>We believe, there’s only one way to achieve maximum possible income with minimal risks for us
-                            and our clients, and it is an in-depth and complex understanding of the business we invest
-                            in.</p>
-
-                        <p>That’s why we know everything about our portfolio companies</p>
-                    </div>
-                    <a href="/" class="btn btn-orange">Read more>>></a>
-                </div>
-                <div class="homepage__approach-card">
-                    <h2 class="homepage__approach-card-heading">Why us</h2>
-                    <div class="homepage__approach-card-content">
-                        <p>Blackshield is a fair fund which shares motivation with each of our clients. Blackshield is
-                            an open platform combining experience of top managers and owners with knowledge of
-                            analysts.</p>
-                        <p>We keep an ear to the ground collaborating with SingularityU Kyiv community. We invest in the
-                            future and choose responsible investment.</p>
-                    </div>
-                    <a href="/" class="btn btn-orange">Read more>>></a>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="homepage__partners" id="partners">
-        <div class="container">
-            <h2 class="homepage__partners-heading">Partners</h2>
-            <h3 class="homepage__partners-heading-secondary">Our Partners in Europe and Asia:</h3>
-            <div class="homepage__partners-slider">
-                <img src="img/partners/bankofsingaphore.svg" alt="bankofsingaphore">
-                <img src="img/partners/citibank.svg" alt="citibank">
-                <img src="img/partners/dbs-bank.svg" alt="/dbs-bank">
-                <img src="img/partners/interactive-brokers.svg" alt="interactive-brokers">
-                <img src="img/partners/julius-bar.svg" alt="julius-bar">
-                <img src="img/partners/lgt.svg" alt="lgt">
-                <img src="img/partners/morgan-stanley.svg" alt="morgan-stanley">
-                <img src="img/partners/rothschild.svg" alt="rothschild">
-                <img src="img/partners/ubs.svg" alt="ubs">
-            </div>
-        </div>
-    </div>
-
-    <div class="homepage__careers" id="carrers">
-        <video width="100%" autoplay muted loop id="vid">
-            <source src="video/bottom.mp4" type="video/mp4">
-        </video>
-        <div class="container">
-            <h2 class="homepage__careers-heading">Carrers</h2>
-            <div class="homepage__careers-content">
-                <p>We’re not just looking for employees. We look for team members, responsibility takers,<br>decision
-                    makers, natural born innovators, thirsty learners, curious minds.</p>
-                <p>The ones who won’t ask for instructions, but will search for opportunities.</p>
-                <p>If all this sounds like you, let’s talk!</p>
-            </div>
-            <a href="/" class="btn btn-orange">Contact Us</a>
-        </div>
-    </div>
-</main>
-<footer class="footer">
-    <div class="footer__container container">
-        <div class="footer-subscribe">
-            <span class="footer-subscribe-text">Subscribe to our newsletter to receive exclusive information about us and our services</span>
-            <form action="/" class="footer-subscribe-form">
-                <input type="email" placeholder="Enter your e-mail" class="footer-subscribe-form-email">
-                <input type="submit" value="" class="footer-subscribe-form-btn">
-            </form>
-        </div>
-        <div class="footer-menus">
-            <ul class="footer-menu menu">
+            <ul class="header__menu menu">
                 <li><a href="#home" class="selected link1 menu-link">Home</a></li>
                 <li><a href="#services" class="link2 menu-link">Services</a></li>
                 <li><a href="#partners" class="link3 menu-link">Partners</a></li>
                 <li><a href="#carrers" class="link4 menu-link">Careers</a></li>
-                <li><a href="terms-and-conditions.html" class="link6">Terms & conditions</a></li>
+                <li><a href="#carrers" class="link5 menu-link">Contacts</a></li>
             </ul>
-            <div class="footer-menus-bottom">
-                <div class="footer-socials">
+            <ul class="header__language">
+                <li class="lang-en hidden">En</li>
+                <li class="lang-ru">Ru</li>
+            </ul>
+        </div>
+    </header>
+    <main class="main" id="home">
+        <div class="preloader">
+            <div class="preload-wrap">
+                <div class="loader">
+                    <span class="preloader-type"></span>
+                </div>
+            </div>
+        </div>
+        <script>
+            if (!sessionStorage.getItem('showPreloader')) {
+                sessionStorage.setItem('showPreloader', 'true');
+                $(window).on('load', function () {
+                    $preloader = $('.preloader');
+                    $loader = $preloader.find('.preload-wrap');
+                    $loader.delay(2000).fadeOut('slow');
+                    $preloader.delay(2000).fadeOut('slow');
+                    let preloaderType = new TypeIt('.preloader-type', {
+                        strings: 'hello',
+                        speed: 100
+                    }).go();
+                    setTimeout(function () {
+                        $('body').removeClass('preloader-on');
+                    }, 2000);
+                    setTimeout(function () {
+                        $('.roupe').addClass('animate');
+                        $('.homepage__intro-socials').addClass('animate');
+                    }, 2100);
+                    let type = new TypeIt('.type-effect', {
+                        startDelay: 3000,
+                        speed: 50,
+                        afterComplete: (instance) => {
+                            $('.ti-cursor').addClass('is-hidden');
+                            let type1 = new TypeIt('.type-span', {
+                                beforeStep: (step, queue, instance) => {
+                                    $('.type-span').removeClass('is-hidden');
+                                },
+                                speed: 100,
+                            }).go();
+                        },
+                    }).go();
+                });
+            } else {
+                $('.preloader').hide().delay(0);
+                $('.preload-wrap').hide().delay(0);
+                $('body').removeClass('preloader-on');
+                setTimeout(function () {
+                    $('.roupe').addClass('animate');
+                }, 100);
+                setTimeout(function () {
+                    $('.homepage__intro-socials').addClass('animate');
+                }, 100);
+                $(window).on('load', function () {
+                    let type = new TypeIt('.type-effect', {
+                        startDelay: 1000,
+                        speed: 50,
+                        afterComplete: (instance) => {
+                            $('.ti-cursor').addClass('is-hidden');
+                            let type1 = new TypeIt('.type-span', {
+                                beforeStep: (step, queue, instance) => {
+                                    $('.type-span').removeClass('is-hidden');
+                                },
+                                speed: 100,
+                            }).go();
+                        },
+                    }).go();
+                });
+            }
+        </script>
+        <div class="video-wrapper-bg"></div>
+        <div class="video-wrapper">
+            <div class="video-container">
+                <div class="video-content">
+                    <div class="video-scaler">
+                        <button title="Close (Esc)" type="button" class="video-close">×</button>
+                        <iframe class="vidoe-iframe" src="https://www.youtube.com/embed/tAs5yhjkgK0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage__intro-who-we-are--wrapper">
+            <div class="container">
+                <div class="homepage__intro">
+                    <div class="homepage__intro-socials">
+                        <div class="roupe">
+                            <a href="https://www.facebook.com/BlackshieldCapital">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="13.5" stroke="black"/>
+                                    <path d="M16.9995 8.0025L15.4434 8C13.6952 8 12.5654 9.15914 12.5654 10.9532V12.3148H11.0008C10.8656 12.3148 10.7561 12.4245 10.7561 12.5597V14.5325C10.7561 14.6677 10.8657 14.7772 11.0008 14.7772H12.5654V19.7553C12.5654 19.8905 12.6749 20 12.8101 20H14.8514C14.9866 20 15.0961 19.8904 15.0961 19.7553V14.7772H16.9255C17.0607 14.7772 17.1702 14.6677 17.1702 14.5325L17.1709 12.5597C17.1709 12.4947 17.1451 12.4326 17.0993 12.3866C17.0535 12.3407 16.9911 12.3148 16.9261 12.3148H15.0961V11.1606C15.0961 10.6058 15.2283 10.3241 15.951 10.3241L16.9993 10.3238C17.1344 10.3238 17.2438 10.2142 17.2438 10.0791V8.24718C17.2438 8.11223 17.1345 8.00275 16.9995 8.0025Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="roupe">
+                            <a href="https://www.linkedin.com/company/blackshieldcapital/about/">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="13.5" stroke="black"/>
+                                    <path d="M20 15.2969V19.7334H17.428V15.594C17.428 14.5542 17.056 13.8445 16.125 13.8445C15.4143 13.8445 14.9914 14.3228 14.8054 14.7854C14.7375 14.9508 14.72 15.181 14.72 15.4125V19.7334H12.1472C12.1472 19.7334 12.1818 12.7227 12.1472 11.9963H14.7198V13.093C14.7146 13.1012 14.7078 13.1101 14.7029 13.118H14.7198V13.093C15.0616 12.5666 15.672 11.8145 17.0383 11.8145C18.731 11.8145 20 12.9204 20 15.2969ZM9.45587 8.26666C8.5757 8.26666 8 8.84398 8 9.60318C8 10.3458 8.55905 10.9407 9.42172 10.9407H9.43891C10.3361 10.9407 10.8941 10.3459 10.8941 9.60318C10.8772 8.84398 10.3361 8.26666 9.45587 8.26666ZM8.1528 19.7334H10.7247V11.9963H8.1528V19.7334Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="roupe">
+                            <a href="https://t.me/BlackshieldInsight">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="13.5" stroke="black"/>
+                                    <path d="M7.24344 13.754L10.4192 14.9393L11.6484 18.8924C11.7271 19.1456 12.0367 19.2392 12.2422 19.0712L14.0124 17.628C14.198 17.4768 14.4623 17.4693 14.6562 17.6101L17.8491 19.9282C18.0689 20.088 18.3803 19.9675 18.4355 19.7019L20.7744 8.45112C20.8346 8.16096 20.5495 7.91889 20.2732 8.02575L7.23972 13.0537C6.91808 13.1777 6.92088 13.6331 7.24344 13.754ZM11.4503 14.3083L17.657 10.4856C17.7685 10.4171 17.8833 10.5679 17.7875 10.6568L12.6652 15.4182C12.4852 15.5858 12.369 15.8101 12.3361 16.0535L12.1616 17.3466C12.1385 17.5193 11.896 17.5364 11.8484 17.3693L11.1773 15.0113C11.1004 14.7424 11.2124 14.4551 11.4503 14.3083Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="roupe">
+                            <a href="https://www.instagram.com/blackshieldcapitalin/">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="13.5" stroke="black"/>
+                                    <path d="M16.6884 8H11.3115C9.48554 8 8 9.48561 8 11.3116V16.6884C8 18.5145 9.48554 20 11.3115 20H16.6884C18.5145 20 20 18.5144 20 16.6884V11.3116C20.0001 9.48561 18.5145 8 16.6884 8ZM18.9354 16.6884C18.9354 17.9274 17.9274 18.9353 16.6884 18.9353H11.3115C10.0726 18.9354 9.0647 17.9274 9.0647 16.6884V11.3116C9.0647 10.0727 10.0726 9.0647 11.3115 9.0647H16.6884C17.9273 9.0647 18.9353 10.0727 18.9353 11.3116V16.6884H18.9354Z"/>
+                                    <path d="M13.9998 10.908C12.2947 10.908 10.9077 12.2951 10.9077 14.0001C10.9077 15.7051 12.2947 17.0921 13.9998 17.0921C15.7048 17.0921 17.0918 15.7051 17.0918 14.0001C17.0918 12.2951 15.7048 10.908 13.9998 10.908ZM13.9998 16.0273C12.8819 16.0273 11.9724 15.1179 11.9724 14.0001C11.9724 12.8821 12.8818 11.9727 13.9998 11.9727C15.1177 11.9727 16.0271 12.8821 16.0271 14.0001C16.0271 15.1179 15.1176 16.0273 13.9998 16.0273Z"/>
+                                    <path d="M17.2215 10.0052C17.0164 10.0052 16.8149 10.0883 16.67 10.2338C16.5244 10.3786 16.4407 10.5802 16.4407 10.786C16.4407 10.9912 16.5245 11.1927 16.67 11.3383C16.8148 11.483 17.0164 11.5668 17.2215 11.5668C17.4274 11.5668 17.6282 11.483 17.7737 11.3383C17.9192 11.1927 18.0023 10.9912 18.0023 10.786C18.0023 10.5802 17.9192 10.3786 17.7737 10.2338C17.6289 10.0883 17.4274 10.0052 17.2215 10.0052Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="roupe">
+                            <a href=https://www.youtube.com/channel/UCW90QlyCK6VXHz36-L372eg?view_as=subscriber">
+                                <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                     xmlns="http://www.w3.org/2000/svg">
+                                    <circle cx="14" cy="14" r="13.5" stroke="black"/>
+                                    <path d="M22.7905 12.5938C22.7844 12.2563 22.7576 11.8296 22.7109 11.3141C22.6639 10.7983 22.5967 10.3374 22.5093 9.93123C22.4093 9.47504 22.1921 9.09062 21.8578 8.77812C21.5235 8.46555 21.1343 8.28436 20.6905 8.23429C19.3029 8.07815 17.206 8 14.3999 8C11.5938 8 9.4969 8.07815 8.1094 8.23429C7.66559 8.28433 7.27802 8.46555 6.94687 8.77812C6.61558 9.09052 6.39995 9.47494 6.29993 9.93123C6.20628 10.3375 6.13588 10.7984 6.08902 11.3141C6.04223 11.8296 6.01563 12.2561 6.00942 12.5938C6.00309 12.9312 6 13.4 6 14C6 14.6 6.00309 15.0688 6.00946 15.4062C6.01566 15.7439 6.04226 16.1704 6.08905 16.6858C6.13591 17.2016 6.20313 17.6626 6.29063 18.0688C6.39065 18.5251 6.6078 18.9094 6.94217 19.2218C7.27661 19.5343 7.66575 19.7155 8.10944 19.7656C9.49693 19.9219 11.5937 20 14.4 20C17.2063 20 19.3029 19.9219 20.6905 19.7656C21.1344 19.7156 21.5218 19.5343 21.8531 19.2218C22.1844 18.9094 22.3999 18.5249 22.4999 18.0688C22.5936 17.6626 22.6639 17.2016 22.7109 16.6858C22.7576 16.1704 22.7842 15.7437 22.7905 15.4062C22.7968 15.0688 22.7999 14.6 22.7999 14C22.7999 13.4 22.7968 12.9312 22.7905 12.5938ZM17.7187 14.5063L12.9188 17.5062C12.8313 17.5686 12.7249 17.5999 12.6 17.5999C12.5063 17.5999 12.4094 17.5748 12.3094 17.5248C12.1032 17.4124 12.0001 17.2374 12.0001 16.9999V11.0001C12.0001 10.7627 12.1033 10.5877 12.3094 10.4752C12.522 10.3625 12.725 10.3688 12.9188 10.4939L17.7188 13.4939C17.9062 13.5999 17.9999 13.7688 17.9999 14C17.9999 14.2312 17.9061 14.4001 17.7187 14.5063Z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    <h1 class="homepage__intro-header"><span class="type-effect">Technology<br> and Innovations<br> as a long-term</span><span
+                            class="type-span is-hidden">investment</span>
+                    </h1>
+                    <div class="homepage__intro-text">
+                        <p>We clearly see opportunities and prospects, we feel the trends, we monitor technological
+                            innovations.</p>
+                        <p>So that every new day could bring the long-term growth of your assets.</p>
+                    </div>
+                    <a href="/" class="btn btn-orange">Lets start</a>
+                    <div class="homepage__intro-arrow"></div>
+                </div>
+                <div class="homepage__who-we-are">
+                    <div class="video-top">
+                        <video width="657px" autoplay muted loop>
+                            <source src="video/top.mp4" type="video/mp4">
+                        </video>
+                        <a href="/" class="video-arrow">
+                            <svg width="123" height="123" viewBox="0 0 123 123" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <circle cx="61.5" cy="61.5" r="61"/>
+                                <path d="M69 61.5L57.75 67.9952L57.75 55.0048L69 61.5Z" fill="#333333"/>
+                            </svg>
+                        </a>
+                    </div>
+                    <h2 class="homepage__who-we-are-heading">Who we are</h2>
+                    <p>Blackshield Capital Management is a managing company of a Hedge Fund Blackshield Exponential
+                        Technologies LP.</p>
+                    <p>Having a strong background in asset management, we are now focused on investing in stocks of
+                        innovative companies and technology sector with a potential for exponential growth.</p>
+                    <p>We combine experience, sophistication, connections and a range of investment solutions with the
+                        client-centric focus of an independent investment boutique.</p>
+                    <p>Our mission is to protect and increase our clients' capital.<br>To help them obtain reliance in a
+                        constantly changing world, investing together with professionals, responsibly managing their
+                        assets.
+                    </p>
+                </div>
+            </div>
+        </div>
 
+        <div class="homepage__services" id="services">
+            <div class="container">
+                <div class="homepage__services-description">
+                    <h2 class="homepage__services-heading">Our Services</h2>
+                    <p>Hedgeable offers highly customized portfolios based on your goals.</p>
+                </div>
+                <div class="homepage__services-list">
+                    <div class="homepage__services-list-wrapp">
+                        <div class="homepage__services-list-element">
+                            <img src="img/blackshield-ag.svg" alt="blackshield-ag">
+                            <p>Blackshield Capital Management is a managing company of a Hedge Fund Blackshield
+                                Exponential
+                                Technologies LP.</p>
+                            <a href="/" class="btn btn-orange">Read more >>></a>
+                        </div>
+                    </div>
+                    <div class="homepage__services-list-wrapp">
+                        <div class="homepage__services-list-element">
+                            <img src="img/blackshield-ad.svg" alt="blackshield-ad">
+                            <p>Having a strong background in asset management, we are now focused on investing in stocks
+                                of
+                                innovative companies and technology sector with...</p>
+                            <a href="/" class="btn btn-orange">Read more >>></a>
+                        </div>
+                    </div>
+                    <div class="homepage__services-list-wrapp">
+                        <div class="homepage__services-list-element">
+                            <img src="img/blackshield-fund.svg" alt="blackshield-fund">
+                            <p>We combine experience, sophistication, connections and a range of investment solutions
+                                with
+                                the
+                                client-centric focus of an...</p>
+                            <a href="/" class="btn btn-orange">Read more >>></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage__approach">
+            <div class="container">
+                <div class="homepage__approach-wrapper">
+                    <div class="homepage__approach-card">
+                        <h2 class="homepage__approach-card-heading">Our approach & strategy</h2>
+                        <div class="homepage__approach-card-content">
+                            <p>We believe, there’s only one way to achieve maximum possible income with minimal risks
+                                for us
+                                and our clients, and it is an in-depth and complex understanding of the business we
+                                invest
+                                in.</p>
+
+                            <p>That’s why we know everything about our portfolio companies</p>
+                        </div>
+                        <a href="/" class="btn btn-orange">Read more>>></a>
+                    </div>
+                    <div class="homepage__approach-card">
+                        <h2 class="homepage__approach-card-heading">Why us</h2>
+                        <div class="homepage__approach-card-content">
+                            <p>Blackshield is a fair fund which shares motivation with each of our clients. Blackshield
+                                is
+                                an open platform combining experience of top managers and owners with knowledge of
+                                analysts.</p>
+                            <p>We keep an ear to the ground collaborating with SingularityU Kyiv community. We invest in
+                                the
+                                future and choose responsible investment.</p>
+                        </div>
+                        <a href="/" class="btn btn-orange">Read more>>></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="homepage__partners" id="partners">
+            <div class="container">
+                <h2 class="homepage__partners-heading">Partners</h2>
+                <h3 class="homepage__partners-heading-secondary">Our Partners in Europe and Asia:</h3>
+                <div class="homepage__partners-slider">
+                    <img src="img/partners/bankofsingaphore.svg" alt="bankofsingaphore">
+                    <img src="img/partners/citibank.svg" alt="citibank">
+                    <img src="img/partners/dbs-bank.svg" alt="/dbs-bank">
+                    <img src="img/partners/interactive-brokers.svg" alt="interactive-brokers">
+                    <img src="img/partners/julius-bar.svg" alt="julius-bar">
+                    <img src="img/partners/lgt.svg" alt="lgt">
+                    <img src="img/partners/morgan-stanley.svg" alt="morgan-stanley">
+                    <img src="img/partners/rothschild.svg" alt="rothschild">
+                    <img src="img/partners/ubs.svg" alt="ubs">
+                </div>
+            </div>
+        </div>
+        <div class="homepage__careers" id="carrers">
+            <video width="100%" autoplay muted loop id="vid">
+                <source src="video/bottom.mp4" type="video/mp4">
+            </video>
+            <div class="container">
+                <h2 class="homepage__careers-heading">Carrers</h2>
+                <div class="homepage__careers-content">
+                    <p>We’re not just looking for employees. We look for team members, responsibility takers,<br>decision
+                        makers, natural born innovators, thirsty learners, curious minds.</p>
+                    <p>The ones who won’t ask for instructions, but will search for opportunities.</p>
+                    <p>If all this sounds like you, let’s talk!</p>
+                </div>
+                <a href="/" class="btn btn-orange">Contact Us</a>
+            </div>
+        </div>
+    </main>
+    <footer class="footer">
+        <div class="footer__container container">
+            <div class="footer-subscribe">
+                <span class="footer-subscribe-text">Subscribe to our newsletter to receive exclusive information about us and our services</span>
+                <form action="/" class="footer-subscribe-form">
+                    <input type="email" placeholder="Enter your e-mail" class="footer-subscribe-form-email">
+                    <input type="submit" value="" class="footer-subscribe-form-btn">
+                </form>
+            </div>
+            <div class="footer-menus">
+                <ul class="footer-menu menu">
+                    <li><a href="#home" class="selected link1 menu-link">Home</a></li>
+                    <li><a href="#services" class="link2 menu-link">Services</a></li>
+                    <li><a href="#partners" class="link3 menu-link">Partners</a></li>
+                    <li><a href="#carrers" class="link4 menu-link">Careers</a></li>
+                    <li><a href="terms-and-conditions.html" class="link6">Terms & conditions</a></li>
+                </ul>
+                <div class="footer-menus-bottom">
+                    <div class="footer-socials">
                         <a href="https://www.facebook.com/BlackshieldCapital">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="14" cy="14" r="13.5" stroke="black"/>
                                 <path d="M16.9995 8.0025L15.4434 8C13.6952 8 12.5654 9.15914 12.5654 10.9532V12.3148H11.0008C10.8656 12.3148 10.7561 12.4245 10.7561 12.5597V14.5325C10.7561 14.6677 10.8657 14.7772 11.0008 14.7772H12.5654V19.7553C12.5654 19.8905 12.6749 20 12.8101 20H14.8514C14.9866 20 15.0961 19.8904 15.0961 19.7553V14.7772H16.9255C17.0607 14.7772 17.1702 14.6677 17.1702 14.5325L17.1709 12.5597C17.1709 12.4947 17.1451 12.4326 17.0993 12.3866C17.0535 12.3407 16.9911 12.3148 16.9261 12.3148H15.0961V11.1606C15.0961 10.6058 15.2283 10.3241 15.951 10.3241L16.9993 10.3238C17.1344 10.3238 17.2438 10.2142 17.2438 10.0791V8.24718C17.2438 8.11223 17.1345 8.00275 16.9995 8.0025Z"/>
                             </svg>
                         </a>
-
                         <a href="https://www.linkedin.com/company/blackshieldcapital/about/">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="14" cy="14" r="13.5" stroke="black"/>
                                 <path d="M20 15.2969V19.7334H17.428V15.594C17.428 14.5542 17.056 13.8445 16.125 13.8445C15.4143 13.8445 14.9914 14.3228 14.8054 14.7854C14.7375 14.9508 14.72 15.181 14.72 15.4125V19.7334H12.1472C12.1472 19.7334 12.1818 12.7227 12.1472 11.9963H14.7198V13.093C14.7146 13.1012 14.7078 13.1101 14.7029 13.118H14.7198V13.093C15.0616 12.5666 15.672 11.8145 17.0383 11.8145C18.731 11.8145 20 12.9204 20 15.2969ZM9.45587 8.26666C8.5757 8.26666 8 8.84398 8 9.60318C8 10.3458 8.55905 10.9407 9.42172 10.9407H9.43891C10.3361 10.9407 10.8941 10.3459 10.8941 9.60318C10.8772 8.84398 10.3361 8.26666 9.45587 8.26666ZM8.1528 19.7334H10.7247V11.9963H8.1528V19.7334Z"/>
                             </svg>
                         </a>
-
                         <a href="https://t.me/BlackshieldInsight">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="14" cy="14" r="13.5" stroke="black"/>
                                 <path d="M7.24344 13.754L10.4192 14.9393L11.6484 18.8924C11.7271 19.1456 12.0367 19.2392 12.2422 19.0712L14.0124 17.628C14.198 17.4768 14.4623 17.4693 14.6562 17.6101L17.8491 19.9282C18.0689 20.088 18.3803 19.9675 18.4355 19.7019L20.7744 8.45112C20.8346 8.16096 20.5495 7.91889 20.2732 8.02575L7.23972 13.0537C6.91808 13.1777 6.92088 13.6331 7.24344 13.754ZM11.4503 14.3083L17.657 10.4856C17.7685 10.4171 17.8833 10.5679 17.7875 10.6568L12.6652 15.4182C12.4852 15.5858 12.369 15.8101 12.3361 16.0535L12.1616 17.3466C12.1385 17.5193 11.896 17.5364 11.8484 17.3693L11.1773 15.0113C11.1004 14.7424 11.2124 14.4551 11.4503 14.3083Z"/>
                             </svg>
                         </a>
-
                         <a href="https://www.instagram.com/blackshieldcapitalin/">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="14" cy="14" r="13.5" stroke="black"/>
                                 <path d="M16.6884 8H11.3115C9.48554 8 8 9.48561 8 11.3116V16.6884C8 18.5145 9.48554 20 11.3115 20H16.6884C18.5145 20 20 18.5144 20 16.6884V11.3116C20.0001 9.48561 18.5145 8 16.6884 8ZM18.9354 16.6884C18.9354 17.9274 17.9274 18.9353 16.6884 18.9353H11.3115C10.0726 18.9354 9.0647 17.9274 9.0647 16.6884V11.3116C9.0647 10.0727 10.0726 9.0647 11.3115 9.0647H16.6884C17.9273 9.0647 18.9353 10.0727 18.9353 11.3116V16.6884H18.9354Z"/>
                                 <path d="M13.9998 10.908C12.2947 10.908 10.9077 12.2951 10.9077 14.0001C10.9077 15.7051 12.2947 17.0921 13.9998 17.0921C15.7048 17.0921 17.0918 15.7051 17.0918 14.0001C17.0918 12.2951 15.7048 10.908 13.9998 10.908ZM13.9998 16.0273C12.8819 16.0273 11.9724 15.1179 11.9724 14.0001C11.9724 12.8821 12.8818 11.9727 13.9998 11.9727C15.1177 11.9727 16.0271 12.8821 16.0271 14.0001C16.0271 15.1179 15.1176 16.0273 13.9998 16.0273Z"/>
                                 <path d="M17.2215 10.0052C17.0164 10.0052 16.8149 10.0883 16.67 10.2338C16.5244 10.3786 16.4407 10.5802 16.4407 10.786C16.4407 10.9912 16.5245 11.1927 16.67 11.3383C16.8148 11.483 17.0164 11.5668 17.2215 11.5668C17.4274 11.5668 17.6282 11.483 17.7737 11.3383C17.9192 11.1927 18.0023 10.9912 18.0023 10.786C18.0023 10.5802 17.9192 10.3786 17.7737 10.2338C17.6289 10.0883 17.4274 10.0052 17.2215 10.0052Z"/>
                             </svg>
                         </a>
-
                         <a href="https://www.youtube.com/channel/UCW90QlyCK6VXHz36-L372eg?view_as=subscriber">
-                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none"
+                                 xmlns="http://www.w3.org/2000/svg">
                                 <circle cx="14" cy="14" r="13.5" stroke="black"/>
                                 <path d="M22.7905 12.5938C22.7844 12.2563 22.7576 11.8296 22.7109 11.3141C22.6639 10.7983 22.5967 10.3374 22.5093 9.93123C22.4093 9.47504 22.1921 9.09062 21.8578 8.77812C21.5235 8.46555 21.1343 8.28436 20.6905 8.23429C19.3029 8.07815 17.206 8 14.3999 8C11.5938 8 9.4969 8.07815 8.1094 8.23429C7.66559 8.28433 7.27802 8.46555 6.94687 8.77812C6.61558 9.09052 6.39995 9.47494 6.29993 9.93123C6.20628 10.3375 6.13588 10.7984 6.08902 11.3141C6.04223 11.8296 6.01563 12.2561 6.00942 12.5938C6.00309 12.9312 6 13.4 6 14C6 14.6 6.00309 15.0688 6.00946 15.4062C6.01566 15.7439 6.04226 16.1704 6.08905 16.6858C6.13591 17.2016 6.20313 17.6626 6.29063 18.0688C6.39065 18.5251 6.6078 18.9094 6.94217 19.2218C7.27661 19.5343 7.66575 19.7155 8.10944 19.7656C9.49693 19.9219 11.5937 20 14.4 20C17.2063 20 19.3029 19.9219 20.6905 19.7656C21.1344 19.7156 21.5218 19.5343 21.8531 19.2218C22.1844 18.9094 22.3999 18.5249 22.4999 18.0688C22.5936 17.6626 22.6639 17.2016 22.7109 16.6858C22.7576 16.1704 22.7842 15.7437 22.7905 15.4062C22.7968 15.0688 22.7999 14.6 22.7999 14C22.7999 13.4 22.7968 12.9312 22.7905 12.5938ZM17.7187 14.5063L12.9188 17.5062C12.8313 17.5686 12.7249 17.5999 12.6 17.5999C12.5063 17.5999 12.4094 17.5748 12.3094 17.5248C12.1032 17.4124 12.0001 17.2374 12.0001 16.9999V11.0001C12.0001 10.7627 12.1033 10.5877 12.3094 10.4752C12.522 10.3625 12.725 10.3688 12.9188 10.4939L17.7188 13.4939C17.9062 13.5999 17.9999 13.7688 17.9999 14C17.9999 14.2312 17.9061 14.4001 17.7187 14.5063Z"/>
                             </svg>
                         </a>
-
-
+                    </div>
+                    <div class="footer-copyright">©2019 <strong>Blackshield Capital.</strong> All Rights Reserved.</div>
                 </div>
-                <div class="footer-copyright">©2019 <strong>Blackshield Capital.</strong> All Rights Reserved.</div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 </div>
 <script>
     $('.homepage__partners-slider').slick({
@@ -358,8 +376,6 @@
         autoplaySpeed: 2000,
         infinite: true,
     });
-
-
 </script>
 </body>
 </html>
