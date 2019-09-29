@@ -364,65 +364,75 @@
             </div>
         </div>
     </footer>
-    <div class="contact-us">
-        <div class="anim-modal animated contactModal-on" id="contactModal" style="position: fixed;width: 100%;height: 100%;top: 0px;left: 0px;background-color: rgb(6, 6, 6);overflow-y: auto;z-index: -9999;opacity: 0;animation-duration: 1.5s;">
-            <div class="close-contactModal close-btn">
-                <img class="close-btn-img animated" src="img/close-icon.svg" alt="close">
-            </div>
-            <div class="modal-content">
-                <div class="modal-content-center">
-                    <span class="modal-login-heading">Contact us</span>
-                    <div class="wrapper">
-                        <form>
-                            <div class="group">
-                                <input id="form-name" type="text" required="required" name="name" maxlength="50">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label id="form-name-label">Full Name</label>
-                            </div>
-                            <div class="group">
-                                <input id="form-comp" type="text" required="required" name="company" maxlength="50">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label id="form-comp-label">Company Name</label>
-                            </div>
-                            <div class="group">
-                                <input id="form-email" type="text" required="required" name="email" maxlength="50">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label id="form-email-label">Email</label>
-                            </div>
-                            <div class="group">
-                                <input id="form-phone" type="text" required="required" name="phone" maxlength="50">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label id="form-phone-label">Phone</label>
-                            </div>
-                            <div class="group">
-                                <input id="form-country" type="text" required="required" name="country" maxlength="50">
-                                <span class="highlight"></span>
-                                <span class="bar"></span>
-                                <label id="form-country-label">Country</label>
-                            </div>
-                            <button id="form-btn-contact" onclick="contactClick()" type="button">
-                                Submit
-                            </button>
-                        </form>
-                    </div>
+</div>
 
-                    <div class="form-contact-msg">
-                        <img src="img/contact-form-suc.svg" alt="success">
-                        <span class="form-error-msg-text">
-						<b>Thank You!</b>
-						<br>
-						 We will be in touch with you shortly
-					</span>
-                    </div>
+
+
+
+    <div class="anim-modal" id="contactModal">
+        <div class="close-contactModal close-btn">
+            <img class="close-btn-img animated" src="img/close_icon.svg" alt="close">
+        </div>
+    
+        <div class="modal-content">
+            <div class="modal-content-center">
+                <span class="modal-login-heading">Contact us</span>
+                <div class="wrapper">
+                    <form>
+                        <div class="group">
+                            <input id="form-name" type="text" required="required" name="name" maxlength="50"/>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label id="form-name-label">Full Name</label>
+                        </div>
+                        <div class="group">
+                            <input id="form-comp" type="text" required="required" name="company" maxlength="50"/>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label id="form-comp-label">Company Name</label>
+                        </div>
+                        <div class="group">
+                            <input id="form-email" type="text" required="required" name="email" maxlength="50"/>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label id="form-email-label">Email</label>
+                        </div>
+                        <div class="group">
+                            <input id="form-phone" type="text" required="required" name="phone" maxlength="50"/>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label id="form-phone-label">Phone</label>
+                        </div>
+                        <div class="group">
+                            <input id="form-country" type="text" required="required" name="country" maxlength="50"/>
+                            <span class="highlight"></span>
+                            <span class="bar"></span>
+                            <label id="form-country-label">Country</label>
+                        </div>
+                        <button id="form-btn-contact" onclick="contactClick()" type="button">
+                            Submit
+                        </button>
+                    </form>
+                </div>
+    
+                <div class="form-contact-msg">
+                    <img src="/imgs/contact-form-suc.svg" alt="success" />
+                    <span class="form-error-msg-text">
+                        <b>Thank You!</b>
+                        <br/> 
+                         We will be in touch with you shortly
+                    </span>
                 </div>
             </div>
         </div>
     </div>
-</div>
+
+
+
+
+
+    <script src="js/animatedModal.min.js"></script>
+
 <script>
     $('.homepage__partners-slider').slick({
         dots: false,

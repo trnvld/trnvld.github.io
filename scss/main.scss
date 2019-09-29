@@ -264,3 +264,194 @@ textarea {
 	box-shadow: 0 0 8px rgba(0,0,0,.6);
 	background: #000;
 }
+
+
+
+
+
+.anim-modal {
+  position: relative;
+  background-color: white !important; }
+  .anim-modal .close-btn {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0;
+    background: white;
+    width: 100%;
+    display: flex;
+    padding: 15px 20px;
+    justify-content: flex-end; }
+    .anim-modal .close-btn .close-btn-img {
+      cursor: pointer;
+      width: 34px;
+      margin-right: 100px;
+      margin-top: 50px; }
+    .anim-modal .close-btn .close-btn-img:hover {
+      animation: rotate 0.2s steps(10); }
+
+@keyframes rotate {
+  from {
+    transform-origin: center;
+    transform: rotate3d(0, 0, 1, -100deg);
+    opacity: 1; }
+  to {
+    transform-origin: center;
+    transform: none;
+    opacity: 1; } }
+    @media screen and (max-width: 576px) {
+      .anim-modal .close-btn {
+        right: 5%; } }
+  .anim-modal .modal-content {
+    background-color: white;
+    color: #060606;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    min-height: calc(100% - 150px);
+    margin: 100px 0 0 0;
+    border: none; }
+    .anim-modal .modal-content .modal-content-center {
+      display: flex;
+      flex-direction: row; }
+  @media screen and (max-width: 991px) {
+    .anim-modal .close-btn {
+      padding: 15px 20px;
+      position: fixed; }
+      .anim-modal .close-btn .close-btn-img {
+        margin: 0; }
+    .anim-modal .modal-content {
+      margin: 95px 12px 20px;
+      height: auto; }
+      .anim-modal .modal-content .modal-content-center {
+        flex-direction: column; } }
+  .anim-modal form {
+    width: 100%;
+    margin: 20px auto; }
+  .anim-modal .group {
+    position: relative;
+    margin: 30px 0; }
+  .anim-modal input {
+    background: none;
+    color: #1c1c1c;
+    font-size: 18px;
+    padding: 10px 10px 10px 0px;
+    display: block;
+    width: 100%;
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #1c1c1c; }
+    .anim-modal input:focus {
+      outline: none; }
+    .anim-modal input:focus ~ label,
+    .anim-modal input:valid ~ label {
+      bottom: 35px;
+      font-size: 12px;
+      color: #060606; }
+    .anim-modal input:focus ~ .bar:before {
+      width: 100%; }
+    .anim-modal input:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0px 1000px white inset;
+      -webkit-text-fill-color: #060606 !important; }
+  .anim-modal label {
+    color: #1c1c1c;
+    font-size: 18px;
+    line-height: 24px;
+    opacity: 0.5;
+    font-weight: normal;
+    position: absolute;
+    pointer-events: none;
+    left: 0;
+    bottom: 10px;
+    transition: 300ms ease all; }
+    @media screen and (max-width: 767px) {
+      .anim-modal label {
+        font-size: 16px; } }
+  .anim-modal .bar {
+    position: relative;
+    display: block;
+    width: 100%; }
+    .anim-modal .bar:before {
+      content: '';
+      height: 2px;
+      width: 0;
+      bottom: 0px;
+      position: absolute;
+      background: #060606;
+      transition: 300ms ease all;
+      left: 0%; }
+
+#contactModal .close-btn {
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  left: 0;
+  background: white;
+  width: 100%;
+  display: flex;
+  padding: 15px 20px;
+  justify-content: flex-end;
+  height: auto; }
+  #contactModal .close-btn .close-btn-img {
+    cursor: pointer;
+    width: 34px;
+    margin-top: 20px; }
+
+#contactModal .modal-content {
+  align-items: flex-start;
+  margin-top: 80px; }
+  @media screen and (max-width: 767px) {
+    #contactModal .modal-content {
+      margin-top: 80px; } }
+
+#contactModal .modal-content-center {
+  display: flex;
+  flex-direction: column;
+  max-width: 596px;
+  text-align: center; }
+  #contactModal .modal-content-center .modal-login-heading {
+    font-size: 36px;
+    line-height: 49px;
+    font-weight: 400;
+    margin-bottom: 20px;
+    color: #373737; }
+    @media screen and (max-width: 767px) {
+      #contactModal .modal-content-center .modal-login-heading {
+        font-size: 24px;
+        line-height: 33px; } }
+  #contactModal .modal-content-center #form-btn-contact {
+    border: 1px solid #373737;
+    background-color: transparent;
+    color: #060606;
+    padding: 18px 96px;
+    justify-content: center;
+    white-space: nowrap;
+    line-height: 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.5s;
+    transition-timing-function: ease-in;
+    display: inline-block;
+    margin-top: 30px; }
+  #contactModal .modal-content-center #form-btn-contact:hover {
+    background-color: #373737;
+    color: white !important;
+    outline: none; }
+  #contactModal .modal-content-center .form-contact-msg {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #060606;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    visibility: hidden;
+    margin: 0 30px; }
+    @media screen and (min-width: 400px) {
+      #contactModal .modal-content-center .form-contact-msg {
+        margin: 0 80px; } }
+    #contactModal .modal-content-center .form-contact-msg b {
+      font-size: 20px; }
+    #contactModal .modal-content-center .form-contact-msg img {
+      margin: 15px 0 13px; }
