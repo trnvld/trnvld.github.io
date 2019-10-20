@@ -16,11 +16,12 @@
             <a href="/"><img src="img/logo.svg" alt="logo"></a>
         </div>
         <ul class="header__menu menu">
-            <li><a href="index.html" class="selected link1">Home</a></li>
-            <li><a href="index.html#services" class="link2">Services</a></li>
-            <li><a href="index.html#partners" class="link3">Partners</a></li>
-            <li><a href="index.html#carrers" class="link4">Careers</a></li>
-            <li><a href="index.html#carrers" class="link5">Contacts</a></li>
+            <li><a href="#home" class="selected link1 menu-link">Home</a></li>
+            <li><a href="#services" class="link2 menu-link">Services</a></li>
+            <li><a href="#strategy" class="link3 menu-link">Strategy</a></li>
+            <li><a href="#why-us" class="link4 menu-link">Why us</a></li>
+            <li><a href="#carrers" class="link5 menu-link">Careers</a></li>
+            <li><a href="#loginModal" class="header-login-link" id="login-modal-link">Login</a></li>
         </ul>
         <ul class="header__language">
             <li class="lang-en hidden">En</li>
@@ -113,12 +114,12 @@ with these Terms and Conditions of Use.</p>
             </form>
         </div>
         <div class="footer-menus">
-            <ul class="footer-menu menu">
+            <ul class="header__menu menu">
                 <li><a href="index.html" class="selected link1">Home</a></li>
                 <li><a href="index.html#services" class="link2">Services</a></li>
                 <li><a href="index.html#partners" class="link3">Partners</a></li>
                 <li><a href="index.html#carrers" class="link4">Careers</a></li>
-                <li><a href="terms-and-conditions.html" class="link6">Terms & conditions</a></li>
+                <li><a href="index.html#carrers" class="link5">Contacts</a></li>
             </ul>
             <div class="footer-menus-bottom">
                 <div class="footer-socials">
@@ -168,5 +169,28 @@ with these Terms and Conditions of Use.</p>
     </div>
 </footer>
 </div>
+<div id="toTop">
+        <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="24" cy="24" r="23.5" transform="rotate(-90 24 24)"/>
+        <path d="M24 20.8423L26.7348 25.5791L21.2652 25.5791L24 20.8423Z"/>
+        </svg>
+    </div>
+    <script>
+    $(function() {
+        $(window).scroll(function() {
+            if($(this).scrollTop() > 100) {
+                $('#toTop').show();
+            } else {
+                $('#toTop').hide();
+            }
+        });
+
+        $('#toTop').click(function() {
+            $('body,html').animate({scrollTop:0},800);
+        });
+
+
+    });
+    </script>
 </body>
 </html>
