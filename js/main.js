@@ -29,14 +29,18 @@ function anchorNav() {
         event.preventDefault();
         var id  = $(this).attr('href'),
             top = $(id).offset().top - 86;
-        $('body,html').animate({scrollTop: top}, 1500);
+            if ($('body,html').is(':animated')) {
+                return;
+            } else {
+                $('body,html').animate({scrollTop: top}, 1500);
+            }
     });
 }
 
 function menuItemHighlight() {
-    $('.menu li a').click(function () {
-        if ($('.menu li a').hasClass('selected')) {
-            $('.menu li a').not(this).removeClass('selected')
+    $('.menu-link').click(function () {
+        if ($('.menu-link').hasClass('selected')) {
+            $('.menu-link').not(this).removeClass('selected')
             if ($(this).hasClass('link1')) {
                 $('.link1').addClass('selected')
             } else if ($(this).hasClass('link2')) {
@@ -71,6 +75,17 @@ function fullscreenVideo() {
     document.addEventListener('keydown', modalClose);
 }
 
+function loginClick() {
+    var target = '.form-error-msg-wr-lg';
+    $(target).css('visibility', 'hidden');
+    $(target).removeClass('animated');
+    $(target).removeClass('fadeInUp');
+    setTimeout(function () {
+        $(target).css('visibility', 'visible');
+        $(target).addClass('animated fadeInUp');
+        $('.login-btns #form-btn').css('border-color', '#FF4F1A')
+    }, 1000);
+};
 
 
 function contactClick() {
@@ -78,7 +93,6 @@ function contactClick() {
     if (document.getElementById('form-name').value === '') {
         $('#form-name-label').text('Please enter your full name');
         $('#form-name').css('border-bottom-color', '#FF4F1A');
-        // $('#form-name').css('color', '#FF4F1A');
         errors = true;
     }
     if (document.getElementById('form-comp').value === '') {
@@ -133,7 +147,6 @@ function contactClickRu() {
     if (document.getElementById('form-name').value === '') {
         $('#form-name-label').text('Пожалуйста, введите полное имя');
         $('#form-name').css('border-bottom-color', '#FF4F1A');
-        // $('#form-name').css('color', '#FF4F1A');
         errors = true;
     }
     if (document.getElementById('form-comp').value === '') {
@@ -186,6 +199,30 @@ function contactClickRu() {
 
 
 $(document).ready(function () {
+    $("#login-modal-link").animatedModal({
+        color: 'rgb(6,6,6)',
+        modalTarget: 'loginModal',
+        animatedIn: 'fadeIn',
+        animatedOut: 'fadeOut',
+        animationDuration: '1.5s'
+    });
+    
+    if ($("#form-name").length) {
+        $("#form-name").attr("name", "name");
+        $("#form-comp").attr("name", "company");
+        $("#form-email").attr("name", "email");
+        $("#form-phone").attr("name", "phone");
+        $("#form-country").attr("name", "country");
+    
+        $("#form-name").attr("maxlength", "50");
+        $("#form-comp").attr("maxlength", "50");
+        $("#form-email").attr("maxlength", "50");
+        $("#form-phone").attr("maxlength", "50");
+        $("#form-country").attr("maxlength", "50");
+        
+        $("#form-btn-contact").attr("type", "button");
+    }
+
     $(".contact-modal-link").animatedModal({
         color: 'rgb(6,6,6)',
         modalTarget: 'contactModal',
