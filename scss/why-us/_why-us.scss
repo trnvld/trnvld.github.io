@@ -3,6 +3,7 @@
 	&__top-content {
 		h1 {
 			font-family: $fontFamily;
+			font-weight: normal;
 			font-size: 36px;
 			line-height: 49px;
 			margin-bottom: 28px;
@@ -33,9 +34,15 @@
 		strong {
 			display: block;
 			margin-bottom: 40px;
+			color: #2F3234;
+			font-size: 18px;
+			line-height: 25px;
 		}
 		p {
 			margin-bottom: 20px;
+			color: #2F3234;
+			font-size: 18px;
+			line-height: 25px;
 		}
 	}
 	&__advantages {
@@ -62,4 +69,29 @@
 			}
 		}
 	}
+}
+
+.our-team {
+	flex: 23.25%;
+	padding-top: 130px;
+	padding-bottom: 90px;
+	background: #F5F5F5;
+	&__info {
+		h1 {
+		font-family: $fontFamily;
+		font-weight: normal;
+		font-size: 36px;
+		line-height: 49px;
+		color: #2F3234;
+		margin-bottom: 30px;
+		}
+		p {
+			font-family: $fontFamily;
+			font-size: 18px;
+			line-height: 25px;
+			color: #2F3234;
+			margin-bottom: 30px;
+		}
+	}
+	
 }

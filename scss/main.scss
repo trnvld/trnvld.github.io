@@ -111,6 +111,9 @@ textarea {
   font-family: $fontFamily;
   color: #F15C42;
   font-weight: bold;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
 .main {
