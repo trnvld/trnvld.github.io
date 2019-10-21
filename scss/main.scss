@@ -12,6 +12,7 @@
 @import 'homepage/careers';
 
 @import 'terms-and-conditions/terms-and-conditions';
+@import 'why-us/why-us';
 
 html {
 	box-sizing: border-box;
@@ -104,6 +105,12 @@ textarea {
 		background: transparent;
 		transition: 0.5s;
 	}
+}
+
+.btn-read-more {
+  font-family: $fontFamily;
+  color: #F15C42;
+  font-weight: bold;
 }
 
 .main {

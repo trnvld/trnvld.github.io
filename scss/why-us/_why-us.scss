@@ -1,0 +1,65 @@
+.why-us {
+	padding-top: 85px;
+	&__top-content {
+		h1 {
+			font-family: $fontFamily;
+			font-size: 36px;
+			line-height: 49px;
+			margin-bottom: 28px;
+			color: #000;
+		}
+		p {
+			font-family: $fontFamily;
+			font-size: 18px;
+			line-height: 25px;
+			color: #2F3234;
+			margin-bottom: 60px;
+		}
+	}
+	&__main-content {
+		display: flex;
+		margin-bottom: 150px;
+	}
+	&__ceo-info {
+		flex: 45%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		margin-right: 115px;
+		img {
+			margin-bottom: 50px;
+			width: 100%;
+		}
+		strong {
+			display: block;
+			margin-bottom: 40px;
+		}
+		p {
+			margin-bottom: 20px;
+		}
+	}
+	&__advantages {
+		flex: 55%;
+		display: flex;
+		flex-direction: column;
+		justify-content: space-between;
+		h2 {
+			font-family: $fontFamily;
+			font-weight: bold;
+			font-size: 18px;
+			line-height: 25px;
+			color: #2F3234;
+			margin-bottom: 30px;
+		}
+		p {
+			font-family: $fontFamily;
+			font-size: 18px;
+			line-height: 25px;
+			color: #2F3234;
+			margin-bottom: 35px;
+			&:last-of-type {
+				margin-bottom: 0;
+			}
+		}
+	}
+}
