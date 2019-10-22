@@ -80,10 +80,10 @@
     &__photo-section {
         display: flex;
         margin-bottom: 90px;
-        max-height: 924px;
         &-img {
             flex: 55%;
             margin-right: 115px;
+            max-height: 874px;
         }
         &-text {
             flex: 45%;
@@ -94,7 +94,10 @@
             font-size: 18px;
             line-height: 25px;
             p {
-                margin-bottom: 30px;
+                margin-bottom: 18px;
+                &:last-of-type {
+                    margin-bottom: 30px;
+                }
             }
         }
     }
