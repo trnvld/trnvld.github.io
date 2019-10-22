@@ -7,6 +7,7 @@
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
+    <script src="js/main.js"></script>
 </head>
 <body class="preloader-on">
 	<div class="wrapper">
@@ -170,6 +171,59 @@ with these Terms and Conditions of Use.</p>
     </div>
 </footer>
 </div>
+<div class="anim-modal" id="loginModal">
+    <div class="close-loginModal close-btn">
+        <img class="close-btn-img animated" src="img/close_icon.svg" alt="close">
+    </div>
+
+    <div class="modal-content">
+        <div class="modal-content-center">
+            <span class="modal-login-heading">Login</span>
+            <div class="form-error-msg form-error-msg-wr-lg">
+                <span class="form-error-msg-text">
+                    The User ID or password you entered is incorrect.
+                    <br/> Please try again.
+                </span>
+            </div>
+            <div class="wrapper">
+                <form class="login-form">
+                    <div class="group">
+                        <input type="text" required="required" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>User ID</label>
+                    </div>
+                    <div class="group">
+                        <input type="password" required="required" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Password</label>
+                    </div>
+                    <div class="login-btns">
+                        <a class="forgotPasswordHandler" onclick="forgotPasswordHandler()">Forgot Password?</a>
+                        <a id="form-btn" onclick="loginClick()">
+                            LOGIN
+                        </a>
+                    </div>
+                </form>
+
+                <form class="reset-pass-form">
+                    <span class="reset-pass-form-header">Reset password</span>
+                    <span class="reset-pass-form-text">Please enter your email below. <br/> A link to reset your password will be sent to you.</span>
+                    <div class="group">
+                        <input type="text" required="required" />
+                        <span class="highlight"></span>
+                        <span class="bar"></span>
+                        <label>Email</label>
+                    </div>
+                    <a id="form-btn" onclick="forgotPasswordSendHandler()">
+                        SEND
+                    </a>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 <div id="toTop">
         <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
         <circle cx="24" cy="24" r="23.5" transform="rotate(-90 24 24)"/>
@@ -193,5 +247,6 @@ with these Terms and Conditions of Use.</p>
 
     });
     </script>
+    <script src="js/animatedModal.min.js"></script>
 </body>
 </html>
