@@ -1,0 +1,101 @@
+.block {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: calc(100vh + 600px);
+    position: relative;
+    overflow: hidden;
+    z-index: 0;
+}
+.block__elem {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: rgba(0,0,0,.1);
+    z-index: 2;
+}
+
+.block__bg  {
+    position: absolute;
+    bottom: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 1;
+    height: 100%;
+    width: 100%;
+    background: url("../img/ceo-bg.jpg") 50% 50%/cover;
+}
+
+.paragraph {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    text-transform: uppercase;
+    z-index: 3;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    height: calc(100% - 600px);
+    width: 100%;
+    font-weight: 300;
+    font-size: 64px;
+    line-height: 87px;
+    color: #FFFFFF;
+
+    //position: fixed;
+    //top: 50%;
+    //transform: translate(0,-50%);
+}
+
+.ceo {
+    &__top-text {
+        display: flex;
+        margin-bottom: 90px;
+        h1 {
+            display: flex;
+            justify-content: flex-end;
+            align-items: flex-start;
+            flex: 55%;
+            margin-right: 115px;
+            font-size: 36px;
+            line-height: 49px;
+            text-align: right;
+            text-transform: uppercase;
+            color: #000000;
+        }
+        &-quote {
+            display: flex;
+            flex-direction: column;
+            flex: 45%;
+            font-size: 18px;
+            p {
+                margin-bottom: 30px;
+            }
+        }
+    }
+    &__photo-section {
+        display: flex;
+        margin-bottom: 90px;
+        max-height: 924px;
+        &-img {
+            flex: 55%;
+            margin-right: 115px;
+        }
+        &-text {
+            flex: 45%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 25px;
+            p {
+                margin-bottom: 30px;
+            }
+        }
+    }
+}
