@@ -4,7 +4,8 @@
   "description": "",
   "main": "\u001b[D\u001b[D\u001b[C\u001b[C",
   "dependencies": {
-    "jq-fakeloader": "^2.0.1"
+    "jq-fakeloader": "^2.0.1",
+    "smooth-scrollbar": "^8.5.0"
   },
   "devDependencies": {
     "browser-sync": "^2.26.7",

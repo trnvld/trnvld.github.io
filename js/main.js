@@ -206,6 +206,13 @@ $(document).ready(function () {
         animatedOut: 'fadeOut',
         animationDuration: '1.5s'
     });
+    $("#login-modal-link2").animatedModal({
+        color: 'rgb(6,6,6)',
+        modalTarget: 'loginModal',
+        animatedIn: 'fadeIn',
+        animatedOut: 'fadeOut',
+        animationDuration: '1.5s'
+    });
     
     if ($("#form-name").length) {
         $("#form-name").attr("name", "name");

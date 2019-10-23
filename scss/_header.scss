@@ -6,7 +6,6 @@
 	background-color: #fff;
 	overflow: hidden;
 	backdrop-filter: blur(5px);
-	border-bottom: 1px solid black;
 	&:before{
 		content: "";
 		background: inherit;
@@ -19,6 +18,12 @@
 	}
 	&.offset {
 		background-color: rgba(255,255,255,0.5);
+		border-bottom: 1px solid black;
+	}
+	&-sticky {
+		position: sticky;
+		top: 0;
+		border-bottom: 1px solid black;
 	}
 	.container {
 		display: flex;
