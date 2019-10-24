@@ -12,8 +12,8 @@ function setActiveClass () {
     blockElem.style.backgroundColor = `rgba(0,0,0,${changeOpacity})`;
     blockBg.style.transform = `scale(${changeScale})`;
 
-    let changeLetterSpacing = pageScrollY * 0.5;
-    let changeOpacityPar = 1 - (changeOpacity / 0.9);
+    let changeLetterSpacing = pageScrollY * 0.2;
+    let changeOpacityPar = 1 - (changeOpacity / 0.7);
     if (changeOpacityPar > 0) {
         paragraph.style.opacity = `${changeOpacityPar}`;
     }
