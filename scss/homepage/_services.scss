@@ -1,5 +1,5 @@
 .homepage__services {
-	padding: 145px 0;
+
 	background: #F5F5F5;
 	.container {
 		display: flex;
@@ -13,11 +13,13 @@
 		margin-bottom: 32px;
 	}
 	&-description {
+		position: relative;
 		display: flex;
 		flex-direction: column;
 		max-width: 269px;
 		min-width: 269px;
-		margin-right: 20px;
+		margin-right: 78px;
+		padding: 145px 0;
 		p {
 			font-family: $fontFamily;
 			font-weight: 300;
@@ -30,10 +32,22 @@
 	&-list {
 		display: flex;
 		width: 100%;
+		.slick-list {
+			width: 100%;
+			padding: 30px 0;
+			.slick-slide {
+				padding: 30px;
+			}
+		}
+		&-container {
+			display: block;
+			width: 100%;
+			padding: 90px 0;
+		}
 		&-wrapp {
 			margin: 0 10px;
 			display: flex;
-			flex: 33%;
+			width: 270px;
 			position: relative;
 			min-height: 370px;
 			&:first-child {
@@ -65,6 +79,7 @@
 			padding: 53px 43px 33px 43px;
 			text-align: center;
 			transition: 0.5s;
+			width: 270px;
 			img {
 				margin-bottom: 41px;
 				max-width: 168px;
@@ -77,6 +92,43 @@
 				line-height: 16px;
 				color: #2F3234;
 				user-select: none;
+			}
+		}
+		&-arrows {
+			display: flex;
+			margin-top: 35px;
+			.prev-arrow {
+				margin-right: 20px;
+			}
+			.next-arrow {
+			}
+			.slick-arrow {
+				cursor: pointer;
+				svg {
+					transition: 0.3s;
+					path {
+						transition: 0.3s;
+						fill: #000000;
+					}
+					circle {
+						transition: 0.3s;
+						stroke: #000000;
+						fill: none;
+					}
+				}
+				&:hover {
+					transition: 0.3s;
+					svg {
+						transition: 0.3s;
+						path {
+							fill: #F15C42;
+						}
+						circle {
+							transition: 0.3s;
+							stroke: #F15C42;
+						}
+					}
+				}
 			}
 		}
 	}
