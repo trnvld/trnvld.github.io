@@ -91,8 +91,8 @@ textarea {
 	font-weight: bold;
 	font-size: 14px;
 	line-height: 48px;
-	box-shadow: 0 18px 40px rgba(241, 92, 66, 0.25);
-	border-radius: 2px;
+	//box-shadow: 0 18px 40px rgba(241, 92, 66, 0.25);
+	//border-radius: 2px;
 	border: 2px solid #F05336;
 	transition: 0.5s;
 }
@@ -432,7 +432,7 @@ textarea {
   #contactModal .modal-content-center #form-btn-contact {
     border: 2px solid #F05336;
     background-color: #F05336;
-    font-family: $fontFamily; 
+    font-family: $fontFamily;
     color: #ffffff;
     font-weight: bold;
     padding: 18px 96px;
@@ -525,7 +525,7 @@ textarea {
     align-items: center;
     padding-top: 30px; }
   #loginModal .modal-content-center #form-btn {
-    font-family: $fontFamily; 
+    font-family: $fontFamily;
     border: 2px solid #F05336;
     background-color: #F15C42;
     color: #ffffff;
@@ -576,7 +576,7 @@ textarea {
     right: 70px;
     cursor: pointer;
     display: none;
-    opacity: 0.7;
+    opacity: 0.9;
     background-size: 100%;
     -webkit-transition: 0s;
     -o-transition: 0s;
@@ -585,12 +585,12 @@ textarea {
       transition: 0.3s;
       path {
         transition: 0.3s;
-        fill: #000000;
+        fill: #ffffff;
       }
       circle {
         transition: 0.3s;
-        stroke: #000000;
-        fill: none;
+        stroke: #F15C42;
+        fill: #F15C42;
       }
     }
     &:hover {
@@ -603,6 +603,7 @@ textarea {
         circle {
           transition: 0.3s;
           stroke: #F15C42;
+          fill: transparent;
         }
       }
     }

@@ -3,6 +3,7 @@
 	background: #F5F5F5;
 	.container {
 		display: flex;
+		justify-content: center;
 	}
 	&-heading {
 		font-family: $fontFamily;
@@ -10,23 +11,24 @@
 		font-size: 36px;
 		line-height: 49px;
 		color: #2F3234;
-		margin-bottom: 32px;
+		margin-bottom: 30px;
 	}
 	&-description {
 		position: relative;
 		display: flex;
 		flex-direction: column;
-		max-width: 269px;
-		min-width: 269px;
+		align-items: center;
+		text-align: center;
+		max-width: 666px;
 		margin-right: 78px;
-		padding: 145px 0;
+		padding: 100px 0;
 		p {
 			font-family: $fontFamily;
 			font-weight: 300;
 			font-size: 18px;
 			line-height: 25px;
 			color: #2F3234;
-			margin-bottom: 30px;
+			margin-bottom: 40px;
 		}
 	}
 	&-list {
