@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-	<meta charset="UTF-8">
-	<title>Blackshield Capital - CEO</title>
-	<meta name="viewport"
-		  content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" href="css/animate.css">
+    <meta charset="UTF-8">
+    <title>Blackshield Capital - CEO</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="js/main.js"></script>
@@ -15,20 +15,20 @@
     <script src="js/scale.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 </head>
+
 <body>
-	<div class="preloader">
-    <div class="preload-wrap">
-        <div class="loader">
-            <span class="preloader-type"></span>
+    <div class="preloader">
+        <div class="preload-wrap">
+            <div class="loader">
+                <span class="preloader-type"></span>
+            </div>
         </div>
-    </div>
     </div>
 
     <script>
-
         if (!sessionStorage.getItem('showPreloader')) {
             sessionStorage.setItem('showPreloader', 'true');
-            $(window).on('load', function () {
+            $(window).on('load', function() {
                 $preloader = $('.preloader');
                 $loader = $preloader.find('.preload-wrap');
                 $loader.delay(2000).fadeOut('slow');
@@ -37,7 +37,7 @@
                     strings: 'hello',
                     speed: 100
                 }).go();
-                setTimeout(function () {
+                setTimeout(function() {
                     $('body').removeClass('preloader-on');
                 }, 2000);
             });
@@ -48,83 +48,84 @@
         }
     </script>
     <section class="block">
-		<div class="block__bg"></div>
-		<div class="block__elem"></div>
-		<h1 class="paragraph">Maksim<span style="opacity: 0">_</span>Koretskiy</h1>
-	</section>
-	<div class="wrapper">
-	<header class="header header-sticky">
-    <div class="header__container container">
-        <div class="header__logo">
-            <a href="/"><img src="img/logo.svg" alt="logo"></a>
-        </div>
-        <ul class="header__menu menu">
-            <li><a href="index.html" class="selected link1 menu-link">Home</a></li>
-            <li><a href="index.html#services" class="link2 menu-link">Services</a></li>
-            <li><a href="index.html#strategy" class="link3 menu-link">Strategy</a></li>
-            <li><a href="why-us.html" class="link4 menu-link">Why us</a></li>
-            <li><a href="index.html#carrers" class="link5 menu-link">Careers</a></li>
-            <li><a href="#loginModal" class="header-login-link" id="login-modal-link">Login</a></li>
-        </ul>
-        <ul class="header__language">
-            <li class="lang-en hidden">En</li>
-            <li class="lang-ru">Ru</li>
-        </ul>
+        <div class="block__bg"></div>
+        <div class="block__elem"></div>
+        <h1 class="paragraph">Maksim<span style="opacity: 0">_</span>Koretskiy</h1>
+    </section>
+    <div class="wrapper">
+        <header class="header header-sticky">
+            <div class="header__container container">
+                <div class="header__logo">
+                    <a href="/"><img src="img/logo.svg" alt="logo"></a>
+                </div>
+                <ul class="header__menu menu">
+                    <li><a href="index.html" class="link1 menu-link">Home</a></li>
+                    <li><a href="index.html#services" class="link2 menu-link">Services</a></li>
+                    <li><a href="index.html#strategy" class="link3 menu-link">Strategy</a></li>
+                    <li><a href="why-us.html" class="link4 menu-link">Why us</a></li>
+                    <li><a href="index.html#carrers" class="link5 menu-link">Careers</a></li>
+                    <li><a href="#loginModal" class="header-login-link" id="login-modal-link">Login</a></li>
+                </ul>
+                <ul class="header__language">
+                    <li class="lang-en hidden">En</li>
+                    <li class="lang-ru">Ru</li>
+                </ul>
+            </div>
+        </header>
+        <main class="main">
+            <div class="container">
+                <div class="ceo__top-text">
+                    <h1 class="wow fadeInLeft" data-wow-duration="2s">Вызов</h1>
+                    <div class="ceo__top-text-quote">
+                        <p class="wow fadeInUp" data-wow-duration="2s">Я бросаю вызов страху внутри людей потерять то, что дает им чувство защищенности (деньги, статус, власть, комфорт, достаток, отношения)</p>
+
+                        <strong class="wow fadeInUp" data-wow-duration="2s">Максим Корецкий</strong>
+                    </div>
+                </div>
+                <div class="ceo__photo-section">
+                    <div class="ceo__photo-section-img">
+                        <img src="img/team/maxim_koretskiy_2.jpg" alt="maxim_koretskiy" class="wow fadeInLeft" data-wow-duration="2s">
+                    </div>
+                    <div class="ceo__photo-section-text">
+                        <p class="wow fadeInUp" data-wow-duration="2s">Наверное я в «прошлой или будущей жизни» был дирижёром, трогает меня эта профессия.</p>
+
+                        <p class="wow fadeInUp" data-wow-duration="2s">Чтобы поступить правильно в правильный момент, нужно внимательно слушать тех, с кем вы вместе играете, чтобы понимать, что они собираются сделать. Любое эффективное творческое взаимодействие основано на этом принципе. </p>
+
+                        <p class="wow fadeInUp" data-wow-duration="2s">Чтобы вместе играть отличную музыку, нужно объединить разные навыки, как разные инструменты, импровизировать и в то же время подчинить свой творческий порыв замыслу группы. При этом важно помнить, сколько музыкантов могут хорошо
+                            играть вместе.</p>
+
+                        <p class="wow fadeInUp" data-wow-duration="2s">Талантливый дуэт сможет исполнить великолепную импровизацию, так же как и трио или квартет. Но если собрать вместе десять музыкантов, какими бы талантливыми они ни были, скорее всего, они хорошо сыграют вместе только под управлением
+                            дирижера.</p>
+                        <img src="img/conductor.jpg" alt="conductor" class="wow fadeInUp" data-wow-duration="2s">
+                    </div>
+                </div>
+                <div class="ceo__middle-text-section">
+                    <h2 class="wow fadeInUp" data-wow-duration="2s">Зачем я принимаю этот вызов?</h2>
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы успокоить и защитить, приумножить капитал клиента и создать крепкую систему передачи наследства и гарантировать ее внедрение. Чтобы реализовывать налоговое планирование бизнеса в интересах клиента, обрести и сохранить уверенность
+                        в завтрашнем дне, забыть о страхе потерять привычный образ жизни, деньги, бизнес.</p>
+
+                    <p class="wow fadeInUp" data-wow-duration="2s">Для того чтобы научиться контролировать и направлять свой страх на генерацию новых смыслов - сохранить свободу. Чтобы делать то, что хочется и не зависеть от политики, людей, страны и чужого мнения, чтобы ничего не сковывало.</p>
+
+                    <p class="wow fadeInUp" data-wow-duration="2s">Быть в правильном окружении и создавать ценность внутри его, в жизни собственника денег всегда оставался драйв и пассивный доход, чтобы никогда более собственник денег не ощущал себя бедным.</p>
+
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы собственник денег был спокоен.</p>
+
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы сохранить и приумножить заработанное, видеть перспективы и смело ставить на долгосрочные цели, научиться играть в длинную и зарабатывать умом.</p>
+
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы помочь собственнику увидеть новые горизонты,позволить быть визионером и заботится о масштабировании бизнеса, быть полезным и создавать ценность с превышением для клиентов.</p>
+                </div>
+                <div class="ceo__idea-section">
+                    <div class="ceo__idea-section-text">
+                        <h2 class="wow fadeInLeft" data-wow-duration="2s">Идея</h2>
+                        <p class="wow fadeInLeft" data-wow-duration="2s">Счастье, как цель, объект дискуссий, размышлений и исследования появляется в последнее на многих форумах и конференциях, книгах.</p>
+                    </div>
+                    <div class="ceo__idea-section-img">
+                        <img src="img/team/maxim_koretskiy_3.jpg" alt="maxim_koretskiy" class="wow fadeInRight" data-wow-duration="1s">
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
-</header>
-	<main class="main">
-		<div class="container">
-			<div class="ceo__top-text">
-				<h1 class="wow fadeInLeft" data-wow-duration="2s">Вызов</h1>
-				<div class="ceo__top-text-quote">
-					<p class="wow fadeInUp" data-wow-duration="2s">Я бросаю вызов страху внутри людей потерять 
-					то, что дает им чувство защищенности (деньги, 
-					статус, власть, комфорт, достаток, отношения)</p>
-					
-					<strong class="wow fadeInUp" data-wow-duration="2s">Максим Корецкий</strong>
-				</div>
-			</div>
-			<div class="ceo__photo-section">
-				<div class="ceo__photo-section-img">
-					<img src="img/team/maxim_koretskiy_2.jpg" alt="maxim_koretskiy" class="wow fadeInLeft" data-wow-duration="2s">
-				</div>
-				<div class="ceo__photo-section-text">
-					<p class="wow fadeInUp" data-wow-duration="2s">Наверное я в «прошлой или будущей жизни» был дирижёром, трогает меня эта профессия.</p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Чтобы поступить правильно в правильный момент, нужно внимательно слушать тех, с кем вы вместе играете, чтобы понимать, что они собираются сделать. Любое эффективное творческое взаимодействие основано на этом принципе. </p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Чтобы вместе играть отличную музыку, нужно объединить разные навыки, как разные инструменты, импровизировать и в то же время подчинить свой творческий порыв замыслу группы. При этом важно помнить, сколько музыкантов могут хорошо играть вместе.</p> 
-
-<p class="wow fadeInUp" data-wow-duration="2s">Талантливый дуэт сможет исполнить великолепную импровизацию, так же как и трио или квартет. Но если собрать вместе десять музыкантов, какими бы талантливыми они ни были, скорее всего, они хорошо сыграют вместе только под управлением дирижера.</p>
-<img src="img/conductor.jpg" alt="conductor" class="wow fadeInUp" data-wow-duration="2s">
-				</div>
-			</div>
-			<div class="ceo__middle-text-section">
-				<h2 class="wow fadeInUp" data-wow-duration="2s">Зачем я принимаю этот вызов?</h2>
-				<p class="wow fadeInUp" data-wow-duration="2s">Чтобы успокоить и защитить, приумножить капитал клиента и создать крепкую систему передачи наследства и гарантировать ее внедрение. Чтобы реализовывать налоговое планирование бизнеса в интересах клиента, обрести и сохранить уверенность в завтрашнем дне, забыть о страхе потерять привычный образ жизни, деньги, бизнес.</p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Для того чтобы научиться контролировать и направлять свой страх на генерацию новых смыслов - сохранить свободу. Чтобы делать то, что хочется и не зависеть от политики, людей, страны и чужого мнения, чтобы ничего не сковывало.</p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Быть в правильном окружении и создавать ценность внутри его, в жизни собственника денег всегда оставался драйв и пассивный доход, чтобы никогда более собственник денег не ощущал себя бедным.</p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Чтобы собственник денег был спокоен.</p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Чтобы сохранить и приумножить заработанное, видеть перспективы и смело ставить на долгосрочные цели, научиться играть в длинную и зарабатывать умом.</p>
-
-<p class="wow fadeInUp" data-wow-duration="2s">Чтобы помочь собственнику увидеть новые горизонты,позволить быть визионером и заботится о масштабировании бизнеса, быть полезным и создавать ценность с превышением для клиентов.</p>
-			</div>
-			<div class="ceo__idea-section">
-				<div class="ceo__idea-section-text">
-					<h2 class="wow fadeInLeft" data-wow-duration="2s">Идея</h2>
-					<p class="wow fadeInLeft" data-wow-duration="2s">Счастье, как цель, объект дискуссий, размышлений и исследования появляется в последнее на многих форумах и конференциях, книгах.</p>
-				</div>
-				<div class="ceo__idea-section-img">
-					<img src="img/team/maxim_koretskiy_3.jpg" alt="maxim_koretskiy" class="wow fadeInRight" data-wow-duration="1s">
-				</div>
-			</div>
-		</div>
-	</main>
-	</div>
 
 
 
@@ -137,8 +138,9 @@
 
 
 
-	<script>
-    	new WOW().init();
-	</script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
+
 </html>
