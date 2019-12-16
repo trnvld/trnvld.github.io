@@ -213,9 +213,9 @@
         $(function() {
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 100) {
-                    $('#toTop').show();
+                    $('#toTop').addClass('visible');
                 } else {
-                    $('#toTop').hide();
+                    $('#toTop').removeClass('visible');
                 }
             });
 

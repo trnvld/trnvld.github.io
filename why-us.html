@@ -20,10 +20,10 @@
                 </div>
                 <ul class="header__menu menu">
                     <li><a href="index.html" class="link1 menu-link">Home</a></li>
-                    <li><a href="index.html#services" class="link2 menu-link">Services</a></li>
-                    <li><a href="index.html#strategy" class="link3 menu-link">Strategy</a></li>
+                    <li><a href="services.html" class="link2 menu-link">Services</a></li>
+                    <li><a href="strategy.html" class="link3 menu-link">Strategy</a></li>
                     <li><a href="why-us.html" class="link4 menu-link">Why us</a></li>
-                    <li><a href="index.html#carrers" class="link5 menu-link">Careers</a></li>
+                    <li><a href="careers.html" class="link5 menu-link">Careers</a></li>
                     <li><a href="#loginModal" class="header-login-link" id="login-modal-link">Login</a></li>
                 </ul>
                 <ul class="header__language">
@@ -144,10 +144,10 @@
                 <div class="footer-menus">
                     <ul class="footer-menu menu">
                         <li><a href="index.html" class="link1 menu-link">Home</a></li>
-                        <li><a href="index.html#services" class="link2 menu-link">Services</a></li>
-                        <li><a href="index.html#strategy" class="link3 menu-link">Strategy</a></li>
+                        <li><a href="services.html" class="link2 menu-link">Services</a></li>
+                        <li><a href="strategy.html" class="link3 menu-link">Strategy</a></li>
                         <li><a href="why-us.html" class="link4 menu-link">Why us</a></li>
-                        <li><a href="index.html#carrers" class="link5 menu-link">Careers</a></li>
+                        <li><a href="careers.html" class="link5 menu-link">Careers</a></li>
                         <li><a href="terms-and-conditions.html" class="link6">Terms & conditions</a></li>
                     </ul>
                     <div class="footer-menus-bottom">
@@ -320,9 +320,9 @@
         $(function() {
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 100) {
-                    $('#toTop').show();
+                    $('#toTop').addClass('visible');
                 } else {
-                    $('#toTop').hide();
+                    $('#toTop').removeClass('visible');
                 }
             });
 

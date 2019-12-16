@@ -28,9 +28,11 @@ function fullscreenVideo() {
     $('.video-arrow').click(function() {
         event.preventDefault();
         $('.video-wrapper-bg, .video-wrapper').addClass('open');
+        $('.vidoe-iframe').attr('src', $('.vidoe-iframe').data('src'));
     });
     $('.video-close, .video-wrapper-bg, .video-wrapper').click(function() {
         $('.video-wrapper-bg, .video-wrapper').removeClass('open');
+        $('.vidoe-iframe').attr('src', $('.vidoe-iframe').data('src1'));
     });
 
     function modalClose(e) {
