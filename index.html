@@ -107,7 +107,7 @@
                     <div class="video-content">
                         <div class="video-scaler">
                             <button title="Close (Esc)" type="button" class="video-close">×</button>
-                            <!-- <iframe class="vidoe-iframe" src="https://www.youtube.com/embed/c7_uf1NL8o4" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe> -->
+                             <iframe class="vidoe-iframe" data-src="https://www.youtube.com/embed/c7_uf1NL8o4" data-src1="img/maxresdefault.jpg" src="img/maxresdefault.jpg" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                         </div>
                     </div>
                 </div>
@@ -461,9 +461,9 @@
         $(function() {
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 100) {
-                    $('#toTop').show();
+                    $('#toTop').addClass('visible');
                 } else {
-                    $('#toTop').hide();
+                    $('#toTop').removeClass('visible');
                 }
             });
 
