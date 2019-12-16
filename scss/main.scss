@@ -14,6 +14,7 @@
 @import 'about-ceo/about-ceo';
 @import 'services/services';
 @import 'careers/careers';
+@import 'strategy/strategy';
 html {
     box-sizing: border-box;
     user-select: none;
@@ -405,6 +406,7 @@ textarea {
 }
 
 .anim-modal input:-webkit-autofill {
+    box-shadow: 0 0 0px 1000px white inset;
     -webkit-box-shadow: 0 0 0px 1000px white inset;
     -webkit-text-fill-color: #060606 !important;
 }
