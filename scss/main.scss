@@ -30,6 +30,34 @@ img {
 *:after {
     box-sizing: inherit;
 }
+*{
+    cursor: none;
+}
+.your-cursor4 {
+    position: absolute;
+    height: 20px;
+    width: 20px;
+    transform: translateX(-50%) translateY(-50%);
+    border-radius: 50%;
+    user-select: none;
+    pointer-events: none;
+}
+.your-cursor4 {
+    background-color: #F15C42;
+    z-index: 11;
+}
+.your-cursor4:nth-child(2) {
+    background-color: #F15C42;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+}
+.your-cursor4:nth-child(3) {
+    background-color: #F15C42;
+    z-index: 11;
+    width: 6px;
+    height: 6px;
+}
 
 body {
     font-family: $fontFamily;
