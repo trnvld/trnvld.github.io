@@ -3,7 +3,6 @@
         padding: 90px 0;
         p {
             font-family: $fontFamily;
-            font-weight: normal;
             font-size: 18px;
             line-height: 25px;
             color: #2F3234;
@@ -27,14 +26,12 @@
             width: 55%;
             margin-left: -10%;
             box-shadow: 0px 18px 40px #E4E4E3;
-            margin-right: 100px;
+            margin-right: 120px;
         }
         &-text {
             width: 45%;
             p {
-                font-family: Open Sans;
-                font-style: normal;
-                font-weight: normal;
+                font-family: $fontFamily;
                 font-size: 18px;
                 line-height: 25px;
                 color: #2F3234;
@@ -45,8 +42,7 @@
             }
         }
         &-heading {
-            font-family: Open Sans;
-            font-style: normal;
+            font-family: $fontFamily;
             font-weight: bold;
             font-size: 18px;
             line-height: 25px;
@@ -62,7 +58,61 @@
         &-text {
             width: 40%;
             margin-right: 100px;
+            h2 {
+                font-family: $fontFamily;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 25px;
+                color: #2F3234;
+                margin-bottom: 35px;
+            }
+            p {
+                font-family: Open Sans;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 25px;
+                color: #2F3234;
+                margin-bottom: 60px;
+            }
         }
-        &-img {}
+        &-img {
+            width: 60%;
+            margin-right: -12%;
+            box-shadow: 0px 18px 40px #E4E4E3;
+        }
+    }
+    &__products {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        &-section {
+            padding: 100px 0;
+            background-color: #F5F5F5;
+        }
+        &-heading {
+            font-family: $fontFamily;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 49px;
+            color: #2F3234;
+            margin-bottom: 32px;
+        }
+        &-sub-heading {
+            font-family: $fontFamily;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            color: #2F3234;
+            margin-bottom: 32px;
+        }
+        p {
+            font-family: $fontFamily;
+            font-weight: 300;
+            font-size: 18px;
+            line-height: 25px;
+            color: #2F3234;
+            margin-bottom: 45px;
+        }
     }
 }
