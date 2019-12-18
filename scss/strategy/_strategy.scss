@@ -1,6 +1,6 @@
 .strategy {
-    padding: 86px 0;
-    &__content {
+    &__top-content {
+        padding: 90px 0;
         p {
             font-family: $fontFamily;
             font-weight: normal;
@@ -9,13 +9,60 @@
             color: #2F3234;
             margin-bottom: 30px;
         }
+        &-heading {
+            font-family: $fontFamily;
+            font-weight: normal;
+            font-size: 36px;
+            line-height: 49px;
+            color: #000000;
+            margin-bottom: 30px;
+        }
     }
-    &__heading {
-        font-family: $fontFamily;
-        font-weight: normal;
-        font-size: 36px;
-        line-height: 49px;
-        color: #000000;
-        margin-bottom: 30px;
+    &__inovation {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: 90px 0;
+        &-img {
+            width: 55%;
+            margin-left: -10%;
+            box-shadow: 0px 18px 40px #E4E4E3;
+            margin-right: 100px;
+        }
+        &-text {
+            width: 45%;
+            p {
+                font-family: Open Sans;
+                font-style: normal;
+                font-weight: normal;
+                font-size: 18px;
+                line-height: 25px;
+                color: #2F3234;
+                margin-bottom: 45px;
+            }
+            .btn {
+                margin-bottom: 30px;
+            }
+        }
+        &-heading {
+            font-family: Open Sans;
+            font-style: normal;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            color: #2F3234;
+            margin-bottom: 30px;
+        }
+    }
+    &__middle-content {
+        padding: 90px 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        &-text {
+            width: 40%;
+            margin-right: 100px;
+        }
+        &-img {}
     }
 }

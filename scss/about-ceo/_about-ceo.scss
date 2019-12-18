@@ -7,17 +7,18 @@
     overflow: hidden;
     z-index: 0;
 }
+
 .block__elem {
     position: absolute;
     bottom: 0;
     top: 0;
     left: 0;
     right: 0;
-    background: rgba(0,0,0,.1);
+    background: rgba(0, 0, 0, .1);
     z-index: 2;
 }
 
-.block__bg  {
+.block__bg {
     position: absolute;
     bottom: 0;
     top: 0;
@@ -47,10 +48,9 @@
     font-size: 64px;
     line-height: 87px;
     color: #FFFFFF;
-
     position: fixed;
     top: 50%;
-    transform: translate(0,-50%);
+    transform: translate(0, -50%);
 }
 
 .ceo {
@@ -86,12 +86,15 @@
         display: flex;
         margin-bottom: 90px;
         &-img {
-            flex: 55%;
+            // flex: 55%;
+            width: 55%;
+            height: 100%;
             margin-right: 115px;
             max-height: 874px;
         }
         &-text {
-            flex: 45%;
+            // flex: 45%;
+            width: 45%;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
