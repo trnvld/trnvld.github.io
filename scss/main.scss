@@ -30,9 +30,11 @@ img {
 *:after {
     box-sizing: inherit;
 }
-*{
+
+* {
     cursor: none;
 }
+
 .your-cursor4 {
     position: absolute;
     height: 20px;
@@ -42,19 +44,22 @@ img {
     user-select: none;
     pointer-events: none;
 }
+
 .your-cursor4 {
     background-color: #F15C42;
-    z-index: 11;
+    z-index: 16;
 }
+
 .your-cursor4:nth-child(2) {
     background-color: #F15C42;
-    z-index: 11;
+    z-index: 16;
     width: 15px;
     height: 15px;
 }
+
 .your-cursor4:nth-child(3) {
     background-color: #F15C42;
-    z-index: 11;
+    z-index: 16;
     width: 6px;
     height: 6px;
 }
@@ -337,7 +342,7 @@ textarea {
 }
 
 .anim-modal .close-btn .close-btn-img {
-    cursor: pointer;
+    //cursor: pointer;
     width: 34px;
     margin-right: 100px;
     margin-top: 50px;

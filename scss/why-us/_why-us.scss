@@ -85,7 +85,8 @@
     &__info {
         //flex: 23.5%;
         margin-right: 193px;
-        padding: 110px 0;
+        padding-top: 130px;
+        padding-bottom: 90px;
         min-width: 270px;
         h1 {
             font-family: $fontFamily;
@@ -98,9 +99,6 @@
         strong {
             display: block;
             margin-bottom: 30px;
-            font-size: 18px;
-            line-height: 25px;
-            color: #2F3234;
         }
         p {
             font-family: $fontFamily;
@@ -111,23 +109,135 @@
             font-weight: 300;
         }
     }
-    &__img {
-        width: 61.5%;
-        margin-right: -12%;
+    &__people {
+        padding: 130px 0 120px 120px;
+        background-color: #fff;
+        &-wrapper {
+            display: block;
+            width: 100%;
+            position: relative;
+        }
+        .slick-track {
+            padding-top: 20px;
+            .slick-active {
+                &.overlay-enable {
+                    .our-team__info-img {
+                        .our-team__img-overlay {
+                            background: #fff;
+                            opacity: 0.75;
+                            position: absolute;
+                            top: 0;
+                            transition: 0.3s;
+                            width: 100%;
+                            height: 100%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+                            align-items: center;
+                        }
+                    }
+                    &:hover {
+                        .our-team__img-overlay {
+                            opacity: 0;
+                        }
+                    }
+                }
+            }
+        }
     }
-    //&__img-overlay {
-    //  background: #fff;
-    //  opacity: 0.75;
-    //  position: absolute;
-    //  top: 0;
-    //  transition: 0.3s;
-    //  width: 100%;
-    //  height: 100%;
-    //  display: flex;
-    //  flex-direction: column;
-    //  justify-content: flex-end;
-    //  align-items: center;
-    //}
+    &__people-slider-arrows {
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        bottom: 48px;
+        left: 120px;
+        .prev-arrow {
+            margin-right: 20px;
+        }
+        .slick-arrow {
+            cursor: pointer;
+            svg {
+                transition: 0.3s;
+                path {
+                    transition: 0.3s;
+                    fill: #000000;
+                }
+                circle {
+                    transition: 0.3s;
+                    stroke: #000000;
+                    fill: none;
+                }
+            }
+            &:hover {
+                transition: 0.3s;
+                svg {
+                    transition: 0.3s;
+                    path {
+                        fill: #F15C42;
+                    }
+                    circle {
+                        transition: 0.3s;
+                        stroke: #F15C42;
+                    }
+                }
+            }
+        }
+    }
+    &__people-info {
+        display: flex !important;
+        min-width: 269px;
+        min-height: 470px !important;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        position: relative;
+        &-text {
+            transition: 0.3s;
+            opacity: 0;
+        }
+        &:hover {
+            .our-team__info-img {
+                margin-top: -20px;
+                transition: 0.3s;
+                box-shadow: 0px 18px 40px #C4C4C4;
+            }
+            .our-team__img-overlay {
+                opacity: 0;
+            }
+            .our-team__people-info-text {
+                opacity: 1;
+            }
+        }
+        span {
+            margin-top: 25px;
+            font-size: 18px;
+            line-height: 25px;
+            color: #2F3234;
+            font-weight: 300;
+        }
+        strong {
+            display: block;
+            margin-bottom: 25px;
+            font-weight: bold;
+            font-size: 18px;
+            line-height: 25px;
+            color: #2F3234;
+        }
+    }
+    &__info-img {
+        max-height: 370px;
+        height: 370px;
+        width: 269px;
+        position: absolute;
+        top: 0;
+        transition: 0.3s;
+        overflow: hidden;
+        img {
+            transform: translate(-5%, 0);
+            height: 100%;
+            max-width: unset;
+        }
+    }
     &__people-social {
         margin-bottom: 36px;
         a {
