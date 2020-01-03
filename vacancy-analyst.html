@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Blackshield Capital - Terms & Conditions</title>
+    <title>Blackshield Capital - Vacancy</title>
     <link rel="stylesheet" href="css/main.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
@@ -97,37 +97,46 @@
                             <li>CFA is a plus </li>
                         </ul>
                     </div>
-                    <div class="anim-modal">
+                    <div class="vacancy__form">
 
-                        <div class="modal-content">
+                        <div class="vacancy__form-content">
                             <div class="modal-content-center">
-                                <div class="wrapper">
-                                    <form>
-                                        <div class="group">
-                                            <input id="form-name" type="text" required="required" name="name" maxlength="50">
-                                            <span class="highlight"></span>
-                                            <span class="bar"></span>
-                                            <label id="form-name-label">Name</label>
-                                        </div>
+                                <form>
+                                    <div class="group">
+                                        <input id="form-name" type="text" required="required" name="name" maxlength="50">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label id="form-name-label">Name</label>
+                                    </div>
 
-                                        <div class="group">
-                                            <input id="form-email" type="text" required="required" name="email" maxlength="50">
-                                            <span class="highlight"></span>
-                                            <span class="bar"></span>
-                                            <label id="form-email-label">Email</label>
+                                    <div class="group">
+                                        <input id="form-email" type="text" required="required" name="email" maxlength="50">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label id="form-email-label">Email</label>
+                                    </div>
+                                    <div class="group">
+                                        <input id="form-phone" type="text" required="required" name="phone" maxlength="50">
+                                        <span class="highlight"></span>
+                                        <span class="bar"></span>
+                                        <label id="form-phone-label">Phone</label>
+                                    </div>
+                                    <div class="vacancy__form-file-connect">
+                                        <input type="file" id="file-connect">
+                                        <label for="file-connect">Join our team, <br>send your CV to us</label>
+                                        <div class="vacancy__form-file-connect-icon">
+                                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M23.6455 25.1631H21V23.666H23.6455V21H25.1426V23.666H27.7881V25.1631H25.1426V27.7949H23.6455V25.1631Z" fill="black"/>
+                                                <circle cx="24" cy="24" r="23.5" transform="rotate(-90 24 24)" stroke="black"/>
+                                                </svg>
                                         </div>
-                                        <div class="group">
-                                            <input id="form-phone" type="text" required="required" name="phone" maxlength="50">
-                                            <span class="highlight"></span>
-                                            <span class="bar"></span>
-                                            <label id="form-phone-label">Phone</label>
-                                        </div>
-
-                                        <button id="form-btn-contact" onclick="contactClick()" type="button" class="btn btn-orange">
+                                    </div>
+                                    <p class="vacancy__form-agreement">By submitting your CV, you agree to the processing of personal data in accordance with the “Regulation on Personal Data“</p>
+                                    <button id="form-btn-contact" onclick="contactClick()" type="button" class="btn btn-orange">
                                         Apply
                                     </button>
-                                    </form>
-                                </div>
+                                    <p class="vacancy__form-allowed-files">Allowed file types: doc, docx, pdf, jpg, jpeg, gif, png, text, ppx, pptx. Must be less than 3MB.</p>
+                                </form>
                             </div>
                         </div>
                     </div>
@@ -311,24 +320,24 @@
                         Submit
                     </button>
                     </form>
-                </div>
 
-                <div class="form-contact-msg">
-                    <img src="img/contact-form-suc.svg" alt="success" />
-                    <span class="form-error-msg-text">
+                    <div class="form-contact-msg">
+                        <img src="img/contact-form-suc.svg" alt="success" />
+                        <span class="form-error-msg-text">
                     <b>Thank You!</b>
                     <br/>
                      We will be in touch with you shortly
                 </span>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
     <div id="toTop">
         <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="24" cy="24" r="23.5" transform="rotate(-90 24 24)"/>
-        <path d="M24 20.8423L26.7348 25.5791L21.2652 25.5791L24 20.8423Z"/>
-        </svg>
+            <circle cx="24" cy="24" r="23.5" transform="rotate(-90 24 24)"/>
+            <path d="M24 20.8423L26.7348 25.5791L21.2652 25.5791L24 20.8423Z"/>
+            </svg>
     </div>
     <script>
         $(function() {

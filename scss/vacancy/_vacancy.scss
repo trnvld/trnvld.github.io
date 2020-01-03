@@ -1,6 +1,13 @@
 .vacancy {
     padding: 90px 0;
+    .container {
+        display: flex;
+        align-items: flex-start;
+    }
     &__content {
+        margin-right: 25px;
+        width: 55%;
+        max-width: 55%;
         p {
             font-family: $fontFamily;
             font-weight: normal;
@@ -34,5 +41,151 @@
         line-height: 49px;
         color: #000000;
         margin-bottom: 30px;
+    }
+    &__form {
+        &-content {
+            max-width: 613px;
+            position: absolute;
+            background-color: #F5F5F5;
+            color: #060606;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            padding: 82px 150px 100px 96px;
+            .modal-content-center {
+                display: flex;
+                flex-direction: row;
+                @media screen and (max-width: 991px) {
+                    flex-direction: column;
+                }
+            }
+        }
+        .group {
+            position: relative;
+            margin-bottom: 30px;
+            input {
+                background: none;
+                color: #2F3234;
+                font-size: 18px;
+                padding: 10px 10px 10px 0px;
+                display: block;
+                width: 100%;
+                min-width: 367px;
+                border: none;
+                border-radius: 0;
+                border-bottom: 1px solid black;
+                &:focus {
+                    outline: none;
+                }
+                &:focus~label,
+                &:valid~label {
+                    bottom: 35px;
+                    font-size: 12px;
+                    color: #060606;
+                }
+                &:focus~.bar:before {
+                    width: 100%;
+                }
+                &:-webkit-autofill {
+                    box-shadow: 0 0 0px 1000px white inset;
+                    -webkit-box-shadow: 0 0 0px 1000px white inset;
+                    -webkit-text-fill-color: #060606 !important;
+                }
+            }
+            label {
+                color: #2F3234;
+                font-weight: 300;
+                font-size: 18px;
+                line-height: 25px;
+                opacity: 0.5;
+                position: absolute;
+                pointer-events: none;
+                left: 0;
+                bottom: 20px;
+                transition: 300ms ease all;
+            }
+        }
+        .bar {
+            position: relative;
+            display: block;
+            width: 100%;
+            &:before {
+                content: '';
+                height: 2px;
+                width: 0;
+                bottom: 0px;
+                position: absolute;
+                background: #060606;
+                transition: 300ms ease all;
+                left: 0%;
+            }
+        }
+        .btn {
+            cursor: none;
+            margin-bottom: 30px;
+        }
+        &-file-connect {
+            position: relative;
+            min-height: 48px;
+            margin-bottom: 30px;
+            &-icon {
+                position: absolute;
+                svg {
+                    transition: 0.3s;
+                    path {
+                        transition: 0.3s;
+                        fill: #000;
+                    }
+                    circle {
+                        transition: 0.3s;
+                        stroke: #000;
+                    }
+                }
+            }
+            input {
+                width: 0.1px;
+                height: 0.1px;
+                opacity: 0;
+                overflow: hidden;
+                position: absolute;
+                z-index: -1;
+            }
+            label {
+                position: absolute;
+                padding-left: 100px;
+                font-family: $fontFamily;
+                font-weight: bold;
+                font-size: 18px;
+                line-height: 25px;
+                color: #2F3234;
+                z-index: 3;
+            }
+            label:hover+div svg {
+                transition: 0.3s;
+                path {
+                    fill: #F15C42;
+                }
+                circle {
+                    transition: 0.3s;
+                    stroke: #F15C42;
+                }
+            }
+        }
+        &-agreement {
+            font-family: $fontFamily;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+            color: #FF4F1A;
+            margin-bottom: 30px;
+        }
+        &-allowed-files {
+            font-family: $fontFamily;
+            font-weight: normal;
+            font-size: 12px;
+            line-height: 16px;
+            color: #2F3234;
+        }
     }
 }
