@@ -5,10 +5,12 @@
     <meta charset="UTF-8">
     <title>Blackshield Capital - Vacancy</title>
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
 </head>
 
 <body class="preloader-on">
@@ -99,7 +101,7 @@
                     </div>
                     <div class="vacancy__form">
 
-                        <div class="vacancy__form-content">
+                        <div class="vacancy__form-content wow fadeInRight" data-wow-duration="2s">
                             <div class="modal-content-center">
                                 <form>
                                     <div class="group">
@@ -359,6 +361,9 @@
         });
     </script>
     <script src="js/animatedModal.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
 </body>
 
 </html>
