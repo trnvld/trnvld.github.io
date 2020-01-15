@@ -242,6 +242,19 @@
             max-width: unset;
         }
     }
+    &__img-overlay {
+		background: linear-gradient(rgba(47, 50, 52, 0) 0%, #2F3234  100%);
+		opacity: 0;
+		position: absolute;
+		top: 0;
+		transition: 0.3s;
+		width: 100%;
+		height: 100%;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-end;
+        align-items: center;
+	}
     &__people-social {
         margin-bottom: 36px;
         a {
