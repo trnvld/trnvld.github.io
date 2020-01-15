@@ -3,6 +3,7 @@
         padding: 90px 0;
         p {
             font-family: $fontFamily;
+            font-weight: 300;
             font-size: 18px;
             line-height: 25px;
             color: #2F3234;
@@ -35,6 +36,7 @@
                 line-height: 25px;
                 color: #2F3234;
                 margin-bottom: 45px;
+                font-weight: 300;
             }
             .btn {
                 margin-bottom: 30px;
@@ -67,7 +69,7 @@
             }
             p {
                 font-family: Open Sans;
-                font-weight: normal;
+                font-weight: 300;
                 font-size: 18px;
                 line-height: 25px;
                 color: #2F3234;
