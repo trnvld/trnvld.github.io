@@ -88,7 +88,7 @@
 			font-family: $fontFamily;
 			min-width: 30px;
 			transition: 0.3s;
-			cursor: pointer;
+			// cursor: pointer;
 			&.hidden {
 				display: none;
 			}

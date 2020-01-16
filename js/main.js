@@ -17,12 +17,12 @@ function slideDownArrow() {
     });
 }
 
-function langChange() {
-    $('.header__language').click(function() {
-        $('.lang-en').toggleClass('hidden');
-        $('.lang-ru').toggleClass('hidden');
-    });
-}
+// function langChange() {
+//     $('.header__language').click(function() {
+//         $('.lang-en').toggleClass('hidden');
+//         $('.lang-ru').toggleClass('hidden');
+//     });
+// }
 
 function fullscreenVideo() {
     $('.video-arrow').click(function() {
@@ -238,6 +238,6 @@ $(document).ready(function() {
 
     menuOffset();
     slideDownArrow();
-    langChange();
+    // langChange();
     fullscreenVideo();
 });
