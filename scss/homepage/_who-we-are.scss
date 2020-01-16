@@ -16,6 +16,9 @@
 		width: 657px;
 		height: 368px;
 		overflow: hidden;
+		@media screen and (max-width: 900px){
+            display: none;
+        }
 		video {
 			position: absolute;
 			top: -35px;

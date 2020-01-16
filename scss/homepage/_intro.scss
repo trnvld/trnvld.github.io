@@ -7,6 +7,9 @@
 .homepage__intro {
     padding-top: 68px;
     position: relative;
+    @media screen and (max-width: 900px){
+        padding-top: 30px;
+    }
     &-socials {
         display: flex;
         flex-direction: column;
@@ -93,6 +96,16 @@
         margin-right: 30px;
         min-height: 261px;
         color: #2f3234;
+        @media screen and (max-width: 900px){
+            font-size: 40px;
+            line-height: 50px;
+            min-height: 210px;
+        }
+        @media screen and (max-width: 900px){
+            font-size: 28px;
+            line-height: 32px;
+            min-height: 165px;
+        }
         .ti-cursor {
             top: -6px;
             &.is-hidden {
@@ -117,6 +130,10 @@
         line-height: 25px;
         color: #000000;
         margin-bottom: 50px;
+        @media screen and (max-width: 900px){
+            font-size: 16px;
+            line-height: 22px;
+        }
     }
     &-arrow {
         display: inline-block;
@@ -126,6 +143,9 @@
         width: 25px;
         height: 104px;
         background-size: contain;
+        @media screen and (max-width: 900px){
+            display: none;
+        }
         // cursor: pointer;
     }
 }

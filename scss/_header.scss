@@ -33,9 +33,9 @@
 	}
 	&__logo {
 		z-index: 1;
-		min-width: 179px;
+		max-width: 179px;
 		@media screen and (max-width: 1024px){
-			min-width: 120px;
+			max-width: 120px;
 		}
 	}
 	&__menu {
@@ -44,6 +44,9 @@
 		text-transform: uppercase;
 		margin-left: auto;
 		z-index: 1;
+		@media screen and (max-width: 900px){
+			display: none;
+		}
 		li {
 			list-style-type: none;
 			margin: 0 14px;
