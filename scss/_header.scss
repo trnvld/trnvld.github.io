@@ -33,6 +33,7 @@
 	}
 	&__logo {
 		z-index: 1;
+		min-width: 179px;
 	}
 	&__menu {
 		display: flex;
@@ -43,6 +44,9 @@
 		li {
 			list-style-type: none;
 			margin: 0 14px;
+			@media screen and (max-width: 1024px){
+				margin: 0 10px;
+			}
 			a {
 				position: relative;
 				display: block;
@@ -75,6 +79,9 @@
 		position: relative;
 		width: 19px;
 		height: 19px;
+		@media screen and (max-width: 1024px){
+			margin-left: 40px;
+		}
 		li {
 			list-style-type: none;
 			position: absolute;
