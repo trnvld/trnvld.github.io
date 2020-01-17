@@ -1,6 +1,6 @@
 function menuOffset() {
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 10) {
+        if ($(this).scrollTop() > 10 && $(window).width() < 900) {
             $('.header').addClass('offset');
         } else {
             $('.header').removeClass('offset');
