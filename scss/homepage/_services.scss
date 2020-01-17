@@ -19,7 +19,10 @@
         align-items: center;
         text-align: center;
         max-width: 666px;
-        padding: 100px 0;
+        padding: 60px 0;
+        img {
+            margin-bottom: 20px;
+        }
         p {
             font-family: $fontFamily;
             font-weight: 300;

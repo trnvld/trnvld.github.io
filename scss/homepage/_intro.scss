@@ -107,11 +107,20 @@
         @media screen and (max-width: 600px){
             font-size: 28px;
             line-height: 32px;
+            min-height: 120px;
         }
         .ti-cursor {
             top: -6px;
             &.is-hidden {
                 display: none !important;
+            }
+            @media screen and (max-width: 900px){
+                font-size: 36px !important;
+                top: -4px;
+            }
+            @media screen and (max-width: 600px){
+                font-size: 25px !important;
+                top: -3px;
             }
         }
         .type-span {

@@ -15,10 +15,16 @@
 		top: 0;
 		bottom: 0;
 		filter: blur(10px);
+		@media screen and (max-width: 600px){
+			filter: none;
+		}
 	}
 	&.offset {
 		background-color: rgba(255,255,255,0.5);
 		border-bottom: 1px solid black;
+		@media screen and (max-width: 600px){
+			background-color: #fff;
+		}
 	}
 	&-sticky {
 		position: sticky;
