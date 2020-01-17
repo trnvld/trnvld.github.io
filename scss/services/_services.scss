@@ -1,5 +1,5 @@
 .services {
-  padding-top: 90px;
+  padding-top: 176px;
   &__content {
     font-family: $fontFamily;
     font-weight: 300;
@@ -34,6 +34,10 @@
     display: flex;
     justify-content: flex-start;
     margin-bottom: 105px;
+    @media screen and (max-width: 768px){
+      flex-direction: column;
+      margin-bottom: 50px;
+    }
     &:last-child {
         margin-bottom: 50px;
     }
@@ -42,6 +46,7 @@
         flex-direction: column;
         align-items: center;
         margin-right: 40px;
+        margin-bottom: 30px;
     }
     &-img {
       width: 133px;
