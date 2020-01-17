@@ -885,6 +885,11 @@ Primary style
     white-space: nowrap;
     position: fixed;
     display: none;
+    box-shadow: 0px 7px 20px #b0b0b0;
+    border-radius: 50%;
+    &.close-nav {
+        box-shadow: none;
+    }
     @media screen and (max-width: 1366px){
         cursor: pointer;
     }
