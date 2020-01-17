@@ -10,6 +10,9 @@
 	top: 0;
 	left: 0;
 	transition: 1s;
+	@media screen and (max-width: 900px){
+		display: none;
+	}
 	@media screen and (max-width: 600px){
 		background-color: #fff;
 		backdrop-filter: none;
@@ -49,21 +52,26 @@
 		}
 	}
 	&__logo {
-		z-index: 1;
+		z-index: 11;
 		max-width: 179px;
+		position: absolute;
+		top: 12px;
+		left: 15px;
 		@media screen and (max-width: 1366px){
 			cursor: pointer;
 		}
-		@media screen and (max-width: 1024px){
+		@media screen and (max-width: 900px){
 			max-width: 120px;
 		}
 	}
 	&__menu {
 		display: flex;
 		justify-content: center;
+		align-items: center;
 		text-transform: uppercase;
 		margin-left: auto;
 		z-index: 1;
+		min-height: 64px;
 		@media screen and (max-width: 900px){
 			display: none;
 		}
