@@ -3,6 +3,9 @@
 	padding-bottom: 125px;
 	text-align: center;
 	background: #F5F5F5;
+	@media screen and (max-width: 600px) {
+		display: none;
+	}
 	&-heading {
 		font-family: $fontFamily;
 		font-weight: normal;

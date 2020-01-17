@@ -777,15 +777,51 @@ textarea {
 Primary style
 
 -------------------------------- */
+.burger-socials {
+    display: flex;
+    
+    a {
+        position: relative;
+        width: 27px;
+        height: 27px;
+        margin-right: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s;
+        box-sizing: content-box;
+    
+        svg {
+                transition: 0.3s;
+                path {
+                    transition: 0.3s;
+                    fill: white;
+                }
+
+            }
+            &:hover {
+                transition: 0.3s;
+                svg {
+                    transition: 0.3s;
+                    fill: white;
+                    path {
+                        fill: white;
+                    }
+                    circle {
+                        transition: 0.3s;
+                        stroke: white;
+                    }
+                }
+            }
+    }
+}
+
 *, *::after, *::before {
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
   }
   
-  *::after, *::before {
-    content: '';
-  }
   
   body {
     font-size: 100%;
@@ -849,6 +885,7 @@ Primary style
   }
   .cd-nav-trigger .cd-icon::before, .cd-nav-trigger .cd-icon:after {
     /* upper and lower lines of the menu icon */
+    content: '';
     position: absolute;
     top: 0;
     right: 0;
@@ -861,12 +898,15 @@ Primary style
     transition: transform .3s;
   }
   .cd-nav-trigger .cd-icon::before {
+    content: '';
     transform: translateY(-6px) rotate(0deg);
   }
   .cd-nav-trigger .cd-icon::after {
+    content: '';
     transform: translateY(6px) rotate(0deg);
   }
   .cd-nav-trigger::before, .cd-nav-trigger::after {
+    content: '';
     /* 2 rounded colored backgrounds for the menu icon */
     position: absolute;
     top: 0;
@@ -879,21 +919,25 @@ Primary style
     transition-property: transform;
   }
   .cd-nav-trigger::before {
+    content: '';
     background-color: #F15C42;
     transform: scale(1);
     transition-duration: 0.3s;
     transition-delay: 0.4s;
   }
   .cd-nav-trigger::after {
+    content: '';
     background-color: white;
     transform: scale(0);
     transition-duration: 0s;
     transition-delay: 0s;
   }
   .cd-nav-trigger.close-nav::before {
+    content: '';
     transform: scale(0);
   }
   .cd-nav-trigger.close-nav::after {
+    content: '';
     transform: scale(1);
     transition-delay: 0.4s;
   }
@@ -902,12 +946,15 @@ Primary style
     background-color: rgba(255, 255, 255, 0);
   }
   .cd-nav-trigger.close-nav .cd-icon::before, .cd-nav-trigger.close-nav .cd-icon::after {
+    content: '';
     background-color: #F15C42;
   }
   .cd-nav-trigger.close-nav .cd-icon::before {
+    content: '';
     transform: translateY(0) rotate(45deg);
   }
   .cd-nav-trigger.close-nav .cd-icon::after {
+    content: '';
     transform: translateY(0) rotate(-45deg);
   }
   

@@ -16,6 +16,9 @@
         position: absolute;
         top: -250px;
         right: 0;
+        @media screen and (max-width: 900px) {
+			display: none;
+		}
         &.animate {
             animation: top 1.5s forwards;
             animation-timing-function: ease-in-out;
