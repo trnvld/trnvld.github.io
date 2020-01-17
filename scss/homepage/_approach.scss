@@ -1,12 +1,21 @@
-.homepage__approach {
-	padding-top: 91px;
-	padding-bottom: 12px;
+.fixed-bg {
+	position: fixed;
 	background: #fff url(../img/approach-bg.jpg) no-repeat;
 	background-position: top right;
-	background-attachment: fixed;
+	top: 0;
+    left: 0;
+    width: 100%;
+	height: 100%;
+	z-index: -1;
 	@media screen and (max-width: 600px){
 		background: none;
 	}
+}
+.homepage__approach {
+	position: relative;
+	padding-top: 91px;
+	padding-bottom: 12px;
+	
 	&-wrapper {
 		display: flex;
 		flex-direction: column;
