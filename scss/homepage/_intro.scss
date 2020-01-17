@@ -154,9 +154,6 @@
         width: 25px;
         height: 104px;
         background-size: contain;
-        @media screen and (max-width: 900px){
-            display: none;
-        }
         // cursor: pointer;
     }
 }
