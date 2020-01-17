@@ -787,9 +787,7 @@ Primary style
 
 -------------------------------- */
 .burger-info {
-  position: absolute;
-  bottom: 20px;
-  padding-right: 20px;
+  
 }
 
 .burger-socials {
@@ -992,6 +990,8 @@ header {
 
 .cd-primary-nav {
   /* by default it's hidden */
+  display: flex;
+  flex-direction: column;
   position: fixed;
   left: 0;
   top: 0;
@@ -1012,9 +1012,13 @@ header {
   margin: 1.6em 0;
   text-align: left;
   text-transform: capitalize;
+  &:last-child {
+    margin-top: auto;;
+  }
   @media screen and (max-width: 1024px) {
     margin: 20px 0;
   }
+  
 }
 .cd-primary-nav a {
   font-size: 20px;
