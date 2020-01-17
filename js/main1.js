@@ -2,6 +2,7 @@ jQuery(document).ready(function($){
 	var overlayNav = $('.cd-overlay-nav'),
 		overlayContent = $('.cd-overlay-content'),
 		navigation = $('.cd-primary-nav'),
+		body = $('body'),
 		toggleNav = $('.cd-nav-trigger');
 
 	//inizialize navigation and content layers
@@ -22,6 +23,7 @@ jQuery(document).ready(function($){
 				scaleY: 1,
 			}, 500, 'easeInCubic', function(){
 				navigation.addClass('fade-in');
+				body.addClass('fade-in');
 			});
 		} else {
 			//navigation is open - close it and remove navigation layer
@@ -33,6 +35,7 @@ jQuery(document).ready(function($){
 				scaleY: 1,
 			}, 500, 'easeInCubic', function(){
 				navigation.removeClass('fade-in');
+				body.removeClass('fade-in');
 				
 				overlayNav.children('span').velocity({
 					translateZ: 0,

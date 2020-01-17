@@ -78,6 +78,9 @@ body {
   &.preloader-on {
     overflow: hidden;
   }
+  &.fade-in {
+    overflow: hidden;
+  }
 }
 
 .wrapper {
@@ -786,9 +789,6 @@ textarea {
 Primary style
 
 -------------------------------- */
-.burger-info {
-  
-}
 
 .burger-socials {
   display: flex;
