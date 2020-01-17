@@ -44,6 +44,9 @@ img {
     border-radius: 50%;
     user-select: none;
     pointer-events: none;
+    @media screen and (max-width: 900px){
+        display: none;
+    }
 }
 
 .your-cursor4 {
