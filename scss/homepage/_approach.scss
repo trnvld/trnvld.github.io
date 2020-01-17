@@ -5,7 +5,7 @@
 	background-position: top right;
 	background-attachment: fixed;
 	@media screen and (max-width: 600px){
-		background-size: cover;
+		background: none;
 	}
 	&-wrapper {
 		display: flex;
