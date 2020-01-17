@@ -7,15 +7,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
     <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800&display=swap" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/velocity.min.js"></script>
     <script src="js/main1.js"></script>
 </head>
 
 <body class="preloader-on">
+    <script>
+        new WOW().init();
+    </script>
     <div class='your-cursor4'></div>
     <div class='your-cursor4'></div>
     <div class='your-cursor4'></div>
@@ -164,12 +169,12 @@
             <div class="careers">
                 <div class="container">
                     <div class="careers__content">
-                        <h1 class="careers__heading">Careers</h1>
-                        <p>We strive to create positive economic impact and long-term value for our investors. We are looking for self-motivated candidates with research and analysis skills interested in a dynamic stock market environment to take up the following positions in our fast-growing team. 
+                        <h1 class="careers__heading wow fadeInUp" data-wow-duration="2s">Careers</h1>
+                        <p class="wow fadeInUp" data-wow-duration="2s">We strive to create positive economic impact and long-term value for our investors. We are looking for self-motivated candidates with research and analysis skills interested in a dynamic stock market environment to take up the following positions in our fast-growing team. 
                         </p>
                     </div>
                     <div class="careers__list">
-                        <div class="careers__list-element-wrapp">
+                        <div class="careers__list-element-wrapp wow fadeInLeft" data-wow-duration="2s">
                             <div class="careers__list-element">
                                 <img src="img/career/analyst.svg" alt="career-img">
                                 <h2>Investment Analyst</h2>
@@ -177,7 +182,7 @@
                                 <a href="vacancy-analyst.html" class="btn btn-orange">See more >>></a>
                             </div>
                         </div>
-                        <div class="careers__list-element-wrapp">
+                        <div class="careers__list-element-wrapp wow fadeInRight" data-wow-duration="2s">
                             <div class="careers__list-element">
                                 <img src="img/career/trader.svg" alt="career-img">
                                 <h2>Trader</h2>
