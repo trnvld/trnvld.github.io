@@ -54,7 +54,7 @@
 	&__logo {
 		z-index: 11;
 		max-width: 179px;
-		position: absolute;
+		position: fixed;
 		top: 12px;
 		left: 15px;
 		@media screen and (max-width: 1366px){
@@ -62,6 +62,7 @@
 		}
 		@media screen and (max-width: 900px){
 			max-width: 120px;
+			position: absolute;
 		}
 	}
 	&__menu {

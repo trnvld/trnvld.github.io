@@ -1,6 +1,6 @@
 function menuOffset() {
     $(window).scroll(function() {
-        if ($(this).scrollTop() > 10 && $(window).width() < 900) {
+        if ($(this).scrollTop() > 10 && $(window).width() < 600) {
             $('.header').addClass('offset');
         } else {
             $('.header').removeClass('offset');
@@ -205,6 +205,13 @@ $(document).ready(function() {
         animationDuration: '1.5s'
     });
     $("#login-modal-link2").animatedModal({
+        color: 'rgb(6,6,6)',
+        modalTarget: 'loginModal',
+        animatedIn: 'fadeIn',
+        animatedOut: 'fadeOut',
+        animationDuration: '1.5s'
+    });
+    $("#login-modal-link3").animatedModal({
         color: 'rgb(6,6,6)',
         modalTarget: 'loginModal',
         animatedIn: 'fadeIn',
