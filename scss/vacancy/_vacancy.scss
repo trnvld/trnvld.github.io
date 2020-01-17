@@ -43,9 +43,10 @@
         margin-bottom: 30px;
     }
     &__form {
+        margin-right: -120px;
         &-content {
             max-width: 613px;
-            position: absolute;
+            //position: absolute;
             background-color: #F5F5F5;
             color: #060606;
             display: flex;

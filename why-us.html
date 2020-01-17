@@ -184,7 +184,7 @@
                                 <img src="img/team/maxim_koretskiy.jpg" alt="maxim_koretskiy">
                                 <div class="why-us__ceo-img-overlay">
                                     <div class="our-team__people-social">
-                                        <a href="/">
+                                        <a href="mailto:mkoretskiy@blackshieldcapital.ch">
                                             <svg width="36" height="36" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <path fill-rule="evenodd" clip-rule="evenodd"
@@ -196,7 +196,7 @@
                                             </svg>
 
                                         </a>
-                                        <a href="/">
+                                        <a href="https://www.linkedin.com/in/maksimkoretskiy/">
                                             <svg width="36" height="36" viewBox="0 0 28 28" fill="none"
                                                 xmlns="http://www.w3.org/2000/svg">
                                                 <circle cx="14" cy="14" r="13.5" stroke="white"></circle>
@@ -805,13 +805,26 @@
             }]
         });
 
-        $('.slick-active').last().addClass('overlay-enable');
 
-        $('.slick-arrow').on('click', function () {
-            $('.slick-active').removeClass('overlay-enable');
-            $('.slick-active').last().addClass('overlay-enable');
+        $(window).on('load', function () {
+            if ($(window).width() < 600) {
+                $('.slick-active').last().removeClass('overlay-enable');
 
-        })
+                $('.slick-arrow').on('click', function () {
+                    $('.slick-active').removeClass('overlay-enable');
+                    $('.slick-active').last().removeClass('overlay-enable');
+                })
+            } else {
+                $('.slick-active').last().addClass('overlay-enable');
+
+                $('.slick-arrow').on('click', function () {
+                    $('.slick-active').removeClass('overlay-enable');
+                    $('.slick-active').last().addClass('overlay-enable');
+                })
+            }
+        });
+
+
     </script>
     <script src="js/animatedModal.min.js"></script>
 </body>
