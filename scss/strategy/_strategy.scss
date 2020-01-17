@@ -1,122 +1,155 @@
 .strategy {
-    padding-top: 86px;
-    &__top-content {
-        padding: 90px 0;
-        p {
-            font-family: $fontFamily;
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 25px;
-            color: #2F3234;
-            margin-bottom: 30px;
-        }
-        &-heading {
-            font-family: $fontFamily;
-            font-weight: normal;
-            font-size: 36px;
-            line-height: 49px;
-            color: #000000;
-            margin-bottom: 30px;
-        }
+  padding-top: 86px;
+  &__top-content {
+    padding: 50px 0;
+    @media screen and (max-width: 900px) {
+      padding: 0 0 50px 0;
     }
-    &__inovation {
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        padding: 90px 0;
-        &-img {
-            width: 50%;
-            box-shadow: 0px 18px 40px #E4E4E3;
-            margin-right: 120px;
-        }
-        &-text {
-            width: 50%;
-            p {
-                font-family: $fontFamily;
-                font-size: 18px;
-                line-height: 25px;
-                color: #2F3234;
-                margin-bottom: 45px;
-                font-weight: 300;
-            }
-            .btn {
-                margin-bottom: 30px;
-            }
-        }
-        &-heading {
-            font-family: $fontFamily;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 25px;
-            color: #2F3234;
-            margin-bottom: 30px;
-        }
+    p {
+      font-family: $fontFamily;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 25px;
+      color: #2f3234;
+      margin-bottom: 30px;
     }
-    &__middle-content {
-        padding: 90px 0;
-        display: flex;
-        justify-content: space-between;
-        align-items: flex-start;
-        &-text {
-            width: 50%;
-            margin-right: 100px;
-            h2 {
-                font-family: $fontFamily;
-                font-weight: bold;
-                font-size: 18px;
-                line-height: 25px;
-                color: #2F3234;
-                margin-bottom: 35px;
-            }
-            p {
-                font-family: Open Sans;
-                font-weight: 300;
-                font-size: 18px;
-                line-height: 25px;
-                color: #2F3234;
-                margin-bottom: 60px;
-            }
-        }
-        &-img {
-            width: 50%;
-            box-shadow: 0px 18px 40px #E4E4E3;
-        }
+    &-heading {
+      font-family: $fontFamily;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 49px;
+      color: #000000;
+      margin-bottom: 30px;
     }
-    &__products {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-        img {
-            margin-bottom: 35px;
-        }
-        &-section {
-            padding: 60px 0;
-            background-color: #F5F5F5;
-        }
-        &-heading {
-            font-family: $fontFamily;
-            font-weight: normal;
-            font-size: 36px;
-            line-height: 49px;
-            color: #2F3234;
-            margin-bottom: 32px;
-        }
-        &-sub-heading {
-            font-family: $fontFamily;
-            font-weight: bold;
-            font-size: 18px;
-            line-height: 25px;
-            color: #2F3234;
-            margin-bottom: 32px;
-        }
-        p {
-            font-family: $fontFamily;
-            font-weight: 300;
-            font-size: 18px;
-            line-height: 25px;
-            color: #2F3234;
-            margin-bottom: 45px;
-        }
+  }
+  &__inovation {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    padding: 90px 0;
+    @media screen and (max-width: 900px) {
+      padding: 50px 0;
     }
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+    &-img {
+      width: 50%;
+      max-width: 558px;
+      box-shadow: 0px 18px 40px #e4e4e3;
+      margin-right: 120px;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 50px;
+        margin-right: 0;
+        width: 100%;
+      }
+    }
+    &-text {
+      width: 50%;
+      @media screen and (max-width: 768px) {
+        width: 100%;
+      }
+      p {
+        font-family: $fontFamily;
+        font-size: 18px;
+        line-height: 25px;
+        color: #2f3234;
+        margin-bottom: 45px;
+        font-weight: 300;
+      }
+      .btn {
+        margin-bottom: 30px;
+      }
+    }
+    &-heading {
+      font-family: $fontFamily;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      color: #2f3234;
+      margin-bottom: 30px;
+    }
+  }
+  &__middle-content {
+    padding: 90px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @media screen and (max-width: 900px) {
+      padding: 50px 0;
+    }
+    @media screen and (max-width: 768px) {
+      flex-direction: column-reverse;
+    }
+    &-text {
+      width: 50%;
+      margin-right: 100px;
+      @media screen and (max-width: 768px) {
+        margin-right: 0;
+        width: 100%;
+      }
+      h2 {
+        font-family: $fontFamily;
+        font-weight: bold;
+        font-size: 18px;
+        line-height: 25px;
+        color: #2f3234;
+        margin-bottom: 35px;
+      }
+      p {
+        font-family: Open Sans;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 25px;
+        color: #2f3234;
+        margin-bottom: 60px;
+      }
+    }
+    &-img {
+      width: 50%;
+      max-width: 558px;
+      box-shadow: 0px 18px 40px #e4e4e3;
+      @media screen and (max-width: 768px) {
+        margin-bottom: 50px;
+        width: 100%;
+      }
+    }
+  }
+  &__products {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    img {
+      margin-bottom: 35px;
+    }
+    &-section {
+      padding: 60px 0;
+      background-color: #f5f5f5;
+    }
+    &-heading {
+      font-family: $fontFamily;
+      font-weight: normal;
+      font-size: 36px;
+      line-height: 49px;
+      color: #2f3234;
+      margin-bottom: 32px;
+    }
+    &-sub-heading {
+      font-family: $fontFamily;
+      font-weight: bold;
+      font-size: 18px;
+      line-height: 25px;
+      color: #2f3234;
+      margin-bottom: 32px;
+    }
+    p {
+      font-family: $fontFamily;
+      font-weight: 300;
+      font-size: 18px;
+      line-height: 25px;
+      color: #2f3234;
+      margin-bottom: 45px;
+    }
+  }
 }
