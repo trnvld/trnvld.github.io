@@ -1,5 +1,8 @@
 .careers {
   padding-top: 172px;
+  @media screen and (max-width: 900px) {
+    padding-top: 86px;
+  }
   &__content {
     margin-bottom: 50px;
     p {
@@ -24,6 +27,10 @@
     flex-wrap: wrap;
     width: 100%;
     justify-content: space-around;
+    @media screen and (max-width: 748px) {
+      flex-direction: column;
+      align-items: center;
+    }
     &-container {
       display: block;
       width: 100%;
