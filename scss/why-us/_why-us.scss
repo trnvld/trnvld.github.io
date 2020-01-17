@@ -60,6 +60,9 @@
         @media screen and (max-width: 900px) {
           margin-top: 0;
         }
+        @media screen and (max-width: 600px) {
+          text-align: center;
+        }
       }
       p {
         //margin-bottom: 20px;
@@ -69,6 +72,9 @@
         font-weight: 300;
         @media screen and (max-width: 900px) {
           margin-bottom: 50px;
+        }
+        @media screen and (max-width: 600px) {
+          text-align: center;
         }
       }
     }
