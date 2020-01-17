@@ -22,6 +22,11 @@
 	}
 	&-slider {
 		cursor: pointer;
+		.slick-track {
+			@media screen and (max-width: 600px){
+			
+			}
+		}
 		img {
 			width: auto !important;
 			max-height: 75px;

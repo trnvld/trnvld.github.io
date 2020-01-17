@@ -12,6 +12,9 @@
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script src="js/slick.min.js"></script>
     <script src="js/main.js"></script>
+
+    <script src="js/velocity.min.js"></script>
+    <script src="js/main1.js"></script>
 </head>
 
 <body class="preloader-on">
@@ -37,8 +40,28 @@
                     <li class="lang-ru hidden">Ru</li>
                 </ul>
             </div>
+            
         </header>
         <main class="main" id="home">
+            <nav>
+                <ul class="cd-primary-nav">
+                    <li><a href="#0">The team</a></li>
+                    <li><a href="#0">Our services</a></li>
+                    <li><a href="#0">Our projects</a></li>
+                    <li><a href="#0">Start a project</a></li>
+                    <li><a href="#0">Join In</a></li>
+                    <li><a href="#0">Create an account</a></li>
+                </ul>
+            </nav>
+            <div class="cd-overlay-nav">
+                <span></span>
+            </div> <!-- cd-overlay-nav -->
+        
+            <div class="cd-overlay-content">
+                <span></span>
+            </div> <!-- cd-overlay-content -->
+        
+            <a href="#0" class="cd-nav-trigger">Menu<span class="cd-icon"></span></a>
             <div class="preloader">
                 <div class="preload-wrap">
                     <div class="loader">
@@ -573,6 +596,7 @@
                 breakpoint: 420,
                 settings: {
                     slidesToShow: 1,
+                    centerMode: true,
                 }
 
             }]
