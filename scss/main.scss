@@ -589,6 +589,9 @@ textarea {
 .header-login-link {
     font-weight: bold !important;
     color: #F05336 !important;
+    @media screen and (max-width: 900px){
+        color: #ffffff !important;
+    }
     &:hover {
         text-decoration: underline;
     }
@@ -736,20 +739,32 @@ textarea {
     -webkit-transition: 0s;
     -o-transition: 0s;
     transition: 1s;
+    @media screen and (max-width: 600px){
+        justify-content: flex-start;
+    }
     &.visible {
         transition: 1s;
         right: 70px;
+        @media screen and (max-width: 600px){
+            right: 5%;
+        }
     }
     svg {
         transition: 0.3s;
         path {
             transition: 0.3s;
             fill: #ffffff;
+            @media screen and (max-width: 600px){
+                fill: #F15C42;
+            }
         }
         circle {
             transition: 0.3s;
             stroke: #F15C42;
             fill: #F15C42;
+            @media screen and (max-width: 600px){
+                fill: none;
+            }
         }
     }
     &:hover {
@@ -777,8 +792,15 @@ textarea {
 Primary style
 
 -------------------------------- */
+.burger-info {
+    position: absolute;
+    bottom: 20px;
+    padding-right: 20px;
+}
+
 .burger-socials {
     display: flex;
+    margin-bottom: 20px;
     
     a {
         position: relative;
@@ -797,22 +819,25 @@ Primary style
                     transition: 0.3s;
                     fill: white;
                 }
+                stroke {
+                    fill: white;
+                }
 
             }
-            &:hover {
-                transition: 0.3s;
-                svg {
-                    transition: 0.3s;
-                    fill: white;
-                    path {
-                        fill: white;
-                    }
-                    circle {
-                        transition: 0.3s;
-                        stroke: white;
-                    }
-                }
-            }
+    }
+}
+
+.burger-copyright {
+    color: white;
+}
+
+.burger-presentation {
+    display: flex;
+    align-items: center;
+    font-size: 16px !important;
+    margin-bottom: 20px;
+    span {
+        margin-right: 15px;
     }
 }
 
@@ -849,7 +874,7 @@ Primary style
   }
   
   .cd-nav-trigger {
-    top: 18px;
+    top: 12px;
     right: 5%;
     height: 44px;
     width: 44px;
@@ -965,7 +990,7 @@ Primary style
     top: 0;
     height: 100%;
     width: 100%;
-    padding: 80px 5%;
+    padding: 80px 5% 20px 5%;
     z-index: 14;
     background-color: #F15C42;
     overflow: auto;
@@ -983,6 +1008,7 @@ Primary style
     font-size: 1.25rem;
     transition: color 0.2s;
     color: white;
+    cursor: pointer;
   }
   .no-touch .cd-primary-nav a:hover {
     color: #ffffff;
