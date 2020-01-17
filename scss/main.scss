@@ -1004,11 +1004,17 @@ header {
   visibility: hidden;
   opacity: 0;
   transition: visibility 0s, opacity 0.3s;
+  @media screen and (max-width: 1024px) {
+    padding: 30px 5% 20px 5%;
+  }
 }
 .cd-primary-nav li {
   margin: 1.6em 0;
   text-align: left;
   text-transform: capitalize;
+  @media screen and (max-width: 1024px) {
+    margin: 20px 0;
+  }
 }
 .cd-primary-nav a {
   font-size: 20px;
