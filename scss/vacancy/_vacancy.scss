@@ -99,6 +99,7 @@
         border: none;
         border-radius: 0;
         border-bottom: 1px solid black;
+        box-shadow: none;
         @media screen and (max-width: 1024px) {
           min-width: 260px;
         }
@@ -131,6 +132,7 @@
         left: 0;
         bottom: 20px;
         transition: 300ms ease all;
+        text-transform: capitalize;
       }
     }
     .bar {
@@ -213,6 +215,12 @@
       font-size: 12px;
       line-height: 16px;
       color: #2f3234;
+    }
+    &-thankyou {
+      color: #a8df94;
+      font-size: 16px;
+      margin-top: 20px;
+      position: absolute;
     }
   }
 }
