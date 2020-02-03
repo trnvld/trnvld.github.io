@@ -58,30 +58,66 @@ function loginClick() {
 
 function contactClick() {
     var errors = false;
-    if (document.getElementById('form-name').value === '') {
+    let input = {
+        name: document.getElementById('form-name'),
+        company: document.getElementById('form-comp'),
+        email: document.getElementById('form-email'),
+        phone: document.getElementById('form-phone'),
+        country: document.getElementById('form-country'),
+    };
+    let regexp = {
+        email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+        phone: /^\d+$/
+    };
+    if (input.name.value === '') {
         $('#form-name-label').text('Please enter your full name');
         $('#form-name').css('border-bottom-color', '#FF4F1A');
         errors = true;
+    } else {
+        $('#form-name-label').text('Correct!');
+        $('#form-name').css('border-bottom-color', '#a8df94');
     }
-    if (document.getElementById('form-comp').value === '') {
+    if (input.company.value === '') {
         $('#form-comp-label').text('Please enter your company');
         $('#form-comp').css('border-bottom-color', '#FF4F1A');
         errors = true;
+    } else {
+        $('#form-comp-label').text('Correct!');
+        $('#form-comp').css('border-bottom-color', '#a8df94');
     }
-    if (document.getElementById('form-email').value === '') {
+
+    if (input.email.value === '') {
         $('#form-email-label').text('Please enter your email');
         $('#form-email').css('border-bottom-color', '#FF4F1A');
         errors = true;
+    } else if (!regexp.email.test(input.email.value)) {
+        $('#form-email-label').text('Please enter correct email');
+        $('#form-email').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#form-email-label').text('Correct!');
+        $('#form-email').css('border-bottom-color', '#a8df94');
     }
-    if (document.getElementById('form-phone').value === '') {
+
+    if (input.phone.value === '') {
         $('#form-phone-label').text('Please enter your phone');
         $('#form-phone').css('border-bottom-color', '#FF4F1A');
         errors = true;
+    } else if (!regexp.phone.test(input.phone.value)) {
+        $('#form-phone-label').text('Please enter correct phone (only nubmers)');
+        $('#form-phone').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#form-phone-label').text('Correct!');
+        $('#form-phone').css('border-bottom-color', '#a8df94');
     }
-    if (document.getElementById('form-country').value === '') {
+    if (input.country.value === '') {
         $('#form-country-label').text('Please enter your country');
         $('#form-country').css('border-bottom-color', '#FF4F1A');
         errors = true;
+    } else {
+        $('#form-country-label').text('Correct!');
+        $('#form-country').css('border-bottom-color', '#a8df94');
     }
     if (errors) {
         $('#form-btn-contact').css('border-color', '#FF4F1A');
@@ -103,12 +139,118 @@ function contactClick() {
 
             $.ajax({
                 type: "POST",
-                url: "/mail.php",
-                data: $('form').serialize()
+                url: "php/handlers/ContactFormHandler.php",
+                data: $('form').serialize(),
             });
         }, 1500);
     }
 };
+
+// form with file logic (CV - form)
+function contactClickCV() {
+    let form = document.getElementById('cv-form');
+    let input = {
+        name: document.getElementById('cv-form-name'),
+        email: document.getElementById('cv-form-email'),
+        phone: document.getElementById('cv-form-phone'),
+        file: document.getElementById('cv-file-connect'),
+    };
+    let regexp = {
+        email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+        phone: /^\d+$/
+    }
+
+    let formData = new FormData;
+    let errors = false;
+    let fileHint = document.querySelectorAll('label[for="cv-file-connect"]')[0];
+    let fileSVG = {
+        path: document.querySelectorAll('.vacancy__form-file-connect-icon svg path')[0],
+        circle: document.querySelectorAll('.vacancy__form-file-connect-icon svg circle')[0],
+    };
+
+    if (input.name.value === '') {
+        $('#cv-form-name-label').text('Please enter your full name');
+        $('#cv-form-name').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#cv-form-name-label').text('Correct!');
+        $('#cv-form-name').css('border-bottom-color', '#a8df94');
+        formData.append('name', input.name.value);
+    }
+    // email validation
+    if (input.email.value === '') {
+        $('#cv-form-email-label').text('Please enter your email');
+        $('#cv-form-email').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else if (!regexp.email.test(input.email.value)) {
+        $('#cv-form-email-label').text('Please enter correct email');
+        $('#cv-form-email').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#cv-form-email-label').text('Correct!');
+        $('#cv-form-email').css('border-bottom-color', '#a8df94');
+        formData.append('email', input.email.value);
+    }
+    // phone validation
+    if (input.phone.value === '') {
+        $('#cv-form-phone-label').text('Please enter your phone');
+        $('#cv-form-phone').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else if (!regexp.phone.test(input.phone.value)) {
+        $('#cv-form-phone-label').text('Please enter correct phone (only nubmers)');
+        $('#cv-form-phone').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#cv-form-phone-label').text('Correct!');
+        $('#cv-form-phone').css('border-bottom-color', '#a8df94');
+        formData.append('phone', input.phone.value);
+    }
+
+    if (input.file.files.length === 0) {
+
+        fileHint.innerHTML = 'Choose your CV,<br> plsease';
+        fileHint.style.color = '#FF4F1A';
+        fileSVG.path.style.fill = '#FF4F1A';
+        fileSVG.circle.style.stroke = '#FF4F1A';
+        errors = true;
+
+    } else {
+        formData.append('file', input.file.files[0]);
+    }
+
+    if (errors) {
+        $('#cv-form-btn-contact').css('border-color', '#FF4F1A');
+    }
+
+
+    if (!errors) {
+
+        $.ajax({
+            type: "POST",
+            url: "php/handlers/CVFormHandler.php",
+            processData: false,
+            contentType: false,
+            data: formData,
+            success: function (data) {
+
+                fileSVG.path.style.fill = '#000';
+                fileSVG.circle.style.stroke = '#000';
+                fileHint.innerHTML = "Join our team,<br>send your CV to us";
+                fileHint.style.color = '#000';
+                for (let inputKey in input) {
+                    input[inputKey].value = '';
+                    $('#cv-form-'+inputKey+'-label').text(inputKey);
+                    $('#cv-form-'+inputKey).css('border-bottom-color', '#000');
+                }
+                let thankNode = document.createElement("p");
+                thankNode.classList.add('vacancy__form-agreement');
+                thankNode.classList.add('vacancy__form-thankyou');
+                thankNode.innerHTML = 'Thank you, your CV was sent successfully!';
+                form.append(thankNode);
+            }
+        });
+    }
+}
 
 function contactClickRu() {
     var errors = false;
@@ -194,7 +336,66 @@ $(document).on("mousemove", function(e) {
     mouseY = e.pageY;
 });
 
+// file upload state changing
+function fileUploadState() {
+    let fileSVG = {
+        path: document.querySelectorAll('.vacancy__form-file-connect-icon svg path')[0],
+        circle: document.querySelectorAll('.vacancy__form-file-connect-icon svg circle')[0],
+    };
+    let fileInput = document.getElementById('cv-file-connect');
+    let fileHint = document.querySelectorAll('label[for="cv-file-connect"]')[0];
+    if (fileInput) {
+        fileInput.addEventListener('change', function () {
+            fileSVG.path.style.fill = '#a8df94';
+            fileSVG.circle.style.stroke = '#a8df94';
+            fileHint.innerHTML = fileInput.files[0].name;
+            fileHint.style.color = '#a8df94';
+        });
+    }
+}
 
+function subscribeForm() {
+    let submitButton = document.querySelectorAll('.footer-subscribe-form-btn')[0];
+    let subscribeForm = document.querySelectorAll('form.footer-subscribe-form')[0];
+    let subscribeInput = subscribeForm.childNodes[1];
+    let regexp = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    let errors = false;
+    let thankNode = document.createElement("p");
+    thankNode.classList.add('footer-subscribe-thankyou');
+
+    submitButton.addEventListener('click', function (e) {
+        e.preventDefault();
+        if (subscribeInput.value === '') {
+            thankNode.innerHTML = 'Please enter your email';
+            thankNode.classList.add('footer-subscribe-wrong');
+            subscribeForm.append(thankNode);
+            errors = true;
+        } else if (!regexp.test(subscribeInput.value)) {
+            thankNode.innerHTML = 'Please enter correct email';
+            thankNode.classList.add('footer-subscribe-wrong');
+            subscribeForm.append(thankNode);
+            errors = true;
+        } else {
+            thankNode.classList.remove('footer-subscribe-wrong');
+            thankNode.innerHTML = '';
+            errors = false;
+        }
+
+        if (!errors) {
+            $.ajax({
+                type: "POST",
+                url: "php/handlers/SubscribeHandler.php",
+                data: $('form.footer-subscribe-form').serialize(),
+                success: function () {
+                    thankNode.innerHTML = 'Thanks for subscribing!';
+                    subscribeForm.append(thankNode);
+                    subscribeInput.value = '';
+                }
+            });
+        }
+
+    });
+}
 
 $(document).ready(function() {
     $("#login-modal-link").animatedModal({
@@ -247,4 +448,6 @@ $(document).ready(function() {
     slideDownArrow();
     // langChange();
     fullscreenVideo();
+    fileUploadState();
+    subscribeForm();
 });

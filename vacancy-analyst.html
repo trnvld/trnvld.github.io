@@ -124,7 +124,7 @@
                                     </svg>
                                 </a>
                             </div>
-                            <div class="burger-copyright">©2019 <strong>Blackshield Capital Group.</strong> All Rights
+                            <div class="burger-copyright">©2020 <strong>Blackshield Capital Group.</strong> All Rights
                                 Reserved.</div>
                         </div>
                     </li>
@@ -212,29 +212,29 @@
 
                         <div class="vacancy__form-content wow fadeInRight" data-wow-duration="2s" style="visibility:hidden">
                             <div class="modal-content-center">
-                                <form>
+                                <form id="cv-form" enctype="multipart/form-data">
                                     <div class="group">
-                                        <input id="form-name" type="text" required="required" name="name" maxlength="50">
+                                        <input id="cv-form-name" type="text" required="required" name="name" maxlength="50">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label id="form-name-label">Name</label>
+                                        <label id="cv-form-name-label">Name</label>
                                     </div>
 
                                     <div class="group">
-                                        <input id="form-email" type="text" required="required" name="email" maxlength="50">
+                                        <input id="cv-form-email" type="text" required="required" name="email" maxlength="50">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label id="form-email-label">Email</label>
+                                        <label id="cv-form-email-label">Email</label>
                                     </div>
                                     <div class="group">
-                                        <input id="form-phone" type="text" required="required" name="phone" maxlength="50">
+                                        <input id="cv-form-phone" type="text" required="required" name="phone" maxlength="50">
                                         <span class="highlight"></span>
                                         <span class="bar"></span>
-                                        <label id="form-phone-label">Phone</label>
+                                        <label id="cv-form-phone-label">Phone</label>
                                     </div>
                                     <div class="vacancy__form-file-connect">
-                                        <input type="file" id="file-connect">
-                                        <label for="file-connect">Join our team, <br>send your CV to us</label>
+                                        <input type="file" id="cv-file-connect" name="file" required="required" accept=".doc, .docx, .pdf, .jpg, .jpeg, .gif, .png, .text, .ppx, .pptx">
+                                        <label for="cv-file-connect">Join our team, <br>send your CV to us</label>
                                         <div class="vacancy__form-file-connect-icon">
                                             <svg width="48" height="48" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
                                                 <path d="M23.6455 25.1631H21V23.666H23.6455V21H25.1426V23.666H27.7881V25.1631H25.1426V27.7949H23.6455V25.1631Z" fill="black"/>
@@ -243,7 +243,7 @@
                                         </div>
                                     </div>
                                     <p class="vacancy__form-agreement">By submitting your CV, you agree to the processing of personal data in accordance with the “Regulation on Personal Data“</p>
-                                    <button id="form-btn-contact" onclick="contactClick()" type="button" class="btn btn-orange">
+                                    <button id="cv-form-btn-contact" onclick="contactClickCV()" type="button" class="btn btn-orange">
                                         Apply
                                     </button>
                                     <p class="vacancy__form-allowed-files">Allowed file types: doc, docx, pdf, jpg, jpeg, gif, png, text, ppx, pptx. Must be less than 3MB.</p>
@@ -273,7 +273,7 @@
                 <div class="footer-subscribe">
                     <span class="footer-subscribe-text">Subscribe to our newsletter to receive exclusive information about us and our services</span>
                     <form action="/" class="footer-subscribe-form">
-                        <input type="email" placeholder="Enter your e-mail" class="footer-subscribe-form-email">
+                        <input type="email" placeholder="Enter your e-mail" class="footer-subscribe-form-email" name="email">
                         <input type="submit" value="" class="footer-subscribe-form-btn">
                     </form>
                 </div>
@@ -328,7 +328,7 @@
 
 
                         </div>
-                        <div class="footer-copyright">©2019 <strong>Blackshield Capital Group.</strong> All Rights Reserved.</div>
+                        <div class="footer-copyright">©2020 <strong>Blackshield Capital Group.</strong> All Rights Reserved.</div>
                     </div>
                 </div>
             </div>
@@ -440,6 +440,14 @@
                      We will be in touch with you shortly
                 </span>
                     </div>
+                </div>
+                <div class="form-contact-msg">
+                    <img src="img/contact-form-suc.svg" alt="success" />
+                    <span class="form-error-msg-text">
+                        <b>Thank You!</b>
+                        <br />
+                        We will be in touch with you shortly
+                    </span>
                 </div>
             </div>
         </div>
