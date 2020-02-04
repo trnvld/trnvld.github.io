@@ -249,6 +249,17 @@ function contactClickCV() {
                 form.append(thankNode);
             }
         });
+        let successMsg = document.getElementsByClassName('form-success-msg');
+        let successMsgContent = document.getElementById('form-success-msg-content');
+        $(successMsg).fadeIn();
+        $(successMsgContent).addClass('fadeInUp animated');
+        $('body').addClass('fade-in');
+        $('.close-form-success-msg').click(function() {
+            $('body').removeClass('fade-in');
+            $(successMsg).fadeOut(function() {
+                window.location.reload();
+            });
+        });
     }
 }
 

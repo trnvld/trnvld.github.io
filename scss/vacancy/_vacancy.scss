@@ -153,6 +153,9 @@
     .btn {
       cursor: none;
       margin-bottom: 30px;
+      @media screen and (max-width: 1400px) {
+        cursor: pointer;
+      }
     }
     &-file-connect {
       position: relative;
@@ -189,6 +192,7 @@
         line-height: 25px;
         color: #2f3234;
         z-index: 3;
+        word-break: break-all;
       }
       label:hover + div svg {
         transition: 0.3s;
@@ -221,6 +225,51 @@
       font-size: 16px;
       margin-top: 20px;
       position: absolute;
+    }
+  }
+}
+
+.form-success-msg {
+  background: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  width: 100%;
+  height: 100%;
+  display: none;
+  .form-contact-msg {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    color: #060606;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 300;
+    margin: 80px 30px 0 30px;
+    img {
+      margin: 15px 0 13px;
+    }
+    b {
+      font-size: 20px;
+    }
+  }
+  .close-btn {
+    position: absolute;
+    z-index: 2;
+    top: 0px;
+    left: 0;
+    background: white;
+    width: 100%;
+    display: flex;
+    padding: 15px 20px;
+    justify-content: flex-end;
+    height: auto;
+    .close-btn-img {
+      cursor: pointer;
+      width: 34px;
+      margin-top: 20px;
+      margin-right: 100px;
     }
   }
 }
