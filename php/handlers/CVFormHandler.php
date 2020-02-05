@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_FILES['file'])) {
-    $to = "edudukin2@gmail.com";
+    $to = "blackshieldrealestate@gmail.com";
     $from = "support@blackshield.capital";
     $subject = "Новое CV!";
     $message = "Имя пользователя: ".$_POST['name']."\nEmail пользователя ".$_POST['email']."\nТелефон пользователя ".$_POST['phone'];

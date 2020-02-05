@@ -1,6 +1,6 @@
 <?php
 if (isset($_POST['name']) && isset($_POST['company']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['country'])) {
-    $to = 'edudukin2@gmail.com';
+    $to = 'blackshieldrealestate@gmail.com';
     $from = "support@blackshield.capital";
     $subject = 'Новый пользователь';
     $message = "
