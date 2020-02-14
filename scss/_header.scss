@@ -94,7 +94,6 @@
       a {
         position: relative;
         display: block;
-        padding: 5px;
         font-size: 14px;
         line-height: 19px;
         color: #2f3234;
@@ -102,7 +101,7 @@
         font-family: $fontFamily;
         font-weight: 300;
         text-align: center;
-        min-width: 87px;
+        min-width: 92px;
         transition: 0.3s;
         &:hover,
         &.selected {
@@ -134,7 +133,7 @@
       display: block;
       font-size: 14px;
       line-height: 19px;
-      
+      font-weight: bold;
       text-decoration: none;
       font-family: $fontFamily;
       min-width: 30px;
@@ -145,7 +144,7 @@
       }
       &:hover,
       &.selected {
-        font-weight: bold;
+        
         color: #2f3234;
         transition: 0.3s;
       }

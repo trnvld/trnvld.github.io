@@ -260,6 +260,10 @@ function contactClickCV() {
                 window.location.reload();
             });
         });
+        $(successMsg).delay(1500).fadeOut('slow');
+        $(successMsg).fadeOut(function() {
+            window.location.reload();
+        });
     }
 }
 
