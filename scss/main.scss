@@ -998,7 +998,7 @@ header {
   top: 0;
   height: 100%;
   width: 100%;
-  padding: 80px 5% 20px 5%;
+  padding: 30px 5% 20px 5%;
   z-index: 14;
   background-color: #f15c42;
   overflow: auto;
@@ -1008,18 +1008,27 @@ header {
   @media screen and (max-width: 1024px) {
     padding: 30px 5% 20px 5%;
   }
+  .burger-lang {
+    color: white;
+    margin-bottom: 20px;
+    a {
+      font-size: 16px;
+      &.selected {
+        font-weight: bold;
+      }
+    }
+  }
+  .header-login-link {
+    color: white !important;
+  }
 }
 .cd-primary-nav li {
-  margin: 1.6em 0;
+  margin: 18px 0;
   text-align: left;
   text-transform: capitalize;
   &:last-child {
-    margin-top: auto;;
+    margin-top: auto;
   }
-  @media screen and (max-width: 1024px) {
-    margin: 20px 0;
-  }
-  
 }
 .cd-primary-nav a {
   font-size: 20px;
@@ -1038,9 +1047,6 @@ header {
   opacity: 1;
 }
 @media only screen and (min-width: 768px) {
-  .cd-primary-nav li {
-    margin: 2em 0;
-  }
   .cd-primary-nav a {
     font-size: 28px;
     font-size: 1.75rem;
