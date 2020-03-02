@@ -14,6 +14,15 @@
     <script src="https://cdn.jsdelivr.net/npm/typeit@6.0.3/dist/typeit.min.js"></script>
     <script src="js/scale.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-159327349-1"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'UA-159327349-1');
+    </script>
 </head>
 
 <body>
@@ -31,7 +40,7 @@
     <script>
         if (!sessionStorage.getItem('showPreloader')) {
             sessionStorage.setItem('showPreloader', 'true');
-            $(window).on('load', function() {
+            $(window).on('load', function () {
                 $preloader = $('.preloader');
                 $loader = $preloader.find('.preload-wrap');
                 $loader.delay(2000).fadeOut('slow');
@@ -40,7 +49,7 @@
                     strings: 'hello',
                     speed: 100
                 }).go();
-                setTimeout(function() {
+                setTimeout(function () {
                     $('body').removeClass('preloader-on');
                 }, 2000);
             });
@@ -80,22 +89,33 @@
                 <div class="ceo__top-text">
                     <h1 class="wow fadeInLeft" data-wow-duration="2s">Вызов</h1>
                     <div class="ceo__top-text-quote">
-                        <p class="wow fadeInUp" data-wow-duration="2s">Я бросаю вызов страху внутри людей потерять то, что дает им чувство защищенности (деньги, статус, власть, комфорт, достаток, отношения)</p>
+                        <p class="wow fadeInUp" data-wow-duration="2s">Я бросаю вызов страху внутри людей потерять то,
+                            что дает им чувство защищенности (деньги, статус, власть, комфорт, достаток, отношения)</p>
 
                         <strong class="wow fadeInUp" data-wow-duration="2s">Максим Корецкий</strong>
                     </div>
                 </div>
                 <div class="ceo__photo-section">
-                    <img src="img/team/maxim_koretskiy_2.jpg " class="ceo__photo-section-img wow fadeInLeft" alt="maxim_koretskiy" data-wow-duration="2s">
+                    <img src="img/team/maxim_koretskiy_2.jpg " class="ceo__photo-section-img wow fadeInLeft"
+                        alt="maxim_koretskiy" data-wow-duration="2s">
                     <div class="ceo__photo-section-text">
-                        <p class="wow fadeInUp" data-wow-duration="2s">Наверное я в «прошлой или будущей жизни» был дирижёром, трогает меня эта профессия.</p>
+                        <p class="wow fadeInUp" data-wow-duration="2s">Наверное я в «прошлой или будущей жизни» был
+                            дирижёром, трогает меня эта профессия.</p>
 
-                        <p class="wow fadeInUp" data-wow-duration="2s">Чтобы поступить правильно в правильный момент, нужно внимательно слушать тех, с кем вы вместе играете, чтобы понимать, что они собираются сделать. Любое эффективное творческое взаимодействие основано на этом принципе. </p>
+                        <p class="wow fadeInUp" data-wow-duration="2s">Чтобы поступить правильно в правильный момент,
+                            нужно внимательно слушать тех, с кем вы вместе играете, чтобы понимать, что они собираются
+                            сделать. Любое эффективное творческое взаимодействие основано на этом принципе. </p>
 
-                        <p class="wow fadeInUp" data-wow-duration="2s">Чтобы вместе играть отличную музыку, нужно объединить разные навыки, как разные инструменты, импровизировать и в то же время подчинить свой творческий порыв замыслу группы. При этом важно помнить, сколько музыкантов могут хорошо
+                        <p class="wow fadeInUp" data-wow-duration="2s">Чтобы вместе играть отличную музыку, нужно
+                            объединить разные навыки, как разные инструменты, импровизировать и в то же время подчинить
+                            свой творческий порыв замыслу группы. При этом важно помнить, сколько музыкантов могут
+                            хорошо
                             играть вместе.</p>
 
-                        <p class="wow fadeInUp" data-wow-duration="2s">Талантливый дуэт сможет исполнить великолепную импровизацию, так же как и трио или квартет. Но если собрать вместе десять музыкантов, какими бы талантливыми они ни были, скорее всего, они хорошо сыграют вместе только под управлением
+                        <p class="wow fadeInUp" data-wow-duration="2s">Талантливый дуэт сможет исполнить великолепную
+                            импровизацию, так же как и трио или квартет. Но если собрать вместе десять музыкантов,
+                            какими бы талантливыми они ни были, скорее всего, они хорошо сыграют вместе только под
+                            управлением
                             дирижера.
                         </p>
                         <img src="img/conductor.jpg" alt="conductor" class="wow fadeInUp" data-wow-duration="2s">
@@ -103,26 +123,40 @@
                 </div>
                 <div class="ceo__middle-text-section">
                     <h2 class="wow fadeInUp" data-wow-duration="2s">Зачем я принимаю этот вызов?</h2>
-                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы успокоить и защитить, приумножить капитал клиента и создать крепкую систему передачи наследства и гарантировать ее внедрение. Чтобы реализовывать налоговое планирование бизнеса в интересах клиента, обрести и сохранить уверенность
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы успокоить и защитить, приумножить капитал
+                        клиента и создать крепкую систему передачи наследства и гарантировать ее внедрение. Чтобы
+                        реализовывать налоговое планирование бизнеса в интересах клиента, обрести и сохранить
+                        уверенность
                         в завтрашнем дне, забыть о страхе потерять привычный образ жизни, деньги, бизнес.</p>
 
-                    <p class="wow fadeInUp" data-wow-duration="2s">Для того чтобы научиться контролировать и направлять свой страх на генерацию новых смыслов - сохранить свободу. Чтобы делать то, что хочется и не зависеть от политики, людей, страны и чужого мнения, чтобы ничего не сковывало.</p>
+                    <p class="wow fadeInUp" data-wow-duration="2s">Для того чтобы научиться контролировать и направлять
+                        свой страх на генерацию новых смыслов - сохранить свободу. Чтобы делать то, что хочется и не
+                        зависеть от политики, людей, страны и чужого мнения, чтобы ничего не сковывало.</p>
 
-                    <p class="wow fadeInUp" data-wow-duration="2s">Быть в правильном окружении и создавать ценность внутри его, в жизни собственника денег всегда оставался драйв и пассивный доход, чтобы никогда более собственник денег не ощущал себя бедным.</p>
+                    <p class="wow fadeInUp" data-wow-duration="2s">Быть в правильном окружении и создавать ценность
+                        внутри его, в жизни собственника денег всегда оставался драйв и пассивный доход, чтобы никогда
+                        более собственник денег не ощущал себя бедным.</p>
 
                     <p class="wow fadeInUp" data-wow-duration="2s">Чтобы собственник денег был спокоен.</p>
 
-                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы сохранить и приумножить заработанное, видеть перспективы и смело ставить на долгосрочные цели, научиться играть в длинную и зарабатывать умом.</p>
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы сохранить и приумножить заработанное, видеть
+                        перспективы и смело ставить на долгосрочные цели, научиться играть в длинную и зарабатывать
+                        умом.</p>
 
-                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы помочь собственнику увидеть новые горизонты,позволить быть визионером и заботится о масштабировании бизнеса, быть полезным и создавать ценность с превышением для клиентов.</p>
+                    <p class="wow fadeInUp" data-wow-duration="2s">Чтобы помочь собственнику увидеть новые
+                        горизонты,позволить быть визионером и заботится о масштабировании бизнеса, быть полезным и
+                        создавать ценность с превышением для клиентов.</p>
                 </div>
                 <div class="ceo__idea-section">
                     <div class="ceo__idea-section-text">
                         <h2 class="wow fadeInLeft" data-wow-duration="2s">Идея</h2>
-                        <p class="wow fadeInLeft" data-wow-duration="2s">Счастье, как цель, объект дискуссий, размышлений и исследования появляется в последнее на многих форумах и конференциях, книгах.</p>
+                        <p class="wow fadeInLeft" data-wow-duration="2s">Счастье, как цель, объект дискуссий,
+                            размышлений и исследования появляется в последнее на многих форумах и конференциях, книгах.
+                        </p>
                     </div>
                     <div class="ceo__idea-section-img">
-                        <img src="img/team/maxim_koretskiy_3.jpg" alt="maxim_koretskiy" class="wow fadeInRight" data-wow-duration="1s">
+                        <img src="img/team/maxim_koretskiy_3.jpg" alt="maxim_koretskiy" class="wow fadeInRight"
+                            data-wow-duration="1s">
                     </div>
                 </div>
             </div>
