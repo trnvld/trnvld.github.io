@@ -1,0 +1,50 @@
+.page404 {
+  padding: 172px 0 86px 0;
+  @media screen and (max-width: 600px) {
+    padding: 120px 0 45px 0;
+  }
+  &-main {
+    background: url(../img/terms-bg.jpg) no-repeat;
+    background-size: cover;
+    background-position: bottom;
+  }
+  &__content {
+    p {
+      font-family: $fontFamily;
+      font-weight: 300;
+      font-size: 36px;
+      line-height: 49px;
+      color: #2F3234;
+      min-height: 640px;
+      @media screen and (max-width: 768px) {
+        min-height: 400px;
+        font-size: 32px;
+        line-height: 42px;
+      }
+      @media screen and (max-width: 600px) {
+        min-height: 200px;
+        font-size: 26px;
+        line-height: 30px;
+      }
+    }
+  }
+
+  &__heading {
+    font-family: $fontFamily;
+    font-weight: normal;
+    font-size: 144px;
+    line-height: 196px;
+    display: flex;
+    align-items: flex-end;
+    color: #000000;
+    margin-bottom: 32px;
+    @media screen and (max-width: 768px) {
+      font-size: 120px;
+      line-height: 160px;
+    }
+    @media screen and (max-width: 600px) {
+      font-size: 100px;
+      line-height: 140px;
+    }
+  }
+}
