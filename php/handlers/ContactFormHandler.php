@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['name']) && isset($_POST['company']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['country'])) {
-    $to = 'info@blackshield.fund';
-    $from = "support@blackshield.capital";
+    $to = 'vlad.terniuk@gmail.com';
+    $from = "vlad.terniuk@gmail.com";
     $subject = 'Новый пользователь';
     $message = "
         Имя: $_POST[name]
