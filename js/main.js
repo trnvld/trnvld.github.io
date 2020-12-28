@@ -154,6 +154,7 @@ function contactClickCV() {
         email: document.getElementById('cv-form-email'),
         phone: document.getElementById('cv-form-phone'),
         file: document.getElementById('cv-file-connect'),
+        type: document.getElementById('cv-vacancy-type'),
     };
     let regexp = {
         email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
@@ -216,6 +217,10 @@ function contactClickCV() {
 
     } else {
         formData.append('file', input.file.files[0]);
+    }
+
+    if (input.type.textContent.length) {
+        formData.append('type', input.type.textContent);
     }
 
     if (errors) {

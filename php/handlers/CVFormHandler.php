@@ -1,8 +1,8 @@
 <?php
-if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_FILES['file'])) {
+if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_FILES['file']) && isset($_FILES['type'])) {
     $to = "info@blackshield.fund";
     $from = "support@blackshield.capital";
-    $subject = "Новое CV!";
+    $subject = "Новое CV! ".$_POST['type'].;
     $message = "Имя пользователя: ".$_POST['name']."\nEmail пользователя ".$_POST['email']."\nТелефон пользователя ".$_POST['phone'];
 
     $boundary = md5(date('r', time()));
