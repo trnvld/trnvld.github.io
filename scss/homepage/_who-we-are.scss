@@ -13,16 +13,9 @@
 		float: right;
 		padding: 0 0 30px 30px;
 		position: relative;
-		width: 657px;
-		height: 368px;
-		overflow: hidden;
 		@media screen and (max-width: 900px){
             display: none;
         }
-		video {
-			position: absolute;
-			top: -35px;
-		}
 	}
 	p {
 		font-family: $fontFamily;
@@ -41,7 +34,7 @@
 		position: absolute;
 		top: 50%;
 		right: 50%;
-		transform: translate(50%,-50%);
+		transform: translate(77px,-76px);
 		z-index: 1;
 		svg {
 			transition: 0.3s;
