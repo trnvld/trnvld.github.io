@@ -1,7 +1,7 @@
 <?php
 if (isset($_POST['email'])) {
-    $to = 'vlad.terniuk@gmail.com';
-    $from = "vlad.terniuk@gmail.com";
+    $to = 'info@blackshield.fund';
+    $from = "support@blackshield.capital";
     $subject = 'Новая подписка';
     $message = "Почта: $_POST[email]";
 
