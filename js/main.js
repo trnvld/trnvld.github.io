@@ -151,10 +151,11 @@ function contactClickCV() {
     let form = document.getElementById('cv-form');
     let input = {
         name: document.getElementById('cv-form-name'),
+        surname: document.getElementById('cv-form-surname'),
         email: document.getElementById('cv-form-email'),
         phone: document.getElementById('cv-form-phone'),
-        file: document.getElementById('cv-file-connect'),
         type: document.getElementById('cv-vacancy-type'),
+        file: document.getElementById('cv-file-connect'),
     };
     let regexp = {
         email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
@@ -170,13 +171,23 @@ function contactClickCV() {
     };
 
     if (input.name.value === '') {
-        $('#cv-form-name-label').text('Please enter your full name');
+        $('#cv-form-name-label').text('Please enter your first name');
         $('#cv-form-name').css('border-bottom-color', '#FF4F1A');
         errors = true;
     } else {
         $('#cv-form-name-label').text('Correct!');
         $('#cv-form-name').css('border-bottom-color', '#a8df94');
         formData.append('name', input.name.value);
+    }
+
+    if (input.surname.value === '') {
+        $('#cv-form-surname-label').text('Please enter your last name');
+        $('#cv-form-surname').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#cv-form-surname-label').text('Correct!');
+        $('#cv-form-surname').css('border-bottom-color', '#a8df94');
+        formData.append('surname', input.surname.value);
     }
     // email validation
     if (input.email.value === '') {
@@ -207,6 +218,11 @@ function contactClickCV() {
         formData.append('phone', input.phone.value);
     }
 
+
+    if (input.type.textContent.length) {
+        formData.append('type', input.type.textContent);
+    }
+
     if (input.file.files.length === 0) {
 
         fileHint.innerHTML = 'Choose your CV,<br> plsease';
@@ -219,9 +235,6 @@ function contactClickCV() {
         formData.append('file', input.file.files[0]);
     }
 
-    if (input.type.textContent.length) {
-        formData.append('type', input.type.textContent);
-    }
 
     if (errors) {
         $('#cv-form-btn-contact').css('border-color', '#FF4F1A');
