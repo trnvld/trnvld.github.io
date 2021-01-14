@@ -1,10 +1,11 @@
 <?php
-if (isset($_POST['name']) && isset($_POST['company']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['country'])) {
+if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['company']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['country'])) {
     $to = 'info@blackshield.fund';
     $from = "support@blackshield.capital";
-    $subject = 'Новый пользователь';
+    $subject = 'Новый контакт';
     $message = "
         Имя: $_POST[name]
+        Фамилия: $_POST[surname]
         Компания: $_POST[company]
         Почта: $_POST[email]
         Телефон: $_POST[phone]
