@@ -55,11 +55,11 @@ function loginClick() {
     }, 1000);
 };
 
-
 function contactClick() {
     var errors = false;
     let input = {
         name: document.getElementById('form-name'),
+        surname: document.getElementById('form-surname'),
         company: document.getElementById('form-comp'),
         email: document.getElementById('form-email'),
         phone: document.getElementById('form-phone'),
@@ -70,13 +70,23 @@ function contactClick() {
         phone: /^\d+$/
     };
     if (input.name.value === '') {
-        $('#form-name-label').text('Please enter your full name');
+        $('#form-name-label').text('Please enter your first name');
         $('#form-name').css('border-bottom-color', '#FF4F1A');
         errors = true;
     } else {
         $('#form-name-label').text('Correct!');
         $('#form-name').css('border-bottom-color', '#a8df94');
     }
+
+    if (input.name.value === '') {
+        $('#form-surname-label').text('Please enter your second name');
+        $('#form-surname').css('border-bottom-color', '#FF4F1A');
+        errors = true;
+    } else {
+        $('#form-name-label').text('Correct!');
+        $('#form-name').css('border-bottom-color', '#a8df94');
+    }
+
     if (input.company.value === '') {
         $('#form-comp-label').text('Please enter your company');
         $('#form-comp').css('border-bottom-color', '#FF4F1A');
@@ -223,7 +233,7 @@ function contactClickCV() {
         formData.append('type', input.type.textContent);
     }
 
-    if (input.file.files.length === 0) {
+    if (input.file.files.length === 0 ) {
 
         fileHint.innerHTML = 'Choose your CV,<br> plsease';
         fileHint.style.color = '#FF4F1A';
@@ -231,6 +241,12 @@ function contactClickCV() {
         fileSVG.circle.style.stroke = '#FF4F1A';
         errors = true;
 
+    } else if (input.file.files[0].size / 1024 / 1024 > 4) {
+        fileHint.innerHTML = 'Uploaded file is to large';
+        fileHint.style.color = '#FF4F1A';
+        fileSVG.path.style.fill = '#FF4F1A';
+        fileSVG.circle.style.stroke = '#FF4F1A';
+        errors = true;
     } else {
         formData.append('file', input.file.files[0]);
     }
@@ -455,12 +471,14 @@ $(document).ready(function() {
 
     if ($("#form-name").length) {
         $("#form-name").attr("name", "name");
+        $("#form-surname").attr("name", "surname");
         $("#form-comp").attr("name", "company");
         $("#form-email").attr("name", "email");
         $("#form-phone").attr("name", "phone");
         $("#form-country").attr("name", "country");
 
         $("#form-name").attr("maxlength", "50");
+        $("#form-surname").attr("maxlength", "50");
         $("#form-comp").attr("maxlength", "50");
         $("#form-email").attr("maxlength", "50");
         $("#form-phone").attr("maxlength", "50");
