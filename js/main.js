@@ -69,6 +69,7 @@ function contactClick() {
         email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
         phone: /^\d+$/
     };
+
     if (input.name.value === '') {
         $('#form-name-label').text('Please enter your first name');
         $('#form-name').css('border-bottom-color', '#FF4F1A');
@@ -78,13 +79,13 @@ function contactClick() {
         $('#form-name').css('border-bottom-color', '#a8df94');
     }
 
-    if (input.name.value === '') {
-        $('#form-surname-label').text('Please enter your second name');
+    if (input.surname.value === '') {
+        $('#form-surname-label').text('Please enter your last name');
         $('#form-surname').css('border-bottom-color', '#FF4F1A');
         errors = true;
     } else {
-        $('#form-name-label').text('Correct!');
-        $('#form-name').css('border-bottom-color', '#a8df94');
+        $('#form-surname-label').text('Correct!');
+        $('#form-surname').css('border-bottom-color', '#a8df94');
     }
 
     if (input.company.value === '') {
@@ -141,18 +142,20 @@ function contactClick() {
         $('#form-btn-contact').css('display', 'none');
         $(target).removeClass('animated');
         $(target).removeClass('fadeInUp');
-        setTimeout(function() {
-            $('#contactModal .wrapper').css('display', 'none');
-            $('#contactModal .modal-login-heading').css('display', 'none');
-            $(target).css('visibility', 'visible');
-            $(target).addClass('animated fadeInUp');
-
-            $.ajax({
-                type: "POST",
-                url: "php/handlers/ContactFormHandler.php",
-                data: $('form').serialize(),
-            });
-        }, 1500);
+        $.ajax({
+            type: "POST",
+            url: "php/handlers/ContactFormHandler.php",
+            data: $('form').serialize(),
+            success: function () {
+                $('#contactModal .wrapper').css('display', 'none');
+                $('#contactModal .modal-login-heading').css('display', 'none');
+            }
+        });
+        $(target).css('visibility', 'visible');
+        $(target).addClass('animated fadeInUp');
+        $(target).delay(2500).fadeOut(function() {
+            window.location.reload();
+        });
     }
 };
 
