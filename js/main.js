@@ -17,13 +17,6 @@ function slideDownArrow() {
     });
 }
 
-// function langChange() {
-//     $('.header__language').click(function() {
-//         $('.lang-en').toggleClass('hidden');
-//         $('.lang-ru').toggleClass('hidden');
-//     });
-// }
-
 function fullscreenVideo() {
     $('.video-arrow').click(function() {
         event.preventDefault();
@@ -160,7 +153,19 @@ function contactClick() {
 };
 
 // form with file logic (CV - form)
+let defaultLabels;
+$(document).ready(function() {
+    defaultLabels = {
+        name: document.getElementById('cv-form-name-label').innerHTML,
+        surname: document.getElementById('cv-form-surname-label').innerHTML,
+        email: document.getElementById('cv-form-email-label').innerHTML,
+        phone: document.getElementById('cv-form-phone-label').innerHTML,
+        file: document.querySelectorAll('label[for="cv-file-connect"]')[0].innerHTML
+    };
+});
+
 function contactClickCV() {
+
     let form = document.getElementById('cv-form');
     let input = {
         name: document.getElementById('cv-form-name'),
@@ -170,6 +175,7 @@ function contactClickCV() {
         type: document.getElementById('cv-vacancy-type'),
         file: document.getElementById('cv-file-connect'),
     };
+
     let regexp = {
         email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
         phone: /^\d+$/
@@ -286,77 +292,38 @@ function contactClickCV() {
                 form.append(thankNode);
             }
         });
-        let successMsg = document.getElementsByClassName('form-success-msg');
-        let successMsgContent = document.getElementById('form-success-msg-content');
-        $(successMsg).fadeIn();
-        $(successMsgContent).addClass('fadeInUp animated');
-        $('body').addClass('fade-in');
-        $('.close-form-success-msg').click(function() {
-            $('body').removeClass('fade-in');
-            $(successMsg).fadeOut(function() {
-                window.location.reload();
-            });
-        });
-        $(successMsg).delay(1500).fadeOut('slow');
-        $(successMsg).fadeOut(function() {
-            window.location.reload();
+
+        let successMsgContainer = document.getElementById('form-msg-container');
+        let vacancyMsgContainer = document.getElementById('vacancy-container');
+        $(successMsgContainer).css("display", "flex").hide().fadeIn();
+        $('body,html').animate({
+            scrollTop: 0
+        }, 800);
+        $(vacancyMsgContainer).fadeOut();
+        $(successMsgContainer).addClass('fadeInUp animated');
+        $(successMsgContainer).delay(3000).fadeOut('slow');
+        $(successMsgContainer).fadeOut(function() {
+
+            $('#cv-form-name-label').text(defaultLabels.name)
+            $('#cv-form-name').css('border-bottom-color', '#000000');
+            $('#cv-form-surname-label').text(defaultLabels.surname);
+            $('#cv-form-surname').css('border-bottom-color', '#000000');
+            $('#cv-form-email-label').text(defaultLabels.email);
+            $('#cv-form-email').css('border-bottom-color', '#000000');
+            $('#cv-form-phone-label').text(defaultLabels.phone);
+            $('#cv-form-phone').css('border-bottom-color', '#000000');
+
+            fileHint.innerHTML = defaultLabels.file;
+            fileHint.style.color = '#000000';
+            fileSVG.path.style.fill = '#000000';
+            fileSVG.circle.style.stroke = '#000000';
+
+            $(form).trigger("reset");
+            $(vacancyMsgContainer).fadeIn();
         });
     }
 }
 
-function contactClickRu() {
-    var errors = false;
-    if (document.getElementById('form-name').value === '') {
-        $('#form-name-label').text('Пожалуйста, введите полное имя');
-        $('#form-name').css('border-bottom-color', '#FF4F1A');
-        errors = true;
-    }
-    if (document.getElementById('form-comp').value === '') {
-        $('#form-comp-label').text('Пожалуйста, введите компанию');
-        $('#form-comp').css('border-bottom-color', '#FF4F1A');
-        errors = true;
-    }
-    if (document.getElementById('form-email').value === '') {
-        $('#form-email-label').text('Пожалуйста, введите email');
-        $('#form-email').css('border-bottom-color', '#FF4F1A');
-        errors = true;
-    }
-    if (document.getElementById('form-phone').value === '') {
-        $('#form-phone-label').text('Пожалуйста, введите телефон');
-        $('#form-phone').css('border-bottom-color', '#FF4F1A');
-        errors = true;
-    }
-    if (document.getElementById('form-country').value === '') {
-        $('#form-country-label').text('Пожалуйста, введите страну');
-        $('#form-country').css('border-bottom-color', '#FF4F1A');
-        errors = true;
-    }
-    if (errors) {
-        $('#form-btn-contact').css('border-color', '#FF4F1A');
-    }
-    if (!errors) {
-        $('#contactModal .wrapper').addClass('animated fadeOut');
-        $('#contactModal .modal-login-heading').addClass('animated fadeOut');
-
-        var target = '.form-contact-msg';
-        $(target).css('visibility', 'hidden');
-        $('#form-btn-contact').css('display', 'none');
-        $(target).removeClass('animated');
-        $(target).removeClass('fadeInUp');
-        setTimeout(function() {
-            $('#contactModal .wrapper').css('display', 'none');
-            $('#contactModal .modal-login-heading').css('display', 'none');
-            $(target).css('visibility', 'visible');
-            $(target).addClass('animated fadeInUp');
-
-            $.ajax({
-                type: "POST",
-                url: "/mail.php",
-                data: $('form').serialize()
-            });
-        }, 1500);
-    }
-};
 
 $(document)
     .mousemove(function(e) {
