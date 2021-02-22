@@ -814,6 +814,9 @@ Primary style
       path {
         transition: 0.3s;
         fill: white;
+        &.orange {
+          fill: #f15c42;;
+        }
       }
       stroke {
         fill: white;
