@@ -9,6 +9,12 @@
     @media screen and (max-width: 1024px) {
       flex-direction: column;
     }
+    &#form-msg-container {
+      display: none;
+      min-height: 60vh;
+      justify-content: center;
+      align-items: center;
+    }
   }
   &__content {
     margin-right: 25px;
@@ -231,28 +237,33 @@
 
 .form-success-msg {
   background: white;
-  position: fixed;
+  //position: fixed;
   top: 0;
   left: 0;
   z-index: 999;
   width: 100%;
   height: 100%;
-  display: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   .form-contact-msg {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     color: #060606;
-    font-size: 16px;
-    line-height: 24px;
     font-weight: 300;
-    margin: 80px 30px 0 30px;
+    font-size: 18px;
+    line-height: 25px;
     img {
       margin: 15px 0 13px;
     }
     b {
-      font-size: 20px;
+      display: block;
+      font-weight: normal;
+      font-size: 24px;
+      line-height: 33px;
+      margin-bottom: 24px;
     }
   }
   .close-btn {
