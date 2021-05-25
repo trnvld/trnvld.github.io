@@ -59,7 +59,7 @@ function contactClick() {
         country: document.getElementById('form-country'),
     };
     let regexp = {
-        email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+        email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,15})$/,
         phone: /^\d+$/
     };
 
@@ -177,7 +177,7 @@ function contactClickCV() {
     };
 
     let regexp = {
-        email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/,
+        email: /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,15})$/,
         phone: /^\d+$/
     }
 
@@ -377,7 +377,7 @@ function subscribeForm() {
     let submitButton = document.querySelectorAll('.footer-subscribe-form-btn')[0];
     let subscribeForm = document.querySelectorAll('form.footer-subscribe-form')[0];
     let subscribeInput = subscribeForm.childNodes[1];
-    let regexp = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/;
+    let regexp = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,15})$/;
     let errors = false;
     let thankNode = document.createElement("p");
     thankNode.classList.add('footer-subscribe-thankyou');
