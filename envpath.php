@@ -1,3 +1,3 @@
 <?php
-    $envpath = 'C:\xampp\htdocs';
+    $envpath = '/home/credentials';
 ?>
