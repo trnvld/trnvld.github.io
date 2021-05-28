@@ -20,7 +20,7 @@ $mail->SMTPKeepAlive = true;
 $mail->SMTPAuth = true;
 
 $mail->setFrom('support@blackshield.capital', 'BlackShield Capital');
-$mail->Subject = 'Новое CV!';
+$mail->Subject = 'Новое CV! '.$_POST['type'];
 
 $receiver = ['email' => $_ENV['RECEIVER_EMAIL'], 'name' => 'BlackShield Capital'];
 
@@ -34,8 +34,8 @@ if (array_key_exists('file', $_FILES)) {
       move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
       $mail->addAttachment($uploadfile, $_FILES['file']['name']);
 
-      $mail->Body = "<p>Name: {$_POST['name']}</p><p>Surname: {$_POST['surname']}</p><p> Email: {$_POST['email']}</p><p>Phone: {$_POST['phone']}</p>";
-      $mail->AltBody = "New email! \n With CV attachment";
+      $mail->Body = "<p>Имя: {$_POST['name']}</p><p>Фамилия: {$_POST['surname']}</p><p>Email пользователя: {$_POST['email']}</p><p>Телефон пользователя: {$_POST['phone']}</p>";
+            $mail->AltBody = "Имя: ".$_POST['name']."\nФамилия: ".$_POST['surname']."\nEmail пользователя ".$_POST['email']."\nТелефон пользователя ".$_POST['phone'];
       echo json_encode(array('success' => true));
       $mail->send();
   } else {

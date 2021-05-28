@@ -35,7 +35,6 @@ if (array_key_exists('file', $_FILES)) {
       $mail->addAttachment($uploadfile, $_FILES['file']['name']);
 
       $mail->Body = "<p>Имя: {$_POST['name']}</p><p>Фамилия: {$_POST['surname']}</p><p>Email пользователя: {$_POST['email']}</p><p>Телефон пользователя: {$_POST['phone']}</p>";
-      $mail->AltBody = "New email! \n With CV attachment";
       $mail->AltBody = "Имя: ".$_POST['name']."\nФамилия: ".$_POST['surname']."\nEmail пользователя ".$_POST['email']."\nТелефон пользователя ".$_POST['phone'];
       echo json_encode(array('success' => true));
       $mail->send();
