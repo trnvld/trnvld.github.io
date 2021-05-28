@@ -1,5 +1,5 @@
 function menuOffset() {
-    $(window).scroll(function() {
+    $(window).scroll(function () {
         if ($(this).scrollTop() > 10 && $(window).width() < 600) {
             $('.header').addClass('offset');
         } else {
@@ -9,21 +9,21 @@ function menuOffset() {
 }
 
 function slideDownArrow() {
-    $('.homepage__intro-arrow').click(function() {
+    $('.homepage__intro-arrow').click(function () {
         $('html,body').animate({
-                scrollTop: $(".homepage__who-we-are").offset().top - 100
+                scrollTop: $('.homepage__who-we-are').offset().top - 100
             },
             'slow');
     });
 }
 
 function fullscreenVideo() {
-    $('.video-arrow').click(function() {
+    $('.video-arrow').click(function () {
         event.preventDefault();
         $('.video-wrapper-bg, .video-wrapper').addClass('open');
         $('.vidoe-iframe').attr('src', $('.vidoe-iframe').data('src'));
     });
-    $('.video-close, .video-wrapper-bg, .video-wrapper').click(function() {
+    $('.video-close, .video-wrapper-bg, .video-wrapper').click(function () {
         $('.video-wrapper-bg, .video-wrapper').removeClass('open');
         $('.vidoe-iframe').attr('src', $('.vidoe-iframe').data('src1'));
     });
@@ -33,6 +33,7 @@ function fullscreenVideo() {
             $('.video-wrapper-bg, .video-wrapper').removeClass('open');
         }
     }
+
     document.addEventListener('keydown', modalClose);
 }
 
@@ -41,7 +42,7 @@ function loginClick() {
     $(target).css('visibility', 'hidden');
     $(target).removeClass('animated');
     $(target).removeClass('fadeInUp');
-    setTimeout(function() {
+    setTimeout(function () {
         $(target).css('visibility', 'visible');
         $(target).addClass('animated fadeInUp');
         $('.login-btns #form-btn').css('border-color', '#FF4F1A')
@@ -136,8 +137,8 @@ function contactClick() {
         $(target).removeClass('animated');
         $(target).removeClass('fadeInUp');
         $.ajax({
-            type: "POST",
-            url: "php/handlers/ContactFormHandler.php",
+            type: 'POST',
+            url: 'php/handlers/ContactFormHandler.php',
             data: $('form').serialize(),
             success: function () {
                 $('#contactModal .wrapper').css('display', 'none');
@@ -146,7 +147,7 @@ function contactClick() {
         });
         $(target).css('visibility', 'visible');
         $(target).addClass('animated fadeInUp');
-        $(target).delay(2500).fadeOut(function() {
+        $(target).delay(2500).fadeOut(function () {
             window.location.reload();
         });
     }
@@ -154,7 +155,7 @@ function contactClick() {
 
 // form with file logic (CV - form)
 let defaultLabels;
-$(document).ready(function() {
+$(document).ready(function () {
     defaultLabels = {
         name: document.getElementById('cv-form-name-label').innerHTML,
         surname: document.getElementById('cv-form-surname-label').innerHTML,
@@ -242,7 +243,7 @@ function contactClickCV() {
         formData.append('type', input.type.textContent);
     }
 
-    if (input.file.files.length === 0 ) {
+    if (input.file.files.length === 0) {
 
         fileHint.innerHTML = 'Choose your CV,<br> plsease';
         fileHint.style.color = '#FF4F1A';
@@ -267,73 +268,95 @@ function contactClickCV() {
 
 
     if (!errors) {
-
+        let buttonText = document.getElementById('cv-form-btn-contact').innerText;
+        if (buttonText === 'Прикрепить') {
+            document.getElementById('cv-form-btn-contact').innerText = 'Отправка...'
+        } else {
+            document.getElementById('cv-form-btn-contact').innerText = 'Sending...'
+        }
         $.ajax({
-            type: "POST",
-            url: "php/handlers/CVFormHandler.php",
+            type: 'POST',
+            url: 'php/handlers/CVFormHandler.php',
             processData: false,
             contentType: false,
             data: formData,
-            success: function (data) {
+            success: function (response) {
+                if (response) {
+                    let thankNode = document.createElement('p');
+                    thankNode.classList.add('vacancy__form-agreement');
+                    thankNode.classList.add('vacancy__form-thankyou');
+                    thankNode.innerHTML = 'Thank you, your CV was sent successfully!';
+                    form.append(thankNode);
 
-                fileSVG.path.style.fill = '#000';
-                fileSVG.circle.style.stroke = '#000';
-                fileHint.innerHTML = "Join our team,<br>send your CV to us";
-                fileHint.style.color = '#000';
-                for (let inputKey in input) {
-                    input[inputKey].value = '';
-                    $('#cv-form-'+inputKey+'-label').text(inputKey);
-                    $('#cv-form-'+inputKey).css('border-bottom-color', '#000');
+                    fileSVG.path.style.fill = '#000';
+                    fileSVG.circle.style.stroke = '#000';
+                    fileHint.innerHTML = 'Join our team,<br>send your CV to us';
+                    fileHint.style.color = '#000';
+                    for (let inputKey in input) {
+                        input[inputKey].value = '';
+                        $('#cv-form-' + inputKey + '-label').text(inputKey);
+                        $('#cv-form-' + inputKey).css('border-bottom-color', '#000');
+                    }
+                    document.getElementById('cv-form-btn-contact').innerText = buttonText;
+
+                    let successMsgContainer = document.getElementById('form-msg-container');
+                    let vacancyMsgContainer = document.getElementById('vacancy-container');
+                    $(successMsgContainer).css('display', 'flex').hide().fadeIn();
+                    $('body,html').animate({
+                        scrollTop: 0
+                    }, 800);
+                    $(vacancyMsgContainer).fadeOut();
+                    $(successMsgContainer).addClass('fadeInUp animated');
+                    $(successMsgContainer).delay(3000).fadeOut('slow');
+                    $(successMsgContainer).fadeOut(function () {
+
+                        $('#cv-form-name-label').text(defaultLabels.name)
+                        $('#cv-form-name').css('border-bottom-color', '#000000');
+                        $('#cv-form-surname-label').text(defaultLabels.surname);
+                        $('#cv-form-surname').css('border-bottom-color', '#000000');
+                        $('#cv-form-email-label').text(defaultLabels.email);
+                        $('#cv-form-email').css('border-bottom-color', '#000000');
+                        $('#cv-form-phone-label').text(defaultLabels.phone);
+                        $('#cv-form-phone').css('border-bottom-color', '#000000');
+
+                        fileHint.innerHTML = defaultLabels.file;
+                        fileHint.style.color = '#000000';
+                        fileSVG.path.style.fill = '#000000';
+                        fileSVG.circle.style.stroke = '#000000';
+
+                        $(form).trigger('reset');
+                        $(vacancyMsgContainer).fadeIn();
+                    });
+                } else {
+                    fileSVG.path.style.fill = '#000';
+                    fileSVG.circle.style.stroke = '#000';
+                    fileHint.innerHTML = 'Join our team,<br>send your CV to us';
+                    fileHint.style.color = '#000';
+                    for (let inputKey in input) {
+                        input[inputKey].value = '';
+                        $('#cv-form-' + inputKey + '-label').text(inputKey);
+                        $('#cv-form-' + inputKey).css('border-bottom-color', '#000');
+                    }
+                    document.getElementById('cv-form-btn-contact').innerText = buttonText;
+                    alert('Something went wrong!');
                 }
-                let thankNode = document.createElement("p");
-                thankNode.classList.add('vacancy__form-agreement');
-                thankNode.classList.add('vacancy__form-thankyou');
-                thankNode.innerHTML = 'Thank you, your CV was sent successfully!';
-                form.append(thankNode);
             }
         });
 
-        let successMsgContainer = document.getElementById('form-msg-container');
-        let vacancyMsgContainer = document.getElementById('vacancy-container');
-        $(successMsgContainer).css("display", "flex").hide().fadeIn();
-        $('body,html').animate({
-            scrollTop: 0
-        }, 800);
-        $(vacancyMsgContainer).fadeOut();
-        $(successMsgContainer).addClass('fadeInUp animated');
-        $(successMsgContainer).delay(3000).fadeOut('slow');
-        $(successMsgContainer).fadeOut(function() {
 
-            $('#cv-form-name-label').text(defaultLabels.name)
-            $('#cv-form-name').css('border-bottom-color', '#000000');
-            $('#cv-form-surname-label').text(defaultLabels.surname);
-            $('#cv-form-surname').css('border-bottom-color', '#000000');
-            $('#cv-form-email-label').text(defaultLabels.email);
-            $('#cv-form-email').css('border-bottom-color', '#000000');
-            $('#cv-form-phone-label').text(defaultLabels.phone);
-            $('#cv-form-phone').css('border-bottom-color', '#000000');
-
-            fileHint.innerHTML = defaultLabels.file;
-            fileHint.style.color = '#000000';
-            fileSVG.path.style.fill = '#000000';
-            fileSVG.circle.style.stroke = '#000000';
-
-            $(form).trigger("reset");
-            $(vacancyMsgContainer).fadeIn();
-        });
     }
 }
 
 
 $(document)
-    .mousemove(function(e) {
+    .mousemove(function (e) {
         $('.your-cursor4')
             .eq(0)
             .css({
                 left: e.pageX,
                 top: e.pageY
             });
-        setTimeout(function() {
+        setTimeout(function () {
             $('.your-cursor4')
                 .eq(1)
                 .css({
@@ -341,7 +364,7 @@ $(document)
                     top: e.pageY
                 });
         }, 100);
-        setTimeout(function() {
+        setTimeout(function () {
             $('.your-cursor4')
                 .eq(2)
                 .css({
@@ -350,7 +373,7 @@ $(document)
                 });
         }, 200);
     });
-$(document).on("mousemove", function(e) {
+$(document).on('mousemove', function (e) {
     mouseX = e.pageX;
     mouseY = e.pageY;
 });
@@ -379,7 +402,7 @@ function subscribeForm() {
     let subscribeInput = subscribeForm.childNodes[1];
     let regexp = /^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,15})$/;
     let errors = false;
-    let thankNode = document.createElement("p");
+    let thankNode = document.createElement('p');
     thankNode.classList.add('footer-subscribe-thankyou');
 
     submitButton.addEventListener('click', function (e) {
@@ -402,8 +425,8 @@ function subscribeForm() {
 
         if (!errors) {
             $.ajax({
-                type: "POST",
-                url: "php/handlers/SubscribeHandler.php",
+                type: 'POST',
+                url: 'php/handlers/SubscribeHandler.php',
                 data: $('form.footer-subscribe-form').serialize(),
                 success: function () {
                     thankNode.innerHTML = 'Thanks for subscribing!';
@@ -416,22 +439,22 @@ function subscribeForm() {
     });
 }
 
-$(document).ready(function() {
-    $("#login-modal-link").animatedModal({
+$(document).ready(function () {
+    $('#login-modal-link').animatedModal({
         color: 'rgb(6,6,6)',
         modalTarget: 'loginModal',
         animatedIn: 'fadeIn',
         animatedOut: 'fadeOut',
         animationDuration: '1.5s'
     });
-    $("#login-modal-link2").animatedModal({
+    $('#login-modal-link2').animatedModal({
         color: 'rgb(6,6,6)',
         modalTarget: 'loginModal',
         animatedIn: 'fadeIn',
         animatedOut: 'fadeOut',
         animationDuration: '1.5s'
     });
-    $("#login-modal-link3").animatedModal({
+    $('#login-modal-link3').animatedModal({
         color: 'rgb(6,6,6)',
         modalTarget: 'loginModal',
         animatedIn: 'fadeIn',
@@ -439,25 +462,25 @@ $(document).ready(function() {
         animationDuration: '1.5s'
     });
 
-    if ($("#form-name").length) {
-        $("#form-name").attr("name", "name");
-        $("#form-surname").attr("name", "surname");
-        $("#form-comp").attr("name", "company");
-        $("#form-email").attr("name", "email");
-        $("#form-phone").attr("name", "phone");
-        $("#form-country").attr("name", "country");
+    if ($('#form-name').length) {
+        $('#form-name').attr('name', 'name');
+        $('#form-surname').attr('name', 'surname');
+        $('#form-comp').attr('name', 'company');
+        $('#form-email').attr('name', 'email');
+        $('#form-phone').attr('name', 'phone');
+        $('#form-country').attr('name', 'country');
 
-        $("#form-name").attr("maxlength", "50");
-        $("#form-surname").attr("maxlength", "50");
-        $("#form-comp").attr("maxlength", "50");
-        $("#form-email").attr("maxlength", "50");
-        $("#form-phone").attr("maxlength", "50");
-        $("#form-country").attr("maxlength", "50");
+        $('#form-name').attr('maxlength', '50');
+        $('#form-surname').attr('maxlength', '50');
+        $('#form-comp').attr('maxlength', '50');
+        $('#form-email').attr('maxlength', '50');
+        $('#form-phone').attr('maxlength', '50');
+        $('#form-country').attr('maxlength', '50');
 
-        $("#form-btn-contact").attr("type", "button");
+        $('#form-btn-contact').attr('type', 'button');
     }
 
-    $(".contact-modal-link").animatedModal({
+    $('.contact-modal-link').animatedModal({
         color: 'rgb(6,6,6)',
         modalTarget: 'contactModal',
         animatedIn: 'fadeIn',

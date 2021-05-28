@@ -1,44 +1,52 @@
 <?php
-if (isset($_POST['name']) && isset($_POST['surname']) && isset($_POST['email']) && isset($_POST['phone']) && isset($_POST['type']) && isset($_FILES['file'])) {
-    $to = "hello@blackshield.capital";
-    $from = "support@blackshield.capital";
-    $subject = "Новое CV! ".$_POST['type'];
-    $message = "Имя: ".$_POST['name']."\nФамилия: ".$_POST['surname']."\nEmail пользователя ".$_POST['email']."\nТелефон пользователя ".$_POST['phone'];
+use PHPMailer\PHPMailer\PHPMailer;
+require '../../vendor/autoload.php';
+include '../../envpath.php';
 
-    $boundary = md5(date('r', time()));
-    $filesize = '';
-    $headers = "MIME-Version: 1.0\r\n";
-    $headers .= "From: " . $from . "\r\n";
-    $headers .= "Reply-To: " . $from . "\r\n";
-    $headers .= "Content-Type: multipart/mixed; boundary=\"$boundary\"\r\n";
-    $message="
-Content-Type: multipart/mixed; boundary=\"$boundary\"
+$dotenv = Dotenv\Dotenv::createImmutable($envpath);
+$dotenv->safeLoad();
 
---$boundary
-Content-Type: text/plain; charset=\"utf-8\"
-Content-Transfer-Encoding: 7bit
 
-$message";
-    if(is_uploaded_file($_FILES['file']['tmp_name'])) {
-        $attachment = chunk_split(base64_encode(file_get_contents($_FILES['file']['tmp_name'])));
-        $filename = $_FILES['file']['name'];
-        $filetype = $_FILES['file']['type'];
-        $filesize = $_FILES['file']['size'];
-        $message.="
+$mail = new PHPMailer;
+$mail->isSMTP();
+$mail->CharSet = 'UTF-8';
+$mail->Encoding = 'base64';
+$mail->SMTPSecure = 'ssl';
+$mail->Host = 'smtp.gmail.com';
+$mail->Port = 465;
+$mail->Username = $_ENV['SENDER_EMAIL'];
+$mail->Password = $_ENV['SENDER_PASSWORD'];
+$mail->SMTPKeepAlive = true;
+$mail->SMTPAuth = true;
 
---$boundary
-Content-Type: \"$filetype\"; name=\"$filename\"
-Content-Transfer-Encoding: base64
-Content-Disposition: attachment; filename=\"$filename\"
+$mail->setFrom('support@blackshield.capital', 'BlackShield Capital');
+$mail->Subject = 'Новое CV!';
 
-$attachment";
-    }
-    $message.="
---$boundary--";
+$receiver = ['email' => $_ENV['RECEIVER_EMAIL'], 'name' => 'BlackShield Capital'];
 
-    if ($filesize < 10000000) {
-        mail($to, $subject, $message, $headers);
-    }
+
+$mail->addAddress($receiver['email'], $receiver['name']);
+
+if (array_key_exists('file', $_FILES)) {
+  if ($_FILES['file']['size'] < 4000000) {
+  $ext = PHPMailer::mb_pathinfo($_FILES['file']['name'], PATHINFO_EXTENSION);
+      $uploadfile = tempnam(sys_get_temp_dir(), hash('sha256', $_FILES['file']['name'])) . '.' . $ext;
+      move_uploaded_file($_FILES['file']['tmp_name'], $uploadfile);
+      $mail->addAttachment($uploadfile, $_FILES['file']['name']);
+
+      $mail->Body = "<p>Name: {$_POST['name']}</p><p>Surname: {$_POST['surname']}</p><p> Email: {$_POST['email']}</p><p>Phone: {$_POST['phone']}</p>";
+      $mail->AltBody = "New email! \n With CV attachment";
+      echo json_encode(array('success' => true));
+      $mail->send();
+  } else {
+    echo json_encode(array('success' => 'large_file'));
+  }
+} else {
+  echo json_encode(array('success' => false));
 }
-?>
 
+$mail->clearAddresses();
+
+
+$mail->smtpClose();
+?>
